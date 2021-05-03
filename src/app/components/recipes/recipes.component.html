@@ -1,14 +1,14 @@
 <div class="main">
   <div *ngFor="let recipe of recipes" class="display-recipes">
     <div class="card card-blog">
-      <div class="card-image">
-        <a href="#"> <img class="img" src="../../../assets/images/meal.jpeg"> </a>
+      <div class="card-image" [routerLink]="['/recipes', recipe.id]">
+        <img class="img" src="../../../assets/images/meal.jpeg" alt="meal">
         <div class="ripple-cont"></div>
       </div>
       <div class="table">
         <h6 class="category text-success"><i class="fa fa-university"></i>Type of meal (enum): {{ recipe.typeOfMeal }}</h6>
         <h4 class="card-caption">
-          <a href="#">{{ recipe.title }}</a>
+          <a [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</a>
         </h4>
         <p class="card-description">{{ recipe.preparation }}</p>
         <div class="ftr">

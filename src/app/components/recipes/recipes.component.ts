@@ -10,12 +10,11 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class RecipesComponent implements OnInit {
   recipes: Recipe[];
 
-  constructor (private recipeService:RecipeService) {}
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe(recipes => {
       this.recipes = recipes;
     });
   }
-
 }
