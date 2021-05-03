@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-//import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppRoutingModule } from './app-routing.module';
-import { RecipesComponent } from './components/recipes/recipes.component';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    RecipesComponent,
-    //DashboardComponent
+    routingComponents,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
