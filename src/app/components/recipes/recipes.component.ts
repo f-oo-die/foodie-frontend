@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from 'src/app/models/Recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipes;
+  recipes: Recipe[];
 
   constructor (private recipeService:RecipeService) {}
 
