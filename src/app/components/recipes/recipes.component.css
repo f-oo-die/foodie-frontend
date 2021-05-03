@@ -10,6 +10,7 @@
 }
 
 .card .card-image {
+  cursor: pointer;
   height: 60%;
   position: relative;
   overflow: hidden;

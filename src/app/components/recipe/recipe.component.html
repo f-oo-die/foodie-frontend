@@ -1,12 +1,24 @@
-<ng-container *ngIf="recipe">
-  <h1>{{ recipe.title }}</h1>
-  <div>
-    <p>Preparation: {{ recipe.id }}</p>
-    <p>Number of calories: {{ recipe.numOfCalories }}</p>
-    <p>Type of meal: {{ recipe.typeOfMeal }}</p>
-    <p>Preparation: {{ recipe.preparation }}</p>
-  </div>
-</ng-container>
+<app-header></app-header>
+
+<div class="container pt-5">
+  <ng-container *ngIf="recipe">
+    <div class="pb-3 d-flex justify-content-between align-items-center">
+      <h1>{{ recipe.title }}</h1>
+      <img class="shadow rounded" src="../../../assets/images/meal.jpeg" alt="meal">
+    </div>
+    <hr>
+    <div class="text-center">
+      <h2 class="pt-3">Type of meal</h2>
+      <p>{{ recipe.typeOfMeal }}</p>
+      <h2 class="pt-3">Preparation</h2>
+      <p>{{ recipe.preparation }}</p>
+      <h2 class="pt-3">Number of calories</h2>
+      <p class="pb-5">{{ recipe.numOfCalories }}</p>
+    </div>
+  </ng-container>
+</div>
+
+<app-footer></app-footer>
 
 
 
