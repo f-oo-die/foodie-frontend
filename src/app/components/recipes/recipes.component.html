@@ -1,6 +1,6 @@
 <ul *ngFor="let recipe of recipes">
   <li>
-    <p>Title: {{ recipe.title }}</p>
+    <p>Title: {{ recipe.title }} - <a [routerLink] ="['/recipes', recipe.id]">VIEW</a></p>
     <p>Preparation: {{ recipe.preparation }}</p>
     <hr>
   </li>
