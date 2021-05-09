@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {RecipeResolver} from './resolvers/recipe.resolver';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RecipeResolver,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
