@@ -4,11 +4,11 @@
       <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
        <span class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
-      <a id="logo" class="navbar-brand" routerLink="/">Foodie</a>
+      <a id="logo" class="navbar-brand" [routerLink]="['/']">Foodie</a>
     </div>
     <ul id="link" class="nav navbar-left">
-      <li><a href='#'>Home</a></li>
-      <li><a href='#'>Recipes</a></li>
+      <li><a [routerLink]="['/']">Home</a></li>
+      <li><a [routerLink]="['/recipes']">Recipes</a></li>
       <li><a href="#">About</a></li>
     </ul>
     <ul id="link" class="nav navbar-right">

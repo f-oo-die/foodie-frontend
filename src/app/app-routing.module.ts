@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'recipes/:id',
     component: RecipeComponent,
-    resolve: { recipe: RecipeResolver}
+    resolve: { recipe: RecipeResolver }
   },
 ];
 
@@ -29,5 +29,5 @@ export class AppRoutingModule { }
 export const routingComponents = [
   HomeComponent,
   RecipesComponent,
-  RecipeComponent
-]
+  RecipeComponent,
+];
