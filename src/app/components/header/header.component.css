@@ -40,3 +40,7 @@
 #button-link a {
   color:#f2f2f2;
 }
+
+a {
+  cursor: pointer;
+}
