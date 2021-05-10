@@ -7,13 +7,15 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
