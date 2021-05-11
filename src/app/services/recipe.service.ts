@@ -8,7 +8,7 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class RecipeService {
-  apiUrl:string = environment.api;
+  apiUrl: string = environment.api;
 
   constructor(private http: HttpClient) { }
 
