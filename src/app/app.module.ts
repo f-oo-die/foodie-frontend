@@ -7,6 +7,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
+import { RecipesResolver } from './resolvers/recipes.resolver';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RecipeResolver } from './resolvers/recipe.resolver';
   ],
   providers: [
     RecipeResolver,
+    RecipesResolver,
   ],
   bootstrap: [AppComponent]
 })

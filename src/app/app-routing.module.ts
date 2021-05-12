@@ -5,15 +5,18 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
+import { RecipesResolver } from './resolvers/recipes.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    resolve: { recipes: RecipesResolver }
   },
   {
     path: RoutesConstant.RECIPES_LIST,
     component: RecipesComponent,
+    resolve: { recipes: RecipesResolver }
   },
   {
     path: RoutesConstant.RECIPES_DETAILS,

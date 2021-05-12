@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
+
 import {Recipe} from '../../interface/recipe';
 
 @Component({
@@ -11,11 +12,21 @@ import {Recipe} from '../../interface/recipe';
 export class RecipesComponent implements OnInit {
   recipes: Recipe[];
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(
+    private service: RecipeService,
+    private activatedRoute: ActivatedRoute,
+    ) {}
 
   ngOnInit(): void {
-    this.recipeService.getRecipes().subscribe(recipes => {
-      this.recipes = recipes;
-    });
+    this.activatedRoute.data.subscribe(this.loadRecipes);
+    console.log(this.activatedRoute.data);
+    // this.service.getRecipes().subscribe(recipes => {
+    //   this.recipes = recipes;
+    // });
+
+  }
+
+  loadRecipes = (routeData: { recipes: Recipe[] }) => {
+    this.recipes = routeData.recipes;
   }
 }
