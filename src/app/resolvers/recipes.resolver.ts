@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 import { Recipe } from '../interface/recipe';
 
 @Injectable()
-export class RecipeResolver implements Resolve<Recipe> {
+export class RecipesResolver implements Resolve<Recipe[]> {
 
   constructor(private recipeService: RecipeService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Recipe> {
-    return this.recipeService.getRecipe(route.paramMap.get('id'));
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Recipe[]> {
+    return this.recipeService.getRecipes();
   }
 }
