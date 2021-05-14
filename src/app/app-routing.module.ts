@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipesComponent } from './features/containers/recipes/recipes.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
