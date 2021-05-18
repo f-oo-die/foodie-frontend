@@ -5,7 +5,7 @@
 }
 
 .jumbotron {
-  background-image: url("../../../assets/images/background.jpg");
+  background-image: url("src/assets/images/background.jpg");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@
   height: 30rem;
 
   position: relative;
-  
+
 }
 
 .color-overlay {
