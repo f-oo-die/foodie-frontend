@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RecipesResolver } from './resolvers/recipes.resolver';
 import { IngredientListsComponent } from './components/ingredient-lists/ingredient-lists.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IngredientListsComponent } from './components/ingredient-lists/ingredie
     routingComponents,
     HeaderComponent,
     FooterComponent,
-    IngredientListsComponent
+    IngredientListsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent} from './components/about-us/about-us.component';
 import { HomeComponent } from './components/home/home.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
     component: RecipeComponent,
     resolve: { recipe: RecipeResolver }
   },
+  { path: 'about-us',
+  component : AboutUsComponent,
+
+  }
 ];
 
 @NgModule({
