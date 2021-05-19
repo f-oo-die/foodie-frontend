@@ -1,21 +1,21 @@
 <app-header></app-header>
 
 <div class="container pt-5">
-  <ng-container *ngIf="recipe">
+  <ng-container *ngIf="model">
     <div class="pb-3 d-flex justify-content-between align-items-center">
-      <h1>{{ recipe.title }}</h1>
-      <img class="shadow rounded" src="../../../assets/images/meal.jpeg" alt="meal">
+      <h1>{{ model.title }}</h1>
+      <img class="shadow rounded" src="../../../../assets/images/meal.jpeg" alt="meal">
     </div>
     <hr>
     <div class="text-center">
       <h2 class="pt-3">Type of meal</h2>
-      <p>{{ recipe.typeOfMeal }}</p>
+      <p>{{ model.typeOfMeal }}</p>
       <h2 class="pt-3">Preparation</h2>
-      <p>{{ recipe.preparation }}</p>
+      <p>{{ model.preparation }}</p>
       <h2 class="pt-3">Number of calories</h2>
-      <p class="pb-5">{{ recipe.numOfCalories }}</p>
+      <p class="pb-5">{{ model.numOfCalories }}</p>
     </div>
-    <app-ingredient-lists [ingredientLists]="ingredientsList"></app-ingredient-lists>
+    <app-ingredient-lists [ingredientLists]="ingredientModel"></app-ingredient-lists>
   </ng-container>
 </div>
 

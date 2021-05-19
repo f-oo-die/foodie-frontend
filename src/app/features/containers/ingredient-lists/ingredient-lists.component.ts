@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Ingredient } from 'src/app/interface/ingredient';
+import { Component, Input, OnInit } from '@angular/core';
 import { IngredientList } from 'src/app/interface/ingredientList';
 
 @Component({
@@ -11,11 +10,10 @@ export class IngredientListsComponent implements OnInit {
 
   @Input()
   ingredientLists: IngredientList[];
-
-  constructor() {}
+  
+  constructor() { }
 
   ngOnInit(): void {
-    
   }
 
 }
