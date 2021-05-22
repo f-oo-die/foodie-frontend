@@ -1,3 +1,9 @@
+<div class="search-area">
+  <form class="form-inline my-2 my-lg-0">
+    <input type="search" (ngModelChange)="searchRecipes(key.value)" #key="ngModel" ngModel
+    name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search recipes...">
+ </form>
+</div>
 <div class="main">
   <div *ngFor="let model of models" class="display-recipes">
     <div class="card card-blog">
