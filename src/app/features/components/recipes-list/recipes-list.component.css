@@ -29,7 +29,8 @@
 }
 
 .card .ftr {
-  margin-top: 15px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .card .ftr div {
@@ -45,21 +46,17 @@
 
 .table {
   margin-bottom: 0px;
-  padding: 15px 30px;
+  padding: 10px 20px;
 }
 
 /* ============ Card Blog ============ */
 
 .card-blog {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .card-blog .card-caption {
   margin-top: 5px;
-}
-
-.card-blog .card-image + .category {
-  margin-top: 20px;
 }
 
 /* ============ Card Background ============ */
@@ -71,11 +68,10 @@
 }
 
 .card-background .table {
-  position: relative;
   z-index: 2;
   min-height: 280px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   max-width: 440px;
   margin: 0 auto;
 }
@@ -86,9 +82,9 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.card-background .card-caption {
-  color: #FFFFFF;
-  margin-top: 10px;
+.card-caption {
+  margin-top: 7px;
+  text-align: center !important;
 }
 
 /* ============ Card Category ============ */
@@ -96,7 +92,6 @@
 .category {
   position: relative;
   line-height: 0;
-  margin: 15px 0;
 }
 
 /* ============ Text Color ============ */
@@ -134,11 +129,43 @@ font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 90%;
   margin: 20px auto;
 }
 
-.display-recipes {
-  width: 30%;
+.table .main {
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px auto;
 }
+
+.display-recipes {
+  width: 32%;
+}
+
+.fadeout {
+  height:150px;
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 55px;
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(95%,rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  }
+
+  .card-text {
+    height: 150px;
+    overflow: hidden;
+    text-align: justify;
+  }
+
+  .card-caption a {
+    font-size: 25px;
+    text-align: center;
+  }

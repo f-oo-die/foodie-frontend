@@ -6,13 +6,17 @@
         <div class="ripple-cont"></div>
       </div>
       <div class="table">
-        <h6 class="category text-success"><i class="fa fa-university"></i>Type of meal (enum): {{ model.typeOfMeal }}</h6>
+        <div class="main">
+          <p class="category text-success"><i class="fa fa-university"></i>{{ typeOfMeal[model.typeOfMeal] }}</p>
+          <p class="stats"> <i class="fa fa-clock-o"></i> {{ model.numOfCalories }} calories </p>
+        </div>
         <h4 class="card-caption">
           <a [routerLink]="['/recipes', model.id]">{{ model.title }}</a>
         </h4>
-        <p class="card-description">{{ model.preparation }}</p>
+        <p class="card-description card-text">{{ model.preparation }}</p>
+        <div class="fadeout"></div>
         <div class="ftr">
-            <div class="stats"> <i class="fa fa-clock-o"></i> {{ model.numOfCalories }} calories </div>
+          nutritional issue tags
         </div>
       </div>
     </div>

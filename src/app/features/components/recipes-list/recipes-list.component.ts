@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
 import { Recipe } from 'src/app/interface/recipe';
 
 @Component({
@@ -10,4 +11,6 @@ export class RecipesListComponent {
 
   @Input()
   models: Recipe[];
+
+  typeOfMeal = TypeOfMeal;
 }
