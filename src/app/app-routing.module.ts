@@ -7,7 +7,7 @@ import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
 import { RecipesResolver } from './resolvers/recipes.resolver';
 import {AdminComponent} from './admin/admin.component';
-import {AdminRecipesComponent} from './admin-recipes/admin-recipes.component';
+import {AdminRecipesComponent} from './admin/admin-recipes/admin-recipes.component';
 
 const routes: Routes = [
   {
@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+  },
+  {
+    path: 'admin/recipes',
+    component: AdminRecipesComponent,
   },
 ];
 

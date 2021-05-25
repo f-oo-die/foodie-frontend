@@ -15,6 +15,9 @@ import { RecipesComponent } from './features/containers/recipes/recipes.componen
 import { RecipesListComponent } from './features/components/recipes-list/recipes-list.component';
 import { RecipeDetailsComponent } from './features/components/recipe-details/recipe-details.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.component';
+import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
+import { AdminTopNavigationComponent } from './admin/admin-top-navigation/admin-top-navigation.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { AdminComponent } from './admin/admin.component';
     RecipesListComponent,
     RecipeDetailsComponent,
     AdminComponent,
+    AdminRecipesComponent,
+    AdminSidebarComponent,
+    AdminTopNavigationComponent,
   ],
   imports: [
     BrowserModule,
