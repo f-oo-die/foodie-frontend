@@ -5,13 +5,18 @@ export abstract class RoutesConstant {
 
   // Route roots
   static readonly RECIPES_ROUTE: string = 'recipes';
+  static readonly ADMIN_ROUTE: string = 'admin';
 
   // Routes
   static readonly RECIPES_LIST: string = RoutesConstant.RECIPES_ROUTE;
   static readonly RECIPES_DETAILS_BASE: string = RoutesConstant.RECIPES_ROUTE;
   static readonly RECIPES_DETAILS: string = RoutesConstant.RECIPES_ROUTE + '/:' + RoutesConstant.RECIPE_ID;
-  static readonly RECIPES_NEW: string = RoutesConstant.RECIPES_ROUTE + '/new';
-  static readonly RECIPES_EDIT_BASE: string = RoutesConstant.RECIPES_ROUTE + '/edit';
-  static readonly RECIPES_EDIT: string = RoutesConstant.RECIPES_EDIT_BASE + '/:' + RoutesConstant.RECIPE_ID;
+  // static readonly RECIPES_NEW: string = RoutesConstant.RECIPES_ROUTE + '/new';
+  // static readonly RECIPES_EDIT_BASE: string = RoutesConstant.RECIPES_ROUTE + '/edit';
+  // static readonly RECIPES_EDIT: string = RoutesConstant.RECIPES_EDIT_BASE + '/:' + RoutesConstant.RECIPE_ID;
+
+  static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';
+  static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
+  static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';
 
 }

@@ -6,8 +6,9 @@ import { RecipeComponent } from './features/containers/recipe/recipe.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
 import { RecipesResolver } from './resolvers/recipes.resolver';
-import {AdminComponent} from './admin/admin.component';
-import {AdminRecipesComponent} from './admin/admin-recipes/admin-recipes.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.component';
+import {AdminRecipesAddComponent} from './admin/admin-recipes-add/admin-recipes-add.component';
 
 const routes: Routes = [
   {
@@ -26,12 +27,17 @@ const routes: Routes = [
     resolve: { recipe: RecipeResolver }
   },
   {
-    path: 'admin',
+    path: RoutesConstant.ADMIN_ROUTE,
     component: AdminComponent,
   },
   {
-    path: 'admin/recipes',
+    path: RoutesConstant.ADMIN_RECIPES_LIST,
     component: AdminRecipesComponent,
+    resolve: { recipes: RecipesResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_RECIPES_NEW,
+    component: AdminRecipesAddComponent,
   },
 ];
 

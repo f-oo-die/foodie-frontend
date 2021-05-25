@@ -19,6 +19,7 @@ import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.compo
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { AdminTopNavigationComponent } from './admin/admin-top-navigation/admin-top-navigation.component';
 import { DataTablesModule } from 'angular-datatables';
+import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipes-add.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DataTablesModule } from 'angular-datatables';
     AdminRecipesComponent,
     AdminSidebarComponent,
     AdminTopNavigationComponent,
+    AdminRecipesAddComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RoutesConstant} from '../../constants/routes-constant';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  openRecipesList(): void {
+    this.router.navigateByUrl(`/${RoutesConstant.ADMIN_RECIPES_LIST}`);
+  }
+
 
 }
