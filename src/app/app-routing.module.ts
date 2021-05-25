@@ -6,6 +6,8 @@ import { RecipeComponent } from './features/containers/recipe/recipe.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
 import { RecipesResolver } from './resolvers/recipes.resolver';
+import {AdminComponent} from './admin/admin.component';
+import {AdminRecipesComponent} from './admin-recipes/admin-recipes.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,10 @@ const routes: Routes = [
     component: RecipeComponent,
     resolve: { recipe: RecipeResolver }
   },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
 ];
 
 @NgModule({
@@ -34,4 +40,5 @@ export const routingComponents = [
   HomeComponent,
   RecipesComponent,
   RecipeComponent,
+  AdminComponent,
 ];
