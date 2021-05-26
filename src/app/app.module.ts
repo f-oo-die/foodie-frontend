@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -20,6 +20,12 @@ import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.compo
 import { AdminTopNavigationComponent } from './admin/admin-top-navigation/admin-top-navigation.component';
 import { DataTablesModule } from 'angular-datatables';
 import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipes-add.component';
+import { AdminNutritionIssuesComponent } from './admin/admin-nutrition-issues/admin-nutrition-issues.component';
+import { NutritionIssuesResolver } from './resolvers/nutrition-issues.resolver';
+import { AdminNutritionIssuesAddComponent } from './admin/admin-nutrition-issues-add/admin-nutrition-issues-add.component';
+import { AdminIngredientsComponent } from './admin/admin-ingredients/admin-ingredients.component';
+import { IngredientsResolver } from './resolvers/ingredients.resolver';
+import { AdminIngredientsAddComponent } from './admin/admin-ingredients-add/admin-ingredients-add.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,10 @@ import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipe
     AdminSidebarComponent,
     AdminTopNavigationComponent,
     AdminRecipesAddComponent,
+    AdminNutritionIssuesComponent,
+    AdminNutritionIssuesAddComponent,
+    AdminIngredientsComponent,
+    AdminIngredientsAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +54,13 @@ import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipe
     HttpClientModule,
     FormsModule,
     DataTablesModule,
+    ReactiveFormsModule,
   ],
   providers: [
     RecipeResolver,
     RecipesResolver,
+    NutritionIssuesResolver,
+    IngredientsResolver,
   ],
   bootstrap: [AppComponent]
 })
