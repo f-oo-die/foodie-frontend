@@ -18,6 +18,6 @@ export class NutritionIssueService {
   }
 
   createNutritionIssue(nutritionIssue: NutritionIssue): Observable<NutritionIssue> {
-    return this.http.post<NutritionIssue>(`${this.apiUrl}/nutrition-issues`, nutritionIssue);
+    return this.http.post<NutritionIssue>(`${this.apiUrl}/admin/nutrition-issues`, nutritionIssue);
   }
 }

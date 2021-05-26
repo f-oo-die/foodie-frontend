@@ -17,6 +17,6 @@ export class IngredientService {
   }
 
   createIngredient(ingredient: Ingredient): Observable<Ingredient> {
-    return this.http.post<Ingredient>(`${this.apiUrl}/ingredients`, ingredient);
+    return this.http.post<Ingredient>(`${this.apiUrl}/admin/ingredients`, ingredient);
   }
 }

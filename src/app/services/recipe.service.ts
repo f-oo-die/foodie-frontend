@@ -21,7 +21,7 @@ export class RecipeService {
   }
 
   createRecipe(recipe: Recipe): Observable<Recipe> {
-    return this.http.post<Recipe>(`${this.apiUrl}/recipes`, recipe);
+    return this.http.post<Recipe>(`${this.apiUrl}/admin/recipes`, recipe);
   }
 
 }
