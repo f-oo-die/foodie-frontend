@@ -5,7 +5,30 @@
     <app-admin-top-navigation></app-admin-top-navigation>
     <!-- Page content-->
     <div class="container-fluid">
-      <!-- todo: create recipes add form -->
+      <p class="h3 pt-3 pb-3">Add New Recipe</p>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input formControlName="title" type="text" class="form-control" id="title" placeholder="Enter recipe title">
+        </div>
+        <div class="form-group">
+          <label for="typeOfMeal">Title</label>
+          <select class="form-control" id="typeOfMeal">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="numOfCals">Password</label>
+          <input type="number" class="form-control" id="numOfCals" placeholder="Enter number of calories">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" rows="3" placeholder="Enter recipe description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
 </div>
