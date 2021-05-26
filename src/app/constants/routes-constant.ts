@@ -19,4 +19,12 @@ export abstract class RoutesConstant {
   static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
   static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';
 
+  static readonly ADMIN_NUTRITION_ISSUES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/nutrition-issues';
+  static readonly ADMIN_NUTRITION_ISSUES_LIST: string = RoutesConstant.ADMIN_NUTRITION_ISSUES_BASE;
+  static readonly ADMIN_NUTRITION_ISSUES_NEW: string = RoutesConstant.ADMIN_NUTRITION_ISSUES_BASE + '/new';
+
+  static readonly ADMIN_INGREDIENTS_BASE: string = RoutesConstant.ADMIN_ROUTE + '/ingredients';
+  static readonly ADMIN_INGREDIENTS_LIST: string = RoutesConstant.ADMIN_INGREDIENTS_BASE;
+  static readonly ADMIN_INGREDIENTS_NEW: string = RoutesConstant.ADMIN_INGREDIENTS_BASE + '/new';
+
 }
