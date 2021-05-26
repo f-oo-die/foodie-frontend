@@ -18,5 +18,13 @@ export class AdminSidebarComponent implements OnInit {
     this.router.navigateByUrl(`/${RoutesConstant.ADMIN_RECIPES_LIST}`);
   }
 
+  openNutritionIssuesList(): void {
+    this.router.navigateByUrl(`/${RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST}`);
+  }
+
+  openIngredientsList(): void {
+    this.router.navigateByUrl(`/${RoutesConstant.ADMIN_INGREDIENTS_LIST}`);
+  }
+
 
 }
