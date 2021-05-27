@@ -15,6 +15,11 @@
       <h2 class="pt-3">Number of calories</h2>
       <p class="pb-5">{{ model.numOfCalories }}</p>
     </div>
+    <div class="ftr">
+      <div *ngFor="let nutritionIssue of nutritionIssues">
+        <span class="badge badge-info"> {{nutritionIssue.name}} </span>
+      </div>
+    </div>
     <app-ingredient-lists [ingredientLists]="ingredientModel"></app-ingredient-lists>
   </ng-container>
 </div>
