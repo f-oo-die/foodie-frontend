@@ -23,4 +23,8 @@ export class AdminNutritionIssuesComponent implements OnInit {
   openAddNutritionIssues(): void {
     this.router.navigateByUrl(`/${RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW}`);
   }
+
+  openEditNutritionIssues(id: number): void {
+    this.router.navigateByUrl(`/${RoutesConstant.ADMIN_NUTRITION_ISSUES_BASE}/edit/${id}`);
+  }
 }
