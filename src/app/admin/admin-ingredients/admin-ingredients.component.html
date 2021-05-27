@@ -13,6 +13,7 @@
           <th>Name</th>
           <th>Caloric Value</th>
           <th>Nutritional Value</th>
+          <th>Edit</th>
         </tr>
         </thead>
 
@@ -22,6 +23,7 @@
           <td>{{ ingredient.ingredientName }}</td>
           <td>{{ ingredient.caloricValue }}</td>
           <td>{{ ingredient.nutritionalValue }}</td>
+          <td><button type="button" class="btn btn-primary" (click)="openEditIngredient(ingredient.id)">Edit</button></td>
         </tr>
         </tbody>
       </table>

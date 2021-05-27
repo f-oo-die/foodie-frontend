@@ -23,4 +23,8 @@ export class AdminIngredientsComponent implements OnInit {
   openAddIngredients(): void {
     this.router.navigateByUrl(`/${RoutesConstant.ADMIN_INGREDIENTS_NEW}`);
   }
+
+  openEditIngredient(id: number): void {
+    this.router.navigateByUrl(`/${RoutesConstant.ADMIN_INGREDIENTS_BASE}/edit/${id}`);
+  }
 }
