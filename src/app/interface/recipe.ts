@@ -1,5 +1,5 @@
 import {IngredientList} from './ingredientList';
-import {NutritionIssue} from './nutrition-issue';
+import {NutritionIssue} from './nutritionIssue';
 
 export interface Recipe {
   id?: number;
