@@ -26,6 +26,10 @@ import { AdminNutritionIssuesAddComponent } from './admin/admin-nutrition-issues
 import { AdminIngredientsComponent } from './admin/admin-ingredients/admin-ingredients.component';
 import { IngredientsResolver } from './resolvers/ingredients.resolver';
 import { AdminIngredientsAddComponent } from './admin/admin-ingredients-add/admin-ingredients-add.component';
+import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issues-edit/admin-nutrition-issues-edit.component';
+import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
+import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
+import { IngredientResolver } from './resolvers/ingredient.resolver';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,8 @@ import { AdminIngredientsAddComponent } from './admin/admin-ingredients-add/admi
     AdminNutritionIssuesAddComponent,
     AdminIngredientsComponent,
     AdminIngredientsAddComponent,
+    AdminNutritionIssuesEditComponent,
+    AdminIngredientsEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,9 @@ import { AdminIngredientsAddComponent } from './admin/admin-ingredients-add/admi
     RecipeResolver,
     RecipesResolver,
     NutritionIssuesResolver,
+    NutritionIssueResolver,
     IngredientsResolver,
+    IngredientResolver,
   ],
   bootstrap: [AppComponent]
 })
