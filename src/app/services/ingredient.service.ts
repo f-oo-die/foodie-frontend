@@ -16,7 +16,15 @@ export class IngredientService {
     return this.http.get<Ingredient[]>(`${this.apiUrl}/ingredients`);
   }
 
+  getIngredient(id: string): Observable<Ingredient> {
+    return this.http.get<Ingredient>(`${this.apiUrl}/ingredients/${id}`);
+  }
+
   createIngredient(ingredient: Ingredient): Observable<Ingredient> {
     return this.http.post<Ingredient>(`${this.apiUrl}/admin/ingredients`, ingredient);
+  }
+
+  updateIngredient(id: number, ingredient: Ingredient): Observable<Ingredient> {
+    return this.http.put<Ingredient>(`${this.apiUrl}/admin/ingredients/${id}`, ingredient);
   }
 }
