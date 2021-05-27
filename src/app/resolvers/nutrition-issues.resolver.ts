@@ -2,7 +2,7 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/rou
 import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {NutritionIssueService} from '../services/nutrition-issue.service';
-import {NutritionIssue} from '../interface/nutrition-issue';
+import {NutritionIssue} from '../interface/nutritionIssue';
 
 @Injectable()
 export class NutritionIssuesResolver implements Resolve<NutritionIssue[]> {

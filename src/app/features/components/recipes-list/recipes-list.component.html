@@ -22,7 +22,9 @@
         <p class="card-description card-text">{{ model.preparation }}</p>
         <div class="fadeout"></div>
         <div class="ftr">
-          nutritional issue tags
+          <div *ngFor="let nutritionIssue of model.nutritionIssues">
+            <span class="badge badge-info">{{ nutritionIssue?.name }} </span>
+        </div>
         </div>
       </div>
     </div>

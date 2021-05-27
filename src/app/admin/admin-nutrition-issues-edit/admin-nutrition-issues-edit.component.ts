@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NutritionIssue} from '../../interface/nutrition-issue';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoutesConstant} from '../../constants/routes-constant';
 import {NutritionIssueService} from '../../services/nutrition-issue.service';
+import {NutritionIssue} from '../../interface/nutritionIssue';
 
 @Component({
   selector: 'app-admin-nutrition-issues-edit',

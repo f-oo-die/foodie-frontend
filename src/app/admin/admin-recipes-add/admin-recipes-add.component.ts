@@ -6,7 +6,7 @@ import {RoutesConstant} from '../../constants/routes-constant';
 import {TypeOfMeal} from '../../interface/enums/typeOfMeal';
 import {IngredientList} from '../../interface/ingredientList';
 import {Ingredient} from '../../interface/ingredient';
-import {NutritionIssue} from '../../interface/nutrition-issue';
+import {NutritionIssue} from '../../interface/nutritionIssue';
 
 @Component({
   selector: 'app-admin-recipes-add',
