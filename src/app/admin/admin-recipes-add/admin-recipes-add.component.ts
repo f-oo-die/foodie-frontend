@@ -24,7 +24,7 @@ export class AdminRecipesAddComponent implements OnInit {
 
   recipeModel: Recipe = {
     ingredientList: this.ingredientLists,
-    nutritionIssues: [],
+    nutritionIssues: undefined,
     numOfCalories: 0,
     preparation: '',
     title: '',
