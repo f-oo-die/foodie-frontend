@@ -1,0 +1,29 @@
+<div class="d-flex" id="wrapper">
+  <app-admin-sidebar></app-admin-sidebar>
+  <!-- Page content wrapper-->
+  <div id="page-content-wrapper">
+    <app-admin-top-navigation></app-admin-top-navigation>
+    <!-- Page content-->
+    <div class="container-fluid">
+      <p class="h3 pt-3 pb-3">Recipes</p>
+      <table datatable class="row-border hover">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Type of Meal</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td>{{ recipe.id }}</td>
+          <td>{{ recipe.title }}</td>
+          <td>{{ recipe.typeOfMeal }}</td>
+        </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-primary mt-3" (click)="openAddRecipe()">Add</button>
+    </div>
+  </div>
+</div>
