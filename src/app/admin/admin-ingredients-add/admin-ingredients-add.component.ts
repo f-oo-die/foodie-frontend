@@ -7,7 +7,7 @@ import {Ingredient} from '../../interface/ingredient';
 @Component({
   selector: 'app-admin-ingredients-add',
   templateUrl: './admin-ingredients-add.component.html',
-  styleUrls: ['./admin-ingredients-add.component.css', '../../../assets/css/admin.css']
+  styleUrls: ['./admin-ingredients-add.component.css']
 })
 export class AdminIngredientsAddComponent implements OnInit {
 

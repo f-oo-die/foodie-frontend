@@ -7,7 +7,7 @@ import {NutritionIssue} from '../../interface/nutritionIssue';
 @Component({
   selector: 'app-admin-nutrition-issues-add',
   templateUrl: './admin-nutrition-issues-add.component.html',
-  styleUrls: ['./admin-nutrition-issues-add.component.css', '../../../assets/css/admin.css']
+  styleUrls: ['./admin-nutrition-issues-add.component.css']
 })
 export class AdminNutritionIssuesAddComponent implements OnInit {
 

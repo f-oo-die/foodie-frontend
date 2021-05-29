@@ -7,7 +7,7 @@ import {RoutesConstant} from '../../constants/routes-constant';
 @Component({
   selector: 'app-admin-ingredients-edit',
   templateUrl: './admin-ingredients-edit.component.html',
-  styleUrls: ['./admin-ingredients-edit.component.css', '../../../assets/css/admin.css']
+  styleUrls: ['./admin-ingredients-edit.component.css']
 })
 export class AdminIngredientsEditComponent implements OnInit {
 
