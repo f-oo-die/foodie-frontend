@@ -16,8 +16,6 @@ import { RecipesListComponent } from './features/components/recipes-list/recipes
 import { RecipeDetailsComponent } from './features/components/recipe-details/recipe-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.component';
-import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
-import { AdminTopNavigationComponent } from './admin/admin-top-navigation/admin-top-navigation.component';
 import { DataTablesModule } from 'angular-datatables';
 import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipes-add.component';
 import { AdminNutritionIssuesComponent } from './admin/admin-nutrition-issues/admin-nutrition-issues.component';
@@ -44,8 +42,6 @@ import { IngredientResolver } from './resolvers/ingredient.resolver';
     RecipeDetailsComponent,
     AdminComponent,
     AdminRecipesComponent,
-    AdminSidebarComponent,
-    AdminTopNavigationComponent,
     AdminRecipesAddComponent,
     AdminNutritionIssuesComponent,
     AdminNutritionIssuesAddComponent,

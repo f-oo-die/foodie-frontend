@@ -11,7 +11,7 @@ import {NutritionIssue} from '../../interface/nutritionIssue';
 @Component({
   selector: 'app-admin-recipes-add',
   templateUrl: './admin-recipes-add.component.html',
-  styleUrls: ['./admin-recipes-add.component.css', '../../../assets/css/admin.css']
+  styleUrls: ['./admin-recipes-add.component.css']
 })
 export class AdminRecipesAddComponent implements OnInit {
   typeOfMeal = TypeOfMeal;

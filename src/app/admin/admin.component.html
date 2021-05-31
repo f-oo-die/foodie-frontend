@@ -1,19 +1,28 @@
 <div class="d-flex" id="wrapper">
-  <app-admin-sidebar></app-admin-sidebar>
+  <div class="border-end bg-white" id="sidebar-wrapper">
+    <!-- Sidebar navigation -->
+    <div class="sidebar-heading border-bottom bg-light">Foodie Admin Panel</div>
+    <div class="list-group list-group-flush">
+      <a class="list-group-item list-group-item-action list-group-item-light p-3" (click)="openRecipesList()">Recipes</a>
+      <a class="list-group-item list-group-item-action list-group-item-light p-3" (click)="openNutritionIssuesList()">Nutrition issues</a>
+      <a class="list-group-item list-group-item-action list-group-item-light p-3" (click)="openIngredientsList()">Ingredients</a>
+    </div>
+  </div>
   <!-- Page content wrapper-->
   <div id="page-content-wrapper">
-    <app-admin-top-navigation></app-admin-top-navigation>
+    <!-- Top navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item active"><a class="nav-link" href="#">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Page content-->
     <div class="container-fluid">
-<!--      <h1 class="mt-4">Simple Sidebar</h1>-->
-<!--      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>-->
-<!--      <p>-->
-<!--        Make sure to keep all page content within the-->
-<!--        <code>#page-content-wrapper</code>-->
-<!--        . The top navbar is optional, and just for demonstration. Just create an element with the-->
-<!--        <code>#sidebarToggle</code>-->
-<!--        ID which will toggle the menu when clicked.-->
-<!--      </p>-->
+      <ng-content></ng-content>
     </div>
   </div>
 </div>
