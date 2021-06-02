@@ -8,6 +8,7 @@ export abstract class RoutesConstant {
   static readonly ADMIN_ROUTE: string = 'admin';
 
   static readonly SIGNUP_ROUTE: string = 'signup';
+  static readonly LOGIN_ROUTE: string = 'login';
 
   // Routes
   static readonly RECIPES_LIST: string = RoutesConstant.RECIPES_ROUTE;

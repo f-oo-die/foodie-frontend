@@ -29,6 +29,8 @@ import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
 import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
     SignupComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     FormsModule,
     DataTablesModule,
     ReactiveFormsModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [
     RecipeResolver,
