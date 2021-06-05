@@ -19,6 +19,7 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
+import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
     path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
     component: AdminIngredientsEditComponent,
     resolve: { ingredient: IngredientResolver },
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
 ];
 

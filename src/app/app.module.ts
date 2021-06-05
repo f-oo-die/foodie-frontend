@@ -28,6 +28,7 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { IngredientResolver } from './resolvers/ingredient.resolver';
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

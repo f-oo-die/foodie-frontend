@@ -1,0 +1,15 @@
+#main {
+  background-color: #f5f8fa !important;
+}
+
+img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  width: 200px;
+  height: 200px;
+}
+
+.user {
+  height: 100%;
+}
