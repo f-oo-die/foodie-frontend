@@ -19,7 +19,8 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
-import {ProfileComponent} from './profile/profile.component';
+import {ProfileComponent} from './features/containers/profile/profile.component';
+import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    resolve: {  nutritionIssues: NutritionIssuesResolver },
+  },
+  {
+    path: 'profile',
+    component: ProfileNutritionIssuesEditComponent,
   },
 ];
 
