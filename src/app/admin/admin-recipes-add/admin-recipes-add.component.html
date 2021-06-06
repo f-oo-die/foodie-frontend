@@ -1,0 +1,74 @@
+<app-admin>
+  <p class="h3 pt-3 pb-3">Add New Recipe</p>
+  <form #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input [(ngModel)]="recipeModel.title" name="title" type="text" class="form-control" id="title" placeholder="Enter recipe title">
+        </div>
+        <div class="form-group">
+          <label for="typeOfMeal">Type of meal</label>
+          <select class="form-control" id="typeOfMeal" [(ngModel)]="recipeModel.typeOfMeal" name="typeOfMeal">
+            <option [ngValue]="typeOfMeal.Breakfast">Breakfast</option>
+            <option [ngValue]="typeOfMeal.Lunch">Lunch</option>
+            <option [ngValue]="typeOfMeal.Dinner">Dinner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="numOfCalories">Number of Calories</label>
+          <input [(ngModel)]="recipeModel.numOfCalories" name="numOfCalories" type="number" class="form-control" id="numOfCalories" placeholder="Enter number of calories">
+        </div>
+        <div class="form-group">
+          <label for="nutritionIssues">Nutrition Issues</label>
+          <select multiple class="form-control" id="nutritionIssues" [(ngModel)]="recipeModel.nutritionIssues" name="nutritionIssues">
+            <option *ngFor="let nutritionIssue of nutritionIssues" [ngValue]="nutritionIssue">{{ nutritionIssue.name }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group h-100">
+          <label for="preparation">Preparation</label>
+          <textarea [(ngModel)]="recipeModel.preparation" name="preparation" class="form-control" id="preparation" placeholder="Enter recipe preparation"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <p class="h4 pt-3 pb-3">Ingredients</p>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="ingredients">Ingredient</label>
+          <select class="form-control" id="ingredients" [(ngModel)]="ingredientList.ingredient" name="ingredientList">
+            <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">{{ ingredient.ingredientName }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input [(ngModel)]="ingredientList.amount" name="amount" type="number" class="form-control" id="amount" placeholder="Enter number of calories">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="amountLabel">Label</label>
+          <input [(ngModel)]="ingredientList.amountLabel" name="amountLabel" type="text" class="form-control" id="amountLabel" placeholder="Enter label">
+        </div>
+      </div>
+      <div class="col d-flex align-items-end">
+        <a class="btn btn-success mb-3" (click)="addIngredient()">Add</a>
+        <a class="btn btn-danger ml-3 mb-3" *ngIf="ingredientLists.length" (click)="ingredientLists.pop()">Undo</a>
+      </div>
+    </div>
+
+    <div *ngIf="ingredientLists.length">
+      <p class="h6 pt-3 pb-3">Added Ingredients</p>
+      <div *ngFor="let ingredientList of ingredientLists; let i = index">
+        <p>{{ i+1 }} | Ingredient Name: {{ ingredientList.ingredient.ingredientName }} | Amount: {{ ingredientList.amount }} | Label: {{ ingredientList.amountLabel }}</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</app-admin>

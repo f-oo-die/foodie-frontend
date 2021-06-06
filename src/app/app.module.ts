@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -14,6 +14,20 @@ import { IngredientListComponent } from './features/components/ingredient-list/i
 import { RecipesComponent } from './features/containers/recipes/recipes.component';
 import { RecipesListComponent } from './features/components/recipes-list/recipes-list.component';
 import { RecipeDetailsComponent } from './features/components/recipe-details/recipe-details.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.component';
+import { DataTablesModule } from 'angular-datatables';
+import { AdminRecipesAddComponent } from './admin/admin-recipes-add/admin-recipes-add.component';
+import { AdminNutritionIssuesComponent } from './admin/admin-nutrition-issues/admin-nutrition-issues.component';
+import { NutritionIssuesResolver } from './resolvers/nutrition-issues.resolver';
+import { AdminNutritionIssuesAddComponent } from './admin/admin-nutrition-issues-add/admin-nutrition-issues-add.component';
+import { AdminIngredientsComponent } from './admin/admin-ingredients/admin-ingredients.component';
+import { IngredientsResolver } from './resolvers/ingredients.resolver';
+import { AdminIngredientsAddComponent } from './admin/admin-ingredients-add/admin-ingredients-add.component';
+import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issues-edit/admin-nutrition-issues-edit.component';
+import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
+import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
+import { IngredientResolver } from './resolvers/ingredient.resolver';
 
 @NgModule({
   declarations: [
@@ -25,17 +39,32 @@ import { RecipeDetailsComponent } from './features/components/recipe-details/rec
     IngredientListComponent,
     RecipesComponent,
     RecipesListComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    AdminComponent,
+    AdminRecipesComponent,
+    AdminRecipesAddComponent,
+    AdminNutritionIssuesComponent,
+    AdminNutritionIssuesAddComponent,
+    AdminIngredientsComponent,
+    AdminIngredientsAddComponent,
+    AdminNutritionIssuesEditComponent,
+    AdminIngredientsEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule,
+    ReactiveFormsModule,
   ],
   providers: [
     RecipeResolver,
     RecipesResolver,
+    NutritionIssuesResolver,
+    NutritionIssueResolver,
+    IngredientsResolver,
+    IngredientResolver,
   ],
   bootstrap: [AppComponent]
 })

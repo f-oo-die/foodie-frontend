@@ -6,6 +6,19 @@ import { RecipeComponent } from './features/containers/recipe/recipe.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RoutesConstant } from './constants/routes-constant';
 import { RecipesResolver } from './resolvers/recipes.resolver';
+import { AdminComponent } from './admin/admin.component';
+import { AdminRecipesComponent } from './admin/admin-recipes/admin-recipes.component';
+import {AdminRecipesAddComponent} from './admin/admin-recipes-add/admin-recipes-add.component';
+import {AdminNutritionIssuesComponent} from './admin/admin-nutrition-issues/admin-nutrition-issues.component';
+import {NutritionIssuesResolver} from './resolvers/nutrition-issues.resolver';
+import {AdminNutritionIssuesAddComponent} from './admin/admin-nutrition-issues-add/admin-nutrition-issues-add.component';
+import {IngredientsResolver} from './resolvers/ingredients.resolver';
+import {AdminIngredientsComponent} from './admin/admin-ingredients/admin-ingredients.component';
+import {AdminIngredientsAddComponent} from './admin/admin-ingredients-add/admin-ingredients-add.component';
+import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-edit/admin-nutrition-issues-edit.component';
+import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
+import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
+import {IngredientResolver} from './resolvers/ingredient.resolver';
 
 const routes: Routes = [
   {
@@ -23,6 +36,48 @@ const routes: Routes = [
     component: RecipeComponent,
     resolve: { recipe: RecipeResolver }
   },
+  {
+    path: RoutesConstant.ADMIN_ROUTE,
+    component: AdminComponent,
+  },
+  {
+    path: RoutesConstant.ADMIN_RECIPES_LIST,
+    component: AdminRecipesComponent,
+    resolve: { recipes: RecipesResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_RECIPES_NEW,
+    component: AdminRecipesAddComponent,
+    resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST,
+    component: AdminNutritionIssuesComponent,
+    resolve: { nutritionIssues: NutritionIssuesResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW,
+    component: AdminNutritionIssuesAddComponent,
+  },
+  {
+    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_EDIT,
+    component: AdminNutritionIssuesEditComponent,
+    resolve: { nutritionIssue: NutritionIssueResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_INGREDIENTS_LIST,
+    component: AdminIngredientsComponent,
+    resolve: { ingredients: IngredientsResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_INGREDIENTS_NEW,
+    component: AdminIngredientsAddComponent,
+  },
+  {
+    path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
+    component: AdminIngredientsEditComponent,
+    resolve: { ingredient: IngredientResolver },
+  },
 ];
 
 @NgModule({
@@ -34,4 +89,5 @@ export const routingComponents = [
   HomeComponent,
   RecipesComponent,
   RecipeComponent,
+  AdminComponent,
 ];

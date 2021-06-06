@@ -1,0 +1,21 @@
+<app-admin>
+  <p class="h3 pt-3 pb-3">Nutrition Issues</p>
+  <table datatable class="row-border hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Edit</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let nutritionIssue of nutritionIssues">
+      <td>{{ nutritionIssue.id }}</td>
+      <td>{{ nutritionIssue.name }}</td>
+      <td><button type="button" class="btn btn-primary" (click)="openEditNutritionIssues(nutritionIssue.id)">Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary mt-3" (click)="openAddNutritionIssues()">Add</button>
+</app-admin>
