@@ -21,6 +21,8 @@ import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admi
 import {IngredientResolver} from './resolvers/ingredient.resolver';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from "./auth/login/login.component";
+import {ProfileComponent} from './features/containers/profile/profile.component';
+import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
@@ -93,9 +95,9 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'shopping-list',
-    component: ShoppingListComponent,
-    resolve: { shoppingLists: ShoppingListsResolver }
+    path: 'profile',
+    component: ProfileComponent,
+    resolve: {  nutritionIssues: NutritionIssuesResolver },
   },
   {
     path: 'shopping-list/:id',
