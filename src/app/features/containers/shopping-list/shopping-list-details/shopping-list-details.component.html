@@ -1,0 +1,13 @@
+<app-shopping-list>
+  <div class="card h-100">
+    <div class="card-body">
+      <h5 class="card-title">Shopping List {{ shoppingList.id }}</h5>
+      <div class="card-text" *ngFor="let ingredient of shoppingList.ingredients">
+        <p class="mb-0">Ingredient Name: {{ ingredient.ingredientName }}</p>
+        <p class="mb-0">Calories: {{ ingredient.caloricValue }}</p>
+        <p class="mb-0">Nutritional value: {{ ingredient.nutritionalValue }}</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</app-shopping-list>
