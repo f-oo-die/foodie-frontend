@@ -13,9 +13,9 @@
       <li><a href="#">About</a></li>
     </ul>
     <ul id="link" class="nav navbar-right">
-      <div *ngIf="!isLoggedIn">
-      <li><a [routerLink]="['/login']">Sign In</a></li>
-      <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>
+      <div *ngIf="!isLoggedIn" class="nav navbar-right">
+        <li><a [routerLink]="['/login']">Sign In</a></li>
+        <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>
       </div>
       <div *ngIf="isLoggedIn">
         <li><a href="#">Meals</a></li>
