@@ -19,6 +19,8 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from "./auth/login/login.component";
 import {ProfileComponent} from './features/containers/profile/profile.component';
 import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 
@@ -79,6 +81,14 @@ const routes: Routes = [
     path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
     component: AdminIngredientsEditComponent,
     resolve: { ingredient: IngredientResolver },
+  },
+  {
+    path: RoutesConstant.SIGNUP_ROUTE,
+    component: SignupComponent,
+  },
+  {
+    path: RoutesConstant.LOGIN_ROUTE,
+    component: LoginComponent,
   },
   {
     path: 'profile',

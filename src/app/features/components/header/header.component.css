@@ -44,3 +44,18 @@
 a {
   cursor: pointer;
 }
+
+button {
+  background: -webkit-linear-gradient(left, #fa6a48, #ffcf5f);
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+}
