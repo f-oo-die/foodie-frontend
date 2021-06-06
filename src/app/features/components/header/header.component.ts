@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router';
-import {AuthService} from '../../../auth/shared/auth.service';
+import {AuthService} from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'app-header',
