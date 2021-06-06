@@ -19,7 +19,6 @@ export class AdminIngredientsEditComponent implements OnInit {
     this.activatedRoute.data.subscribe(routeData => {
       this.ingredientModel = routeData.ingredient;
     });
-    console.log(this.ingredientModel);
   }
 
   onSubmit(): void {
