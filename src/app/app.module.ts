@@ -33,6 +33,10 @@ import { LoginComponent } from './auth/login/login.component';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import {ToastrModule} from 'ngx-toastr';
     AdminIngredientsEditComponent,
     SignupComponent,
     LoginComponent,
+    ShoppingListComponent,
+    ShoppingListDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +81,8 @@ import {ToastrModule} from 'ngx-toastr';
     NutritionIssueResolver,
     IngredientsResolver,
     IngredientResolver,
+    ShoppingListsResolver,
+    ShoppingListResolver,
   ],
   bootstrap: [AppComponent]
 })

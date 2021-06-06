@@ -21,6 +21,10 @@ import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admi
 import {IngredientResolver} from './resolvers/ingredient.resolver';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from "./auth/login/login.component";
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 const routes: Routes = [
   {
@@ -87,6 +91,16 @@ const routes: Routes = [
   {
     path: RoutesConstant.LOGIN_ROUTE,
     component: LoginComponent,
+  },
+  {
+    path: 'shopping-list',
+    component: ShoppingListComponent,
+    resolve: { shoppingLists: ShoppingListsResolver }
+  },
+  {
+    path: 'shopping-list/:id',
+    component: ShoppingListDetailsComponent,
+    resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },
 ];
 
