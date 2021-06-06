@@ -32,6 +32,11 @@ import { DailyMealPlanComponent } from './features/components/daily-meal-plan/da
 import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AdminIngredientsEditComponent,
     DailyMealPlanComponent,
     DailyMealPlansComponent,
+    SignupComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     DataTablesModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxWebstorageModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     RecipeResolver,
