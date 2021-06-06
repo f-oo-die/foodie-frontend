@@ -28,6 +28,10 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
+import { DailyMealPlanComponent } from './features/components/daily-meal-plan/daily-meal-plan.component';
+import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,8 @@ import { IngredientResolver } from './resolvers/ingredient.resolver';
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
+    DailyMealPlanComponent,
+    DailyMealPlansComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,7 @@ import { IngredientResolver } from './resolvers/ingredient.resolver';
     FormsModule,
     DataTablesModule,
     ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     RecipeResolver,
