@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
         this.toastr.success('Login Successful');
       } else{
         this.isError = true;
-
       }
     });
   }

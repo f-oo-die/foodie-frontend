@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {SignupRequestPayload} from '../signup/signup-request.payload';
 import {Observable} from 'rxjs';
@@ -11,6 +11,9 @@ import {LocalStorageService} from 'ngx-webstorage';
   providedIn: 'root'
 })
 export class AuthService {
+
+  // @Output() loggedIn: EventEmmiter<boolean> = new Eventemitter();
+  // @Output() username: EventEmmiter<string> = new EventEmmiter();
 
   constructor(private httpClient: HttpClient,
               private localStorage: LocalStorageService) {
@@ -27,5 +30,18 @@ export class AuthService {
         this.localStorage.store('username', data.username);
         return true;
     }));
+  }
+  logout() {
+    this.localStorage.clear('authenticationToken');
+    this.localStorage.clear('username');
+  }
+  getUsername() {
+    return this.localStorage.retrieve('username');
+  }
+  getJwtToken() {
+    return this.localStorage.retrieve('authenticationToken');
+  }
+  isLoggedIn(): boolean{
+    return this.getJwtToken() != null;
   }
 }

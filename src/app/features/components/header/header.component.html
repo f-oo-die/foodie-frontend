@@ -6,14 +6,22 @@
       </button>
       <a id="logo" class="navbar-brand" [routerLink]="['/']">Foodie</a>
     </div>
+
     <ul id="link" class="nav navbar-left">
       <li><a [routerLink]="['/']">Home</a></li>
       <li><a [routerLink]="['/recipes']">Recipes</a></li>
       <li><a href="#">About</a></li>
     </ul>
     <ul id="link" class="nav navbar-right">
-      <li><a [routerLink]="['/signup']">Sign In</a></li>
-      <li id="button-link"><a [routerLink]="['/login']">Sign Up</a></li>
+      <div *ngIf="!isLoggedIn">
+      <li><a [routerLink]="['/login']">Sign In</a></li>
+      <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>
+      </div>
+      <div *ngIf="isLoggedIn">
+        <li><a href="#">Meals</a></li>
+        <li><a href="#">My Profile</a></li>
+        <li><button (click)="logout()">Logout</button></li>
+      </div>
     </ul>
   </div>
 </nav>
