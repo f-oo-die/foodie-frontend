@@ -38,6 +38,10 @@ import {ProfileComponent} from './features/containers/profile/profile.component'
 import {ProfileEditComponent} from './features/containers/profile/profile-edit/profile-edit.component';
 import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 @NgModule({
   declarations: [
@@ -64,6 +68,8 @@ import {ProfileNutritionIssuesEditComponent} from './features/containers/profile
     ProfileComponent,
     ProfileEditComponent,
     ProfileNutritionIssuesEditComponent,
+    ShoppingListComponent,
+    ShoppingListDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +90,8 @@ import {ProfileNutritionIssuesEditComponent} from './features/containers/profile
     NutritionIssueResolver,
     IngredientsResolver,
     IngredientResolver,
+    ShoppingListsResolver,
+    ShoppingListResolver,
   ],
   bootstrap: [AppComponent]
 })

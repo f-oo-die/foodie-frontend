@@ -23,6 +23,10 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from "./auth/login/login.component";
 import {ProfileComponent} from './features/containers/profile/profile.component';
 import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 const routes: Routes = [
   {
@@ -96,8 +100,9 @@ const routes: Routes = [
     resolve: {  nutritionIssues: NutritionIssuesResolver },
   },
   {
-    path: 'profile',
-    component: ProfileNutritionIssuesEditComponent,
+    path: 'shopping-list/:id',
+    component: ShoppingListDetailsComponent,
+    resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },
 ];
 
