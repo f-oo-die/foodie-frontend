@@ -28,9 +28,14 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
-import { ShoppingListComponent } from './features/containers/shopping-list/shopping-list.component';
-import { ShoppingListsResolver } from './resolvers/shopping-lists.resolver';
-import { ShoppingListDetailsComponent } from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 @NgModule({
@@ -53,6 +58,8 @@ import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
+    SignupComponent,
+    LoginComponent,
     ShoppingListComponent,
     ShoppingListDetailsComponent,
   ],
@@ -63,6 +70,9 @@ import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
     FormsModule,
     DataTablesModule,
     ReactiveFormsModule,
+    NgxWebstorageModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     RecipeResolver,

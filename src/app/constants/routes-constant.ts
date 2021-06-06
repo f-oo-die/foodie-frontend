@@ -7,6 +7,9 @@ export abstract class RoutesConstant {
   static readonly RECIPES_ROUTE: string = 'recipes';
   static readonly ADMIN_ROUTE: string = 'admin';
 
+  static readonly SIGNUP_ROUTE: string = 'signup';
+  static readonly LOGIN_ROUTE: string = 'login';
+
   // Routes
   static readonly RECIPES_LIST: string = RoutesConstant.RECIPES_ROUTE;
   static readonly RECIPES_DETAILS_BASE: string = RoutesConstant.RECIPES_ROUTE;

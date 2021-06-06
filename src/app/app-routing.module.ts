@@ -19,6 +19,8 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from "./auth/login/login.component";
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
@@ -81,6 +83,14 @@ const routes: Routes = [
     path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
     component: AdminIngredientsEditComponent,
     resolve: { ingredient: IngredientResolver },
+  },
+  {
+    path: RoutesConstant.SIGNUP_ROUTE,
+    component: SignupComponent,
+  },
+  {
+    path: RoutesConstant.LOGIN_ROUTE,
+    component: LoginComponent,
   },
   {
     path: 'shopping-list',
