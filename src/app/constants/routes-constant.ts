@@ -15,6 +15,11 @@ export abstract class RoutesConstant {
   // static readonly RECIPES_EDIT_BASE: string = RoutesConstant.RECIPES_ROUTE + '/edit';
   // static readonly RECIPES_EDIT: string = RoutesConstant.RECIPES_EDIT_BASE + '/:' + RoutesConstant.RECIPE_ID;
 
+  // Daily meal plan
+  static readonly DAILY_MEAL_PLAN: string = 'meal-planning';
+  static readonly USER_ID: string = 'id';
+  static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN; 
+
   static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';
   static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
   static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';

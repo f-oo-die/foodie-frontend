@@ -8,13 +8,7 @@ import { Recipe } from 'src/app/interface/recipe';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit {
-  ngOnInit(): void {
-    this.models.forEach(model => {
-      model.nutritionIssues.forEach(nutritionIssue => {
-        console.log(nutritionIssue);
-      });
-    });
-  }
+  ngOnInit(): void {}
 
   @Input()
   models: Recipe[];

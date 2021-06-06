@@ -19,6 +19,7 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
+import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,11 @@ const routes: Routes = [
     path: RoutesConstant.RECIPES_DETAILS,
     component: RecipeComponent,
     resolve: { recipe: RecipeResolver }
+  },
+  {
+    path: RoutesConstant.USER_MEAL_PLAN,
+    component: DailyMealPlansComponent,
+    resolve: { recipes: RecipesResolver }
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
