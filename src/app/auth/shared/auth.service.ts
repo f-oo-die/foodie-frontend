@@ -28,6 +28,7 @@ export class AuthService {
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
+        this.localStorage.store('id', data.id);
         return true;
     }));
   }
@@ -37,6 +38,9 @@ export class AuthService {
   }
   getUsername() {
     return this.localStorage.retrieve('username');
+  }
+  getId() {
+    return this.localStorage.retrieve('id');
   }
   getJwtToken() {
     return this.localStorage.retrieve('authenticationToken');
