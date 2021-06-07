@@ -22,6 +22,13 @@ import {IngredientResolver} from './resolvers/ingredient.resolver';
 import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { LoginComponent } from "./features/auth/login/login.component";
+import {ProfileComponent} from './features/containers/profile/profile.component';
+import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {UserResolver} from './resolvers/user.resolver';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 const routes: Routes = [
   {
@@ -93,6 +100,21 @@ const routes: Routes = [
   {
     path: RoutesConstant.LOGIN_ROUTE,
     component: LoginComponent,
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent,
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver },
+  },
+  {
+    path: 'shopping-lists',
+    component: ShoppingListComponent,
+    resolve: { shoppingLists: ShoppingListsResolver }
+  },
+  {
+    path: 'shopping-list/:id',
+    component: ShoppingListDetailsComponent,
+    resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },
 ];
 

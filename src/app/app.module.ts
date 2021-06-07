@@ -31,12 +31,22 @@ import { IngredientResolver } from './resolvers/ingredient.resolver';
 import { DailyMealPlanComponent } from './features/components/daily-meal-plan/daily-meal-plan.component';
 import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { LoginComponent } from './features/auth/login/login.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ProfileComponent} from './features/containers/profile/profile.component';
+import {ProfileEditComponent} from './features/containers/profile/profile-edit/profile-edit.component';
+import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
+
+import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
+import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
+import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
+import {UserResolver} from './resolvers/user.resolver';
+import { ShoppingListCreateComponent } from './features/containers/shopping-list/shopping-list-create/shopping-list-create.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +72,12 @@ import { ToastrModule } from 'ngx-toastr';
     DailyMealPlansComponent,
     SignupComponent,
     LoginComponent,
+    ProfileComponent,
+    ProfileEditComponent,
+    ProfileNutritionIssuesEditComponent,
+    ShoppingListComponent,
+    ShoppingListDetailsComponent,
+    ShoppingListCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +89,8 @@ import { ToastrModule } from 'ngx-toastr';
     FontAwesomeModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [
     RecipeResolver,
@@ -82,6 +99,9 @@ import { ToastrModule } from 'ngx-toastr';
     NutritionIssueResolver,
     IngredientsResolver,
     IngredientResolver,
+    ShoppingListsResolver,
+    ShoppingListResolver,
+    UserResolver,
   ],
   bootstrap: [AppComponent]
 })
