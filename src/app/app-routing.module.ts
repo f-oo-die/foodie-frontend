@@ -26,6 +26,7 @@ import {ProfileNutritionIssuesEditComponent} from './features/containers/profile
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 
 const routes: Routes = [
@@ -95,9 +96,14 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ProfileComponent,
-    resolve: {  nutritionIssues: NutritionIssuesResolver },
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver },
+  },
+  {
+    path: 'shopping-lists',
+    component: ShoppingListComponent,
+    resolve: { shoppingLists: ShoppingListsResolver }
   },
   {
     path: 'shopping-list/:id',

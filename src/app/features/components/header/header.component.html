@@ -7,21 +7,40 @@
       <a id="logo" class="navbar-brand" [routerLink]="['/']">Foodie</a>
     </div>
 
-    <ul id="link" class="nav navbar-left">
-      <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/recipes']">Recipes</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    <ul id="link" class="nav navbar-right">
-      <div *ngIf="!isLoggedIn">
-      <li><a [routerLink]="['/login']">Sign In</a></li>
-      <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>
-      </div>
-      <div *ngIf="isLoggedIn">
-        <li><a href="#">Meals</a></li>
-        <li><a href="#">My Profile</a></li>
-        <li><button (click)="logout()">Logout</button></li>
-      </div>
-    </ul>
+    <div>
+      <a class="ml-3 text-dark" [routerLink]="['/']">Home</a>
+      <a class="ml-3 text-dark" [routerLink]="['/recipes']">Recipes</a>
+      <a class="ml-3 text-dark" href="#">About</a>
+    </div>
+
+    <div *ngIf="!isLoggedIn">
+      <button class="ml-3 text-dark" [routerLink]="['/login']">Sign In</button>
+      <button class="ml-3 text-dark" [routerLink]="['/signup']">Sign Up</button>
+    </div>
+
+    <div *ngIf="isLoggedIn">
+      <a class="ml-3 text-dark" href="#">Meals</a>
+      <a class="ml-3 text-dark" [routerLink]="['/profile', userId]">My Profile</a>
+      <a class="ml-3 text-dark" [routerLink]="['/shopping-lists']"><fa-icon [icon]="faShoppingCart"></fa-icon></a>
+      <button class="ml-5" (click)="logout()" >Logout</button>
+    </div>
+
+
+<!--    <ul id="link" class="nav navbar-left">-->
+<!--      <li><a [routerLink]="['/']">Home</a></li>-->
+<!--      <li><a [routerLink]="['/recipes']">Recipes</a></li>-->
+<!--      <li><a href="#">About</a></li>-->
+<!--    </ul>-->
+<!--    <ul id="link" class="nav navbar-right">-->
+<!--      <div *ngIf="!isLoggedIn">-->
+<!--      <li><a [routerLink]="['/login']">Sign In</a></li>-->
+<!--      <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>-->
+<!--      </div>-->
+<!--      <div *ngIf="isLoggedIn">-->
+<!--        <li><a href="#">Meals</a></li>-->
+<!--        <li><a [routerLink]="['/profile', userId]">My Profile</a></li>-->
+<!--        <li><button (click)="logout()">Logout</button></li>-->
+<!--      </div>-->
+<!--    </ul>-->
   </div>
 </nav>
