@@ -1,0 +1,32 @@
+<div class="search-area">
+  <form class="form-inline my-2 my-lg-0">
+    <input type="search" (ngModelChange)="searchRecipes(key.value)" #key="ngModel" ngModel
+    name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search recipes...">
+ </form>
+</div>
+<div class="main">
+  <div *ngFor="let model of models" class="display-recipes">
+    <div class="card card-blog">
+      <div class="card-image" [routerLink]="['/recipes', model.id]">
+        <img class="img" src="../../../assets/images/meal.jpeg" alt="meal">
+        <div class="ripple-cont"></div>
+      </div>
+      <div class="table">
+        <div class="main">
+          <p class="category text-success"><i class="fa fa-university"></i>{{ typeOfMeal[model.typeOfMeal] }}</p>
+          <p class="stats"> <i class="fa fa-clock-o"></i> {{ model.numOfCalories }} calories </p>
+        </div>
+        <h4 class="card-caption">
+          <a [routerLink]="['/recipes', model.id]">{{ model.title }}</a>
+        </h4>
+        <p class="card-description card-text">{{ model.preparation }}</p>
+        <div class="fadeout"></div>
+        <div class="ftr">
+          <div *ngFor="let nutritionIssue of model.nutritionIssues">
+            <span class="badge badge-info">{{ nutritionIssue?.name }} </span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
