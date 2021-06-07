@@ -16,7 +16,6 @@ export class ShoppingListDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(routeData => {
       this.shoppingList = routeData.shoppingList;
-      console.log(this.shoppingList);
     });
   }
 
