@@ -19,7 +19,7 @@
       </div>
       <div *ngIf="isLoggedIn">
         <li><a href="#">Meals</a></li>
-        <li><a href="#">My Profile</a></li>
+        <li><a [routerLink]="['/profile', userId]">My Profile</a></li>
         <li><button (click)="logout()">Logout</button></li>
       </div>
     </ul>

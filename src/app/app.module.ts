@@ -42,6 +42,7 @@ import {ShoppingListComponent} from './features/containers/shopping-list/shoppin
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
+import {UserResolver} from './resolvers/user.resolver';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
     IngredientResolver,
     ShoppingListsResolver,
     ShoppingListResolver,
+    UserResolver,
   ],
   bootstrap: [AppComponent]
 })
