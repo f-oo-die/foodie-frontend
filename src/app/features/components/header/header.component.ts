@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../auth/shared/auth.service';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
   userId: number;
-  faShoppingCart = faShoppingCart;
+  faSignOutAlt = faSignOutAlt;
 
   constructor(private authService: AuthService, private router: Router) {
 

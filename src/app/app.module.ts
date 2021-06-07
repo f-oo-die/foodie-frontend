@@ -45,6 +45,7 @@ import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {UserResolver} from './resolvers/user.resolver';
 import { ShoppingListCreateComponent } from './features/containers/shopping-list/shopping-list-create/shopping-list-create.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

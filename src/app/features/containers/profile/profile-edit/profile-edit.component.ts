@@ -30,7 +30,9 @@ export class ProfileEditComponent implements OnInit {
 
   onSubmit(): void {
     this.userService.updateUser(this.userModel.id, this.userModel).subscribe(() => {
-      this.router.navigateByUrl(`/users/${this.userModel.id}`);
+      const element = document.getElementById('closeModal');
+      element.setAttribute('data-dismiss', 'modal');
+      element.click();
     });
   }
 
