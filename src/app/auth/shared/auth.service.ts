@@ -32,20 +32,19 @@ export class AuthService {
         return true;
     }));
   }
-  logout() {
-    this.localStorage.clear('authenticationToken');
-    this.localStorage.clear('username');
+  logout(): void {
+    this.localStorage.clear();
   }
-  getUsername() {
+  getUsername(): string {
     return this.localStorage.retrieve('username');
   }
-  getId() {
+  getId(): number {
     return this.localStorage.retrieve('id');
   }
-  getJwtToken() {
+  getJwtToken(): string {
     return this.localStorage.retrieve('authenticationToken');
   }
-  isLoggedIn(): boolean{
+  isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
 }

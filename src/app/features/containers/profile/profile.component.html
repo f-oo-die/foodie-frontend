@@ -45,9 +45,7 @@
             </div>
 
             <p class="card-text" *ngFor="let nutritionIssue of user.nutritionIssues">{{ nutritionIssue.name }}</p>
-<!--            <p class="card-text"><i class="text-muted">Unset</i></p>-->
-<!--            <p class="card-text"><i class="text-muted">Unset</i></p>-->
-<!--            <p class="card-text"><i class="text-muted">Unset</i></p>-->
+            <p *ngIf="!user.nutritionIssues.length" style="padding: 3rem 0 3rem 0;" class="text-muted"><i>Unset</i></p>
           </div>
         </div>
       </div>
