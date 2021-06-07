@@ -28,7 +28,6 @@ export class ProfileNutritionIssuesEditComponent implements OnInit {
     });
     this.activatedRoute.data.subscribe(routeData => {
       this.userModel = routeData.user;
-      console.log(this.userModel);
     });
   }
 

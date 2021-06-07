@@ -24,7 +24,6 @@ export class ProfileEditComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(routeData => {
       this.userModel = routeData.user;
-      console.log(this.userModel);
     });
   }
 
