@@ -37,9 +37,9 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {ProfileComponent} from './features/containers/profile/profile.component';
-import {ProfileEditComponent} from './features/containers/profile/profile-edit/profile-edit.component';
-import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
+import { ProfileComponent } from './features/containers/profile/profile.component';
+import { ProfileEditComponent } from './features/containers/profile/profile-edit/profile-edit.component';
+import { ProfileNutritionIssuesEditComponent } from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';

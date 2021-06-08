@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ShoppingList} from '../../../interface/shoppingList';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
-import {AuthService} from '../../../auth/shared/auth.service';
+import {AuthService} from '../../auth/shared/auth.service';
 import {RoutesConstant} from '../../../constants/routes-constant';
 import {ShoppingListService} from '../../../services/shoppingList.service';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';

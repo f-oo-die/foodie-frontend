@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {ShoppingList} from '../interface/shoppingList';
-import {AuthService} from '../auth/shared/auth.service';
+import {AuthService} from '../features/auth/shared/auth.service';
 
 @Injectable({
   providedIn: 'root'
