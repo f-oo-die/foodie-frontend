@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
   userId: number;
+  adminUser: string;
   faSignOutAlt = faSignOutAlt;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -22,6 +23,8 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.username = this.authService.getUsername();
     this.userId = this.authService.getId();
+    if (this.authService.getUserRole() === 'ADMIN')
+    {this.adminUser = this.authService.getUserRole(); }
   }
 
   logout(): void {
@@ -29,6 +32,7 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = false;
     this.router.navigateByUrl('');
     this.userId = null;
+    this.adminUser = null;
   }
 
 }
