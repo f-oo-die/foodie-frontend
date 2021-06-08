@@ -28,20 +28,27 @@ export class AuthService {
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
+        this.localStorage.store('id', data.id);
+        this.localStorage.store('userRole', data.userRole);
         return true;
     }));
   }
-  logout() {
-    this.localStorage.clear('authenticationToken');
-    this.localStorage.clear('username');
+  logout(): void {
+    this.localStorage.clear();
   }
-  getUsername() {
+  getUsername(): string {
     return this.localStorage.retrieve('username');
   }
-  getJwtToken() {
+  getId(): number {
+    return this.localStorage.retrieve('id');
+  }
+  getJwtToken(): string {
     return this.localStorage.retrieve('authenticationToken');
   }
-  isLoggedIn(): boolean{
+  getUserRole(): string {
+    return this.localStorage.retrieve('userRole');
+  }
+  isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
 }

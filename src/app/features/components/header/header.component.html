@@ -7,21 +7,38 @@
       <a id="logo" class="navbar-brand" [routerLink]="['/']">Foodie</a>
     </div>
 
-    <ul id="link" class="nav navbar-left">
-      <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/recipes']">Recipes</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    <ul id="link" class="nav navbar-right">
-      <div *ngIf="!isLoggedIn">
-      <li><a [routerLink]="['/login']">Sign In</a></li>
-      <li id="button-link"><a [routerLink]="['/signup']">Sign Up</a></li>
+    <div>
+      <a class="ml-3 text-dark" [routerLink]="['/']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a class="ml-3 text-dark" [routerLink]="['/recipes']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+      <a class="ml-3 text-dark" href="#"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
+    </div>
+
+    <div *ngIf="!isLoggedIn">
+      <a class="ml-3 text-dark" [routerLink]="['/login']">Sign In</a>
+      <button class="ml-3 button-link" [routerLink]="['/signup']">Sign Up</button>
+    </div>
+
+    <div *ngIf="isLoggedIn && !adminUser" class="nav-item dropdown d-flex flex-row">
+      <a class="dropdown-toggle mr-5 text-dark" id="navbardrop" data-toggle="dropdown">
+        Profile
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Meals</a>
+        <a class="dropdown-item" [routerLink]="['/profile', userId]">My Profile</a>
+        <a class="dropdown-item" [routerLink]="['/shopping-lists']">Shopping Lists</a>
+        <a class="dropdown-item" [routerLink]="['/meal-planning']">Meal Plans</a>
       </div>
-      <div *ngIf="isLoggedIn">
-        <li><a href="#">Meals</a></li>
-        <li><a href="#">My Profile</a></li>
-        <li><button (click)="logout()">Logout</button></li>
+      <a (click)="logout()"><fa-icon [icon]="faSignOutAlt"></fa-icon> Sign out</a>
+    </div>
+    <div *ngIf="adminUser" class="nav-item dropdown d-flex flex-row">
+      <a class="dropdown-toggle mr-5 text-dark" id="navbardrop" data-toggle="dropdown">
+        Admin
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="['/admin']">Admin Panel</a>
+        <a class="dropdown-item" [routerLink]="['/profile', userId]">Admin Info</a>
       </div>
-    </ul>
+      <a (click)="logout()"><fa-icon [icon]="faSignOutAlt"></fa-icon> Sign out</a>
+    </div>
   </div>
 </nav>
