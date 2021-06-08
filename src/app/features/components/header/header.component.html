@@ -13,10 +13,10 @@
       <a class="ml-3 text-dark" href="#">About</a>
     </div>
 
-        <div *ngIf="!isLoggedIn">
-          <button class="ml-3 text-dark" [routerLink]="['/login']">Sign In</button>
-          <button class="ml-3 text-dark" [routerLink]="['/signup']">Sign Up</button>
-        </div>
+    <div *ngIf="!isLoggedIn">
+      <button class="" [routerLink]="['/login']">Sign In</button>
+      <button class="ml-3 button-link" [routerLink]="['/signup']">Sign Up</button>
+    </div>
 
     <div *ngIf="isLoggedIn && !adminUser" class="nav-item dropdown d-flex flex-row">
       <a class="dropdown-toggle mr-5 text-dark" id="navbardrop" data-toggle="dropdown">
