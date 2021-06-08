@@ -46,6 +46,7 @@ import {UserResolver} from './resolvers/user.resolver';
 import { ShoppingListCreateComponent } from './features/containers/shopping-list/shopping-list-create/shopping-list-create.component';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AddToShoppingListComponent } from './features/components/ingredient-list/add-to-shopping-list/add-to-shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     ShoppingListComponent,
     ShoppingListDetailsComponent,
     ShoppingListCreateComponent,
+    AddToShoppingListComponent,
   ],
   imports: [
     BrowserModule,

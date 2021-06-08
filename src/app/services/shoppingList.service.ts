@@ -3,7 +3,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {ShoppingList} from '../interface/shoppingList';
-import {Recipe} from '../interface/recipe';
 import {AuthService} from '../auth/shared/auth.service';
 
 @Injectable({
@@ -27,6 +26,10 @@ export class ShoppingListService {
 
   createShoppingList(): Observable<ShoppingList> {
     return this.http.post<ShoppingList>(`${this.apiUrl}/shopping-list/${this.userId}`, '');
+  }
+
+  updateShoppingList(id: number, shoppingList: ShoppingList): Observable<ShoppingList> {
+    return this.http.put<ShoppingList>(`${this.apiUrl}/shopping-list/${this.userId}/${id}`, shoppingList);
   }
 
   deleteShoppingList(id: number): Observable<ShoppingList> {
