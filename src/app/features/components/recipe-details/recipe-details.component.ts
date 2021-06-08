@@ -26,8 +26,4 @@ export class RecipeDetailsComponent {
   @Input()
   shoppingListsModel: ShoppingList[];
 
-  ngOnInit(): void {
-    // console.log("hereeee");
-    // console.log(this.shoppingListsModel);
-  }
 }

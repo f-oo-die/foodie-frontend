@@ -33,5 +33,4 @@ export class ShoppingListDetailsComponent implements OnInit {
       this.shoppingListService.updateShoppingList(shoppingListId, this.shoppingList).subscribe();
     }
   }
-
 }

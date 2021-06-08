@@ -23,12 +23,10 @@ export class RecipeComponent implements OnInit {
       this.recipe = routeData.recipe;
       this.ingredientsList = routeData.recipe.ingredientList;
       this.nutritionIssues = routeData.recipe.nutritionIssues;
-      // console.log(this.ingredientsList);
     });
 
     this.route.data.subscribe(routeData => {
       this.shoppingListsModel = routeData.shoppingLists;
-      // console.log(this.shoppingListsModel);
     });
   }
 }

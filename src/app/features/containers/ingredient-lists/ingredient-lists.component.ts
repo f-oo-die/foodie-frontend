@@ -18,7 +18,7 @@ export class IngredientListsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.shoppingListsModel);
+
   }
 
 }

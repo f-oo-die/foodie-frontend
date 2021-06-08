@@ -47,8 +47,4 @@ export class ShoppingListComponent implements OnInit {
       });
     }
   }
-
-  openShoppingList(id: number): void {
-    this.router.navigateByUrl(`/shopping-lists/${id}`);
-  }
 }
