@@ -83,7 +83,8 @@ ul.social-footer2 li a {display: block; height:30px;width: 30px;text-align: cent
   border-radius: 2px;
 }
 .btn:hover, .btn:focus, .btn.active {
-  background: #4b92dc;color: #fff;
+  background-color: white;
+  color: #fa6a48;
   -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);

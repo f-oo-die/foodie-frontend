@@ -28,15 +28,18 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
-import {NgxWebstorageModule} from 'ngx-webstorage';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ToastrModule} from 'ngx-toastr';
+import { DailyMealPlanComponent } from './features/components/daily-meal-plan/daily-meal-plan.component';
+import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
+
+import { SignupComponent } from './features/auth/signup/signup.component';
+import { LoginComponent } from './features/auth/login/login.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {ProfileComponent} from './features/containers/profile/profile.component';
-import {ProfileEditComponent} from './features/containers/profile/profile-edit/profile-edit.component';
-import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
+import { ProfileComponent } from './features/containers/profile/profile.component';
+import { ProfileEditComponent } from './features/containers/profile/profile-edit/profile-edit.component';
+import { ProfileNutritionIssuesEditComponent } from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
@@ -68,6 +71,8 @@ import { AddToShoppingListComponent } from './features/components/ingredient-lis
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
+    DailyMealPlanComponent,
+    DailyMealPlansComponent,
     SignupComponent,
     LoginComponent,
     ProfileComponent,
@@ -85,6 +90,7 @@ import { AddToShoppingListComponent } from './features/components/ingredient-lis
     FormsModule,
     DataTablesModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
