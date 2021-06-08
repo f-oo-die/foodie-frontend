@@ -8,13 +8,13 @@
     </div>
 
     <div>
-      <a class="ml-3 text-dark" [routerLink]="['/']">Home</a>
-      <a class="ml-3 text-dark" [routerLink]="['/recipes']">Recipes</a>
-      <a class="ml-3 text-dark" href="#">About</a>
+      <a class="ml-3 text-dark" [routerLink]="['/']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a class="ml-3 text-dark" [routerLink]="['/recipes']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+      <a class="ml-3 text-dark" href="#"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
     </div>
 
     <div *ngIf="!isLoggedIn">
-      <button class="" [routerLink]="['/login']">Sign In</button>
+      <a class="ml-3 text-dark" [routerLink]="['/login']">Sign In</a>
       <button class="ml-3 button-link" [routerLink]="['/signup']">Sign Up</button>
     </div>
 
