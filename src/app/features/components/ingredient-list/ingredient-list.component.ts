@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ingredient } from 'src/app/interface/ingredient';
 import { IngredientList } from 'src/app/interface/ingredientList';
+import {ShoppingList} from '../../../interface/shoppingList';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-ingredient-list',
@@ -10,12 +12,15 @@ import { IngredientList } from 'src/app/interface/ingredientList';
 export class IngredientListComponent implements OnInit {
 
   @Input()
-  models: IngredientList[];
+  ingredientListModel: IngredientList[];
+
+  @Input()
+  shoppingListsModel: ShoppingList[];
 
   constructor() {}
 
   ngOnInit(): void {
-    
+
   }
 
 }

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {AuthService} from '../../../../auth/shared/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../../../interface/user';
-import {RoutesConstant} from '../../../../constants/routes-constant';
 import {UserService} from '../../../../services/user.service';
 
 @Component({

@@ -44,7 +44,7 @@ const routes: Routes = [
   {
     path: RoutesConstant.RECIPES_DETAILS,
     component: RecipeComponent,
-    resolve: { recipe: RecipeResolver }
+    resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
@@ -107,7 +107,7 @@ const routes: Routes = [
     resolve: { shoppingLists: ShoppingListsResolver }
   },
   {
-    path: 'shopping-list/:id',
+    path: 'shopping-lists/:id',
     component: ShoppingListDetailsComponent,
     resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },
