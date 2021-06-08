@@ -29,6 +29,7 @@ export class AuthService {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
         this.localStorage.store('id', data.id);
+        this.localStorage.store('userRole', data.userRole);
         return true;
     }));
   }
@@ -43,6 +44,9 @@ export class AuthService {
   }
   getJwtToken(): string {
     return this.localStorage.retrieve('authenticationToken');
+  }
+  getUserRole(): string {
+    return this.localStorage.retrieve('userRole');
   }
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;

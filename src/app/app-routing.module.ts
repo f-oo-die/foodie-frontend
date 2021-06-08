@@ -28,6 +28,7 @@ import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
 import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   {
@@ -47,44 +48,44 @@ const routes: Routes = [
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
-    component: AdminComponent,
+    component: AdminComponent, canActivate: [AuthGuard]
   },
   {
     path: RoutesConstant.ADMIN_RECIPES_LIST,
-    component: AdminRecipesComponent,
+    component: AdminRecipesComponent, canActivate: [AuthGuard],
     resolve: { recipes: RecipesResolver },
   },
   {
     path: RoutesConstant.ADMIN_RECIPES_NEW,
-    component: AdminRecipesAddComponent,
+    component: AdminRecipesAddComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver },
   },
   {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST,
-    component: AdminNutritionIssuesComponent,
+    component: AdminNutritionIssuesComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver },
   },
   {
-    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW,
+    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW, canActivate: [AuthGuard],
     component: AdminNutritionIssuesAddComponent,
   },
   {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_EDIT,
-    component: AdminNutritionIssuesEditComponent,
+    component: AdminNutritionIssuesEditComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssue: NutritionIssueResolver },
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_LIST,
-    component: AdminIngredientsComponent,
+    component: AdminIngredientsComponent, canActivate: [AuthGuard],
     resolve: { ingredients: IngredientsResolver },
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_NEW,
-    component: AdminIngredientsAddComponent,
+    component: AdminIngredientsAddComponent, canActivate: [AuthGuard]
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
-    component: AdminIngredientsEditComponent,
+    component: AdminIngredientsEditComponent, canActivate: [AuthGuard],
     resolve: { ingredient: IngredientResolver },
   },
   {
