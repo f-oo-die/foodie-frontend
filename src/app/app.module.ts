@@ -50,6 +50,9 @@ import { ShoppingListCreateComponent } from './features/containers/shopping-list
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AddToShoppingListComponent } from './features/components/ingredient-list/add-to-shopping-list/add-to-shopping-list.component';
+import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
+import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
+import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 
 @NgModule({
   declarations: [
@@ -106,6 +109,9 @@ import { AddToShoppingListComponent } from './features/components/ingredient-lis
     ShoppingListsResolver,
     ShoppingListResolver,
     UserResolver,
+    DailyMealPlansResolver,
+    DailyMealPlanResolver,
+    LatestDailyMealPlanResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

@@ -23,13 +23,15 @@ import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { LoginComponent } from "./features/auth/login/login.component";
 import {ProfileComponent} from './features/containers/profile/profile.component';
-import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
 import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {AuthGuard} from './auth.guard';
+import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
+import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
+import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 
 const routes: Routes = [
   {
@@ -50,7 +52,7 @@ const routes: Routes = [
   {
     path: RoutesConstant.USER_MEAL_PLAN,
     component: DailyMealPlansComponent,
-    resolve: { recipes: RecipesResolver }
+    resolve: { plans: DailyMealPlansResolver, plan: DailyMealPlanResolver, latestPlan: LatestDailyMealPlanResolver }
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
