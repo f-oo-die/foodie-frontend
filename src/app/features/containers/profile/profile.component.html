@@ -53,13 +53,17 @@
     <div class="card mt-4">
       <div class="card-body">
         <h5 class="card-title">Favorite recipes</h5>
-        <p class="card-text">Favorite Recipe 1</p>
-        <hr>
-        <p class="card-text">Favorite Recipe 2</p>
-        <hr>
-        <p class="card-text">Favorite Recipe 3</p>
-        <hr>
-        <p class="card-text">Favorite Recipe 4</p>
+        <div class="card-text" *ngFor="let favoriteRecipe of favouriteRecipe">
+          <a [routerLink]="['/recipes/', favoriteRecipe.id]">Recipe: {{favoriteRecipe.title}}</a>
+          <p>{{favoriteRecipe.preparation}}</p>
+        </div>
+<!--        <p class="card-text">Favorite Recipe 1</p>-->
+<!--        <hr>-->
+<!--        <p class="card-text">Favorite Recipe 2</p>-->
+<!--        <hr>-->
+<!--        <p class="card-text">Favorite Recipe 3</p>-->
+<!--        <hr>-->
+<!--        <p class="card-text">Favorite Recipe 4</p>-->
       </div>
     </div>
   </div>

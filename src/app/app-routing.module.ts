@@ -30,6 +30,8 @@ import {ShoppingListDetailsComponent} from './features/containers/shopping-list/
 import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {AuthGuard} from './auth.guard';
+import {FavoriteRecipeService} from './services/favorite-recipe.service';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 
 const routes: Routes = [
   {
@@ -105,7 +107,7 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ProfileComponent,
-    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver },
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver, recipe: FavoriteRecipeResolver },
   },
   {
     path: 'shopping-lists',
