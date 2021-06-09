@@ -7,7 +7,7 @@
       <th>Name</th>
       <th>Caloric Value</th>
       <th>Nutritional Value</th>
-      <th>Edit</th>
+      <th>Actions</th>
     </tr>
     </thead>
 
@@ -17,7 +17,10 @@
       <td>{{ ingredient.ingredientName }}</td>
       <td>{{ ingredient.caloricValue }}</td>
       <td>{{ ingredient.nutritionalValue }}</td>
-      <td><button type="button" class="btn btn-primary" (click)="openEditIngredient(ingredient.id)">Edit</button></td>
+      <td class="p-3">
+        <fa-icon [icon]="faEdit" (click)="openEditIngredient(ingredient.id)"></fa-icon>
+        <fa-icon class="text-danger ml-3" [icon]="faTrashAlt" (click)="deleteIngredient(ingredient)"></fa-icon>
+      </td>
     </tr>
     </tbody>
   </table>
