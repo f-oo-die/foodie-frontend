@@ -53,6 +53,7 @@ import { AddToShoppingListComponent } from './features/components/ingredient-lis
 import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
+import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-plans/daily-meal-plan-details/daily-meal-plan-details.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.
     ShoppingListDetailsComponent,
     ShoppingListCreateComponent,
     AddToShoppingListComponent,
+    DailyMealPlanDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Recipe } from 'src/app/interface/recipe';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { DailyMealPlan } from 'src/app/interface/dailyMealPlan';
+import { DailyMealPlanService } from 'src/app/services/dailyMealPlan.service';
+import { AuthService } from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'app-daily-meal-plans',
@@ -8,19 +11,40 @@ import { Recipe } from 'src/app/interface/recipe';
   styleUrls: ['./daily-meal-plans.component.css']
 })
 export class DailyMealPlansComponent implements OnInit {
-  recipes: Recipe[];
+  plans: DailyMealPlan[];
+  latestPlan: DailyMealPlan;
+  userId: number;
+  hasClicked: boolean;
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    ) {}
-
+  constructor(private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private dailyMealPlanService: DailyMealPlanService,
+    private router: Router,
+    private actRoute: ActivatedRoute) {
+      this.userId = this.authService.getId();
+  }
+  
   ngOnInit(): void {
-    this.getRecipes();
+    this.getDailyMealPlans();
+    console.log(this.latestPlan);
   }
 
-  public getRecipes(): void {
-    this.activatedRoute.data.subscribe((routeData: { recipes: Recipe[] }) => {
-      this.recipes = routeData.recipes;
+  getDailyMealPlans(){
+    this.activatedRoute.data.subscribe(routeData => {
+      this.plans = routeData.plans;
+      this.latestPlan = routeData.latestPlan;
+    });
+    if (this.actRoute.snapshot.params.id) {
+      this.hasClicked = true;
+    }
+  }
+
+  createNewPlan(){
+    this.dailyMealPlanService.createMealPlan().subscribe(newPlan => {
+      this.latestPlan = newPlan;
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/meal-planning']);
+      });
     });
   }
 }

@@ -21,7 +21,7 @@ export class DailyMealPlanService {
   }
 
   getLatestMealPlan(): Observable<DailyMealPlan> {
-    return this.http.get<DailyMealPlan>(`${this.apiUrl}/meal-planning/${this.userId}`);
+    return this.http.get<DailyMealPlan>(`${this.apiUrl}/meal-planning/${this.userId}/latest`);
   }
 
   getMealPlan(id: string): Observable<DailyMealPlan> {

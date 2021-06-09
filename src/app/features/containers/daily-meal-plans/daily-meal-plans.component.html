@@ -9,30 +9,74 @@
           </div>
       </div>
       <div style="display: flex;">
-        <div *ngFor="let recipe of recipes">
-            <div class="col-lg-12">
-                <div class="blog-grid">
-                    <div class="blog-img">
-                        <div class="date">04 FEB</div>
-                        <a href="#">
-                            <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.breakfast.id]">{{ latestPlan.breakfast.title }}</a></h5>
+                    <p>Taste, speed, and health, are the most important factors when it comes to breakfast.</p>
+                    <p>This breakfast has it all!</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.breakfast.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
                         </a>
                     </div>
-                    <div class="blog-info">
-                        <h5><a [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                        <div class="btn-bar">
-                            <a [routerLink]="['/recipes', recipe.id]" class="px-btn-arrow">
-                                <span>Read More</span>
-                                <i class="arrow"></i>
-                            </a>
-                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.lunch.id]">{{ latestPlan.lunch.title }}</a></h5>
+                    <p>Here is a lunch idea to keep your midday eating on the right track with a little bit of novelty.</p>
+                    <p>Give it a go today.</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.lunch.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.dinner.id]">{{ latestPlan.dinner.title }}</a></h5>
+                    <p>Dinner, being the grand solid meal of the day, is a matter of considerable importance.</p>
+                    <p>Perfect meal for you to end the day.</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.dinner.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
       </div>
   </div>
+  <div>
+    <button (click)="createNewPlan()">Create New Plan</button>
+</div>
 </section>
 
 <div class="container">
