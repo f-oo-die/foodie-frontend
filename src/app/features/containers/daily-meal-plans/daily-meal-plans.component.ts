@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DailyMealPlan } from 'src/app/interface/dailyMealPlan';
 import { CalorieStatus } from 'src/app/interface/enums/calorieStatus';
 import { DailyMealPlanService } from 'src/app/services/dailyMealPlan.service';

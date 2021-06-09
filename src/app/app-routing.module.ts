@@ -30,12 +30,11 @@ import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {AuthGuard} from './auth.guard';
 import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
-import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
-import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-plans/daily-meal-plan-details/daily-meal-plan-details.component';
 import {FavoriteRecipeService} from './services/favorite-recipe.service';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
+import { CheckUserComponent } from './features/containers/daily-meal-plans/check-user.component';
 
 
 const routes: Routes = [
@@ -55,15 +54,15 @@ const routes: Routes = [
     resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
   },
   {
+    path: 'check-user/:id',
+    component: CheckUserComponent,
+    resolve: { user: UserResolver },
+  },
+  {
     path:'meal-planning', 
     component: DailyMealPlansComponent,
     resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
   },
-  // {
-  //   path: 'meal-planning/:id',
-  //   component: DailyMealPlanDetailsComponent,
-  //   resolve: { dailyMealPlan: DailyMealPlanResolver, plans: DailyMealPlansResolver }
-  // },
   {
     path: RoutesConstant.ADMIN_ROUTE,
     component: AdminComponent, canActivate: [AuthGuard]

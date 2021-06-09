@@ -51,11 +51,10 @@ import {TokenInterceptorService} from './services/token-interceptor.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AddToShoppingListComponent } from './features/components/ingredient-list/add-to-shopping-list/add-to-shopping-list.component';
 import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
-import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
-import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-plans/daily-meal-plan-details/daily-meal-plan-details.component';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
+import { CheckUserComponent } from './features/containers/daily-meal-plans/check-user.component';
 
 @NgModule({
   declarations: [
@@ -88,8 +87,8 @@ import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-reci
     ShoppingListDetailsComponent,
     ShoppingListCreateComponent,
     AddToShoppingListComponent,
-    DailyMealPlanDetailsComponent,
     AdminRecipesEditComponent,
+    CheckUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +114,6 @@ import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-reci
     ShoppingListResolver,
     UserResolver,
     DailyMealPlansResolver,
-    DailyMealPlanResolver,
     LatestDailyMealPlanResolver,
     FavoriteRecipeResolver,
     {
