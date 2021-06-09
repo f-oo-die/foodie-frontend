@@ -54,6 +54,8 @@ import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-plans/daily-meal-plan-details/daily-meal-plan-details.component';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
+import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,7 @@ import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-
     ShoppingListCreateComponent,
     AddToShoppingListComponent,
     DailyMealPlanDetailsComponent,
+    AdminRecipesEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +117,7 @@ import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-
     DailyMealPlansResolver,
     DailyMealPlanResolver,
     LatestDailyMealPlanResolver,
+    FavoriteRecipeResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

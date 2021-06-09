@@ -33,6 +33,10 @@ import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { DailyMealPlanResolver } from './resolvers/daily-meal-plan.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 import { DailyMealPlanDetailsComponent } from './features/containers/daily-meal-plans/daily-meal-plan-details/daily-meal-plan-details.component';
+import {FavoriteRecipeService} from './services/favorite-recipe.service';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
+import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
+
 
 const routes: Routes = [
   {
@@ -75,6 +79,11 @@ const routes: Routes = [
     resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver },
   },
   {
+    path: RoutesConstant.ADMIN_RECIPES_EDIT,
+    component: AdminRecipesEditComponent, canActivate: [AuthGuard],
+    resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver, recipe: RecipeResolver },
+  },
+  {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST,
     component: AdminNutritionIssuesComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver },
@@ -113,7 +122,7 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ProfileComponent,
-    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver },
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver, recipe: FavoriteRecipeResolver },
   },
   {
     path: 'shopping-lists',

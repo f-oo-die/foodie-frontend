@@ -28,6 +28,7 @@ export abstract class RoutesConstant {
   static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';
   static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
   static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';
+  static readonly ADMIN_RECIPES_EDIT: string = RoutesConstant.ADMIN_RECIPES_BASE + '/edit/:id';
 
   static readonly ADMIN_NUTRITION_ISSUES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/nutrition-issues';
   static readonly ADMIN_NUTRITION_ISSUES_LIST: string = RoutesConstant.ADMIN_NUTRITION_ISSUES_BASE;

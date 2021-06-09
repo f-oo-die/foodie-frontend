@@ -28,12 +28,11 @@
                 </div>
               </div>
 
-              <span class="col-md-6 offset-md-4">
-                              <button type="submit" class="login">
-                                  Login
-                              </button>
-                              <span style="padding-left: 15px">New to Foodie? <a routerLink="/signup">SIGN UP</a></span>
-                          </span>
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="login">Login</button>
+                <span style="padding-left: 15px">New to Foodie? </span>
+                <a [routerLink]="['/signup']" class="text-primary" style="cursor: pointer">SIGN UP</a>
+              </div>
               <div class="login-failed" *ngIf="this.isError">
                 <p class="login-failed-text">Login Failed. Please check your credentials.</p>
               </div>

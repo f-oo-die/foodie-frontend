@@ -7,6 +7,10 @@ export interface Recipe {
   preparation: string;
   numOfCalories: number;
   typeOfMeal: number;
+  calorieStatus: number;
+  count: number;
+  thumbnailImageUrl: string;
+  mainImageUrl: string;
   ingredientList: IngredientList[];
   nutritionIssues: NutritionIssue[];
 }

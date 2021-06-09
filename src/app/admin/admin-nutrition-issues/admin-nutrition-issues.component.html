@@ -5,7 +5,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Edit</th>
+      <th>Actions</th>
     </tr>
     </thead>
 
@@ -13,7 +13,10 @@
     <tr *ngFor="let nutritionIssue of nutritionIssues">
       <td>{{ nutritionIssue.id }}</td>
       <td>{{ nutritionIssue.name }}</td>
-      <td><button type="button" class="btn btn-primary" (click)="openEditNutritionIssues(nutritionIssue.id)">Edit</button></td>
+      <td class="p-3">
+        <fa-icon [icon]="faEdit" (click)="openEditNutritionIssues(nutritionIssue.id)"></fa-icon>
+        <fa-icon class="text-danger ml-3" [icon]="faTrashAlt" (click)="deleteNutritionIssue(nutritionIssue)"></fa-icon>
+      </td>
     </tr>
     </tbody>
   </table>
