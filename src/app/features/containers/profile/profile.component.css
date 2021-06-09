@@ -40,3 +40,14 @@ img {
   -o-transition: all 250ms ease-in-out 0s;
   transition: all 250ms ease-in-out 0s;
 }
+
+.notification-block{
+  background-color: #ffcf5f;
+  padding: 10px 5px;
+}
+
+.notification-block p {
+  padding-left: 30px;
+  margin: auto 0;
+  font-weight: 500;
+}
