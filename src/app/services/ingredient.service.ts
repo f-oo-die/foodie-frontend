@@ -27,4 +27,8 @@ export class IngredientService {
   updateIngredient(id: number, ingredient: Ingredient): Observable<Ingredient> {
     return this.http.put<Ingredient>(`${this.apiUrl}/admin/ingredients/${id}`, ingredient);
   }
+
+  deleteIngredient(id: number): Observable<Ingredient> {
+    return this.http.delete<Ingredient>(`${this.apiUrl}/admin/ingredients/${id}`);
+  }
 }

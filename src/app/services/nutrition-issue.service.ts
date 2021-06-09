@@ -29,4 +29,7 @@ export class NutritionIssueService {
     return this.http.put<NutritionIssue>(`${this.apiUrl}/admin/nutrition-issues/${id}`, nutritionIssue);
   }
 
+  deleteNutritionIssue(id: number): Observable<NutritionIssue> {
+    return this.http.delete<NutritionIssue>(`${this.apiUrl}/admin/nutrition-issues/${id}`);
+  }
 }
