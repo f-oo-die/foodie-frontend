@@ -1,24 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {RecipeService} from '../../services/recipe.service';
-import {Recipe} from '../../interface/recipe';
-import {RoutesConstant} from '../../constants/routes-constant';
+import { Component, OnInit } from '@angular/core';
 import {TypeOfMeal} from '../../interface/enums/typeOfMeal';
-import {IngredientList} from '../../interface/ingredientList';
-import {Ingredient} from '../../interface/ingredient';
-import {NutritionIssue} from '../../interface/nutritionIssue';
 import {CalorieStatus} from '../../interface/enums/calorieStatus';
+import {NutritionIssue} from '../../interface/nutritionIssue';
+import {Ingredient} from '../../interface/ingredient';
+import {IngredientList} from '../../interface/ingredientList';
+import {Recipe} from '../../interface/recipe';
+import {RecipeService} from '../../services/recipe.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {RoutesConstant} from '../../constants/routes-constant';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-admin-recipes-add',
-  templateUrl: './admin-recipes-add.component.html',
-  styleUrls: ['./admin-recipes-add.component.css']
+  selector: 'app-admin-recipes-edit',
+  templateUrl: './admin-recipes-edit.component.html',
+  styleUrls: ['./admin-recipes-edit.component.css']
 })
-export class AdminRecipesAddComponent implements OnInit {
+export class AdminRecipesEditComponent implements OnInit {
   typeOfMeal = TypeOfMeal;
   calorieStatus = CalorieStatus;
   faTrashAlt = faTrashAlt;
+
+  recipe: Recipe;
 
   nutritionIssues: NutritionIssue[];
   ingredients: Ingredient[];
@@ -49,18 +51,23 @@ export class AdminRecipesAddComponent implements OnInit {
     this.activatedRoute.data.subscribe((routeData: { ingredients: Ingredient[] }) => {
       this.ingredients = routeData.ingredients;
     });
+
+    this.activatedRoute.data.subscribe((routeData: { recipe: Recipe }) => {
+      this.recipeModel = routeData.recipe;
+      this.ingredientLists = this.recipeModel.ingredientList;
+    });
   }
 
   onSubmit(): void {
-    this.recipeService.createRecipe(this.recipeModel).subscribe(() => {
+    this.recipeService.updateRecipe(this.recipeModel.id, this.recipeModel).subscribe(() => {
       this.router.navigateByUrl(`/${RoutesConstant.ADMIN_RECIPES_LIST}`);
     });
   }
 
   addIngredient(): void {
-    this.ingredientLists.push(this.ingredientList);
-    console.log(this.ingredientLists);
+    this.recipeModel.ingredientList.push(this.ingredientList);
     this.ingredientList = {ingredient: undefined, amount: 0, amountLabel: ''};
+    this.ingredientLists = this.recipeModel.ingredientList;
   }
 
   removeIngredientList(ingredientList: IngredientList): void {
@@ -69,4 +76,5 @@ export class AdminRecipesAddComponent implements OnInit {
     });
     this.ingredientLists = this.recipeModel.ingredientList;
   }
+
 }

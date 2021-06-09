@@ -23,13 +23,19 @@ import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { LoginComponent } from "./features/auth/login/login.component";
 import {ProfileComponent} from './features/containers/profile/profile.component';
-import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
 import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {AuthGuard} from './auth.guard';
+import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
+import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
+import {FavoriteRecipeService} from './services/favorite-recipe.service';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
+import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
+import { CheckUserComponent } from './features/containers/daily-meal-plans/check-user.component';
+
 
 const routes: Routes = [
   {
@@ -48,9 +54,14 @@ const routes: Routes = [
     resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
   },
   {
-    path: RoutesConstant.USER_MEAL_PLAN,
+    path: 'check-user/:id',
+    component: CheckUserComponent,
+    resolve: { user: UserResolver },
+  },
+  {
+    path:'meal-planning', 
     component: DailyMealPlansComponent,
-    resolve: { recipes: RecipesResolver }
+    resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
@@ -65,6 +76,11 @@ const routes: Routes = [
     path: RoutesConstant.ADMIN_RECIPES_NEW,
     component: AdminRecipesAddComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver },
+  },
+  {
+    path: RoutesConstant.ADMIN_RECIPES_EDIT,
+    component: AdminRecipesEditComponent, canActivate: [AuthGuard],
+    resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver, recipe: RecipeResolver },
   },
   {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST,
@@ -105,7 +121,7 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ProfileComponent,
-    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver },
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver, recipe: FavoriteRecipeResolver },
   },
   {
     path: 'shopping-lists',

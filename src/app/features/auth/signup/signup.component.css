@@ -12,22 +12,21 @@
   z-index:1000;
 }
 .sign-up {
-  background: -webkit-linear-gradient(left, #fa6a48, #ffcf5f);
-  /*background-color: #0079D3;*/
-  /*border-color: #0079D3;*/
-  /*color: aliceblue;*/
-  /*fill: #0079D3;*/
-  /*border: 1px solid;*/
-  border-radius: 4px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 24px;
-  text-transform: uppercase;
-  padding: 3px 16px;
-  opacity: 1;
+  background-color: #fa6a48;
+  color:#fff;
+  border-radius: 2px;
 }
-
+.sign-up:hover, .sign-up:focus, .sign-up.active {
+  background-color: white;
+  color: #fa6a48;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 250ms ease-in-out 0s;
+  -moz-transition: all 250ms ease-in-out 0s;
+  -ms-transition: all 250ms ease-in-out 0s;
+  -o-transition: all 250ms ease-in-out 0s;
+  transition: all 250ms ease-in-out 0s;
+}

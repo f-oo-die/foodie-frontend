@@ -7,5 +7,7 @@ export interface User {
   email: string;
   weight: number;
   height: number;
+  profileImageUrl: string;
   nutritionIssues: NutritionIssue[];
+  // recommendedCalorieStatus: number;
 }

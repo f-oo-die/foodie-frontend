@@ -20,12 +20,15 @@ export abstract class RoutesConstant {
 
   // Daily meal plan
   static readonly DAILY_MEAL_PLAN: string = 'meal-planning';
-  static readonly USER_ID: string = 'id';
-  static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN; 
+  static readonly USER_ID: string = 'userId';
+  static readonly PLAN_ID: string = 'id';
+  static readonly USER_MEAL_PLANS: string = RoutesConstant.DAILY_MEAL_PLAN;
+  static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN + '/:' + RoutesConstant.USER_ID + '/:' + RoutesConstant.PLAN_ID; 
 
   static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';
   static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
   static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';
+  static readonly ADMIN_RECIPES_EDIT: string = RoutesConstant.ADMIN_RECIPES_BASE + '/edit/:id';
 
   static readonly ADMIN_NUTRITION_ISSUES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/nutrition-issues';
   static readonly ADMIN_NUTRITION_ISSUES_LIST: string = RoutesConstant.ADMIN_NUTRITION_ISSUES_BASE;

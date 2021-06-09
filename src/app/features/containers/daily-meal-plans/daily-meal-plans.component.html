@@ -3,209 +3,125 @@
       <div class="row justify-content-center">
           <div class="col-lg-7 text-center">
               <div class="section-title">
-                  <h2>Daily Meal Plan</h2>
-                  <p>We have customized your recipes for today. Try them out and let us know!</p>
+                  <h2 class="text-dark">Daily Meal Plan</h2>
+                  <p class="text-dark">We have customized your recipes for today. Try them out and let us know!</p>
               </div>
           </div>
       </div>
       <div style="display: flex;">
-        <div *ngFor="let recipe of recipes">
-            <div class="col-lg-12">
-                <div class="blog-grid">
-                    <div class="blog-img">
-                        <div class="date">04 FEB</div>
-                        <a href="#">
-                            <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.breakfast.id]">{{ latestPlan.breakfast.title }}</a></h5>
+                    <p>Taste, speed, and health, are the most important factors when it comes to breakfast.</p>
+                    <p>This breakfast has it all!</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.breakfast.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
                         </a>
                     </div>
-                    <div class="blog-info">
-                        <h5><a [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                        <div class="btn-bar">
-                            <a [routerLink]="['/recipes', recipe.id]" class="px-btn-arrow">
-                                <span>Read More</span>
-                                <i class="arrow"></i>
-                            </a>
-                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.lunch.id]">{{ latestPlan.lunch.title }}</a></h5>
+                    <p>Here is a lunch idea to keep your midday eating on the right track with a little bit of novelty.</p>
+                    <p>Give it a go today.</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.lunch.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="blog-grid">
+                <div class="blog-img">
+                    <div class="date">{{ latestPlan.date | date:'mediumDate'}}</div>
+                    <a href="#">
+                        <img src="../../../assets/images/meal.jpeg" title="" alt="" style="width: 350px; height: 280px;">
+                    </a>
+                </div>
+                <div class="blog-info">
+                    <h5><a [routerLink]="['/recipes', latestPlan.dinner.id]">{{ latestPlan.dinner.title }}</a></h5>
+                    <p>Dinner, being the grand solid meal of the day, is a matter of considerable importance.</p>
+                    <p>Perfect meal for you to end the day.</p>
+                    <div class="btn-bar">
+                        <a [routerLink]="['/recipes', latestPlan.dinner.id]" class="px-btn-arrow">
+                            <span>Let's cook</span>
+                            <i class="arrow"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
       </div>
   </div>
+  <div class="create-plan">
+      <p class="lg-3 text-dark">... or generate a new meal plan for today!</p>
+      <button (click)="createNewPlan()" class="new-button">Create New Plan</button>
+  </div>
 </section>
 
 <div class="container">
-  <div class="timetable-img text-center">
-      <img src="img/content/timetable.png" alt="">
-  </div>
   <div class="table-responsive">
       <table class="table table-bordered text-center">
           <thead>
               <tr class="bg-light-gray">
-                  <th class="text-uppercase">Time
-                  </th>
-                  <th class="text-uppercase">Monday</th>
-                  <th class="text-uppercase">Tuesday</th>
-                  <th class="text-uppercase">Wednesday</th>
-                  <th class="text-uppercase">Thursday</th>
-                  <th class="text-uppercase">Friday</th>
-                  <th class="text-uppercase">Saturday</th>
+                  <th class="text-uppercase">#</th>
+                  <th class="text-uppercase">Date</th>
+                  <th class="text-uppercase">Breakfast</th>
+                  <th class="text-uppercase">Lunch</th>
+                  <th class="text-uppercase">Dinner</th>
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td class="align-middle">09:00am</td>
+              <tr *ngFor="let plan of plans; let i = index">
+                  <td class="align-middle">{{ i + 1 }}</td>
                   <td>
-                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Dance</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
+                    <div class="margin-10px-top font-size14">{{ plan.date }}</div>
+                </td>
+                  <td>
+                      <span [ngClass]="{'low':plan.breakfast.calorieStatus===0, 
+                                        'medium':plan.breakfast.calorieStatus===1,
+                                        'high':plan.breakfast.calorieStatus===2}"
+                      >{{ calorieStatus[plan.breakfast.calorieStatus] }} Calorie</span>
+                      <div class="margin-10px-top font-size14">{{ plan.breakfast.title }}</div>
+                      <div class="font-size13 text-light-gray"><a [routerLink]="['/recipes', plan.breakfast.id]" class="view-recipe">View Recipe</a></div>
                   </td>
                   <td>
-                      <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">Marta Healy</div>
+                      <span [ngClass]="{'low':plan.breakfast.calorieStatus===0, 
+                                        'medium':plan.breakfast.calorieStatus===1,
+                                        'high':plan.breakfast.calorieStatus===2}"
+                      >{{ calorieStatus[plan.lunch.calorieStatus] }} Calorie</span>
+                      <div class="margin-10px-top font-size14">{{ plan.lunch.title }}</div>
+                      <div class="font-size13 text-light-gray"><a [routerLink]="['/recipes', plan.lunch.id]" class="view-recipe">View Recipe</a></div>
                   </td>
 
                   <td>
-                      <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td>
-                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td>
-                      <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">Kate Alley</div>
-                  </td>
-                  <td>
-                      <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                      <div class="margin-10px-top font-size14">9:00-10:00</div>
-                      <div class="font-size13 text-light-gray">James Smith</div>
-                  </td>
-              </tr>
-
-              <tr>
-                  <td class="align-middle">10:00am</td>
-                  <td>
-                      <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                      <div class="margin-10px-top font-size14">10:00-11:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td class="bg-light-gray">
-
-                  </td>
-                  <td>
-                      <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                      <div class="margin-10px-top font-size14">10:00-11:00</div>
-                      <div class="font-size13 text-light-gray">Kate Alley</div>
-                  </td>
-                  <td>
-                      <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                      <div class="margin-10px-top font-size14">10:00-11:00</div>
-                      <div class="font-size13 text-light-gray">Marta Healy</div>
-                  </td>
-                  <td>
-                      <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                      <div class="margin-10px-top font-size14">10:00-11:00</div>
-                      <div class="font-size13 text-light-gray">James Smith</div>
-                  </td>
-                  <td class="bg-light-gray">
-
-                  </td>
-              </tr>
-
-              <tr>
-                  <td class="align-middle">11:00am</td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-                  <td>
-                      <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                      <div class="margin-10px-top font-size14">11:00-12:00</div>
-                  </td>
-              </tr>
-
-              <tr>
-                  <td class="align-middle">12:00pm</td>
-                  <td class="bg-light-gray">
-
-                  </td>
-                  <td>
-                      <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                      <div class="margin-10px-top font-size14">12:00-1:00</div>
-                      <div class="font-size13 text-light-gray">Kate Alley</div>
-                  </td>
-                  <td>
-                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
-                      <div class="margin-10px-top font-size14">12:00-1:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td>
-                      <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                      <div class="margin-10px-top font-size14">12:00-1:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td class="bg-light-gray">
-
-                  </td>
-                  <td>
-                      <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                      <div class="margin-10px-top font-size14">12:00-1:00</div>
-                      <div class="font-size13 text-light-gray">Marta Healy</div>
-                  </td>
-              </tr>
-
-              <tr>
-                  <td class="align-middle">01:00pm</td>
-                  <td>
-                      <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                      <div class="margin-10px-top font-size14">1:00-2:00</div>
-                      <div class="font-size13 text-light-gray">James Smith</div>
-                  </td>
-                  <td>
-                      <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                      <div class="margin-10px-top font-size14">1:00-2:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
-                  </td>
-                  <td class="bg-light-gray">
-
-                  </td>
-                  <td>
-                      <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                      <div class="margin-10px-top font-size14">1:00-2:00</div>
-                      <div class="font-size13 text-light-gray">James Smith</div>
-                  </td>
-                  <td>
-                      <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                      <div class="margin-10px-top font-size14">1:00-2:00</div>
-                      <div class="font-size13 text-light-gray">Marta Healy</div>
-                  </td>
-                  <td>
-                      <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                      <div class="margin-10px-top font-size14">1:00-2:00</div>
-                      <div class="font-size13 text-light-gray">Ivana Wong</div>
+                      <span [ngClass]="{'low':plan.breakfast.calorieStatus===0, 
+                                        'medium':plan.breakfast.calorieStatus===1,
+                                        'high':plan.breakfast.calorieStatus===2}"
+                      >{{ calorieStatus[plan.dinner.calorieStatus] }} Calorie</span>
+                      <div class="margin-10px-top font-size14">{{ plan.dinner.title }}</div>
+                      <div class="font-size13 text-light-gray"><a [routerLink]="['/recipes', plan.dinner.id]" class="view-recipe">View Recipe</a></div>
                   </td>
               </tr>
           </tbody>

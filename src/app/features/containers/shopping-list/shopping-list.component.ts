@@ -18,7 +18,7 @@ export class ShoppingListComponent implements OnInit {
   userId: number;
   faTrashAlt = faTrashAlt;
   faHamburger = faHamburger;
-  hasClicked;
+  hasClicked: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
               private authService: AuthService,

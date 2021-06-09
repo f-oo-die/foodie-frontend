@@ -1,6 +1,4 @@
-<app-header></app-header>
-
-<div id="main">
+<div id="main" class="min-vh-100">
   <div class="container p-4">
     <div class="card">
       <div class="row">
@@ -10,6 +8,7 @@
                 <h5 class="card-title">Shopping Lists</h5>
                 <app-shopping-list-create></app-shopping-list-create>
               </div>
+              <p *ngIf="!shoppingLists.length">You have no shopping lists yet.</p>
               <div class="card-text" *ngFor="let shoppingList of shoppingLists">
                 <div class="d-flex justify-content-between">
                   <a [routerLink]="['/shopping-lists', shoppingList.id]">Shopping List {{ shoppingList.id }}</a>
@@ -29,6 +28,3 @@
     </div>
   </div>
 </div>
-
-
-<app-footer></app-footer>
