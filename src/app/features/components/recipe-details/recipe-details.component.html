@@ -24,8 +24,8 @@
           </div>
       </div>
       <div class="btns">
-        <a href="" class="btn btn-info">Read directions</a>
-        <a href="" class="btn">Add to Favorite +</a>
+        <a (click)="onClick()" class="btn btn-info">Read directions</a>
+        <button class="btn btn-outline-info ml-1" (click)="addToFavorite()">Add to Favorite +</button>
       </div>
       </div>
       <img class="shadow rounded" src="{{ model.mainImageUrl }}" alt="ERROR: Image could not be fetched!" style="width: 650px; height: 350px;">
@@ -39,7 +39,7 @@
       <div class="col-6">
         <div class="">
           <h2 class="pt-3 text-center mb-3">Preparation</h2>
-          <p style="word-wrap: break-word;">{{ model.preparation }}</p>
+          <p style="word-wrap: break-word;" id="directions">{{ model.preparation }}</p>
         </div>
       </div>
     </div>

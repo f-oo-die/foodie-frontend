@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from '../../../interface/recipe';
 import { IngredientList } from '../../../interface/ingredientList';
 import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
@@ -26,4 +26,17 @@ export class RecipeDetailsComponent {
   @Input()
   shoppingListsModel: ShoppingList[];
 
+  @Output()
+  onAdd = new EventEmitter();
+
+  public addToFavorite(): void {
+    this.onAdd.emit();
+  }
+
+  onClick(){
+    let x = document.querySelector("#directions");
+    if (x){
+        x.scrollIntoView();
+    }
+}
 }

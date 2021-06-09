@@ -29,4 +29,8 @@ export class RecipeComponent implements OnInit {
       this.shoppingListsModel = routeData.shoppingLists;
     });
   }
+
+  onAdd() {
+    console.log("clicked");
+  }
 }

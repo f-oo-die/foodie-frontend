@@ -55,6 +55,7 @@ import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserComponent } from './features/containers/daily-meal-plans/check-user.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
