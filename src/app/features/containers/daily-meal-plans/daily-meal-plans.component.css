@@ -1,11 +1,19 @@
 body{margin-top:20px;}
 
 .section {
-    padding: 100px 0;
+    padding: 50px 0;
     position: relative;
 }
 .gray-bg {
     background-color: #ebf4fa;
+}
+
+.section-title h2 {
+  font-size: 2.3rem;
+}
+
+.section-title p {
+  font-size: 1.2rem;
 }
 /* Blog 
 ---------------------*/
@@ -207,4 +215,68 @@ body{
   padding: .75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
+}
+
+.new-button {
+  color:#f2f2f2;
+  padding:0 10px 0px;
+  letter-spacing:1.5px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 2px;
+  background-color: #fa6a48;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+}
+
+.new-button:hover{
+  background-color: white;
+  color: #fa6a48;
+  border-color: #fa6a48;
+}
+
+.create-plan{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.create-plan p {
+  font-size: 1.3rem;
+}
+
+.low {
+  background-color: #5bbd2a;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.medium {
+  background-color: #f0ad4e;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.high {
+  background-color: #d9534f;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.view-recipe {
+  color: #fa6a48;
+}
+
+.table-responsive {
+  margin: 30px auto;
 }

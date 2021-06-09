@@ -3,7 +3,7 @@ import { Recipe } from '../../../interface/recipe';
 import { IngredientList } from '../../../interface/ingredientList';
 import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
 import { NutritionIssue } from 'src/app/interface/nutritionIssue';
-import {ShoppingList} from '../../../interface/shoppingList';
+import { ShoppingList } from '../../../interface/shoppingList';
 
 @Component({
   selector: 'app-recipe-details',
