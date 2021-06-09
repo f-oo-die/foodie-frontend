@@ -50,6 +50,7 @@ import { ShoppingListCreateComponent } from './features/containers/shopping-list
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AddToShoppingListComponent } from './features/components/ingredient-list/add-to-shopping-list/add-to-shopping-list.component';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
 
 @NgModule({
@@ -108,6 +109,7 @@ import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-reci
     ShoppingListsResolver,
     ShoppingListResolver,
     UserResolver,
+    FavoriteRecipeResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
