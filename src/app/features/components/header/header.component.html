@@ -25,7 +25,7 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" [routerLink]="['/profile', userId]">My Profile</a>
         <a class="dropdown-item" [routerLink]="['/shopping-lists']">Shopping Lists</a>
-        <a class="dropdown-item" [routerLink]="['/meal-planning']">Meal Plans</a>
+        <a class="dropdown-item" [routerLink]="['/check-user', userId]">Meal Plans</a>
       </div>
       <a (click)="logout()"><fa-icon [icon]="faSignOutAlt"></fa-icon> Sign out</a>
     </div>

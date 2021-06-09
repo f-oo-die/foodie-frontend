@@ -1,9 +1,12 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import { AuthService } from '../features/auth/shared/auth.service';
 import { DailyMealPlan } from '../interface/dailyMealPlan';
+import { User } from '../interface/user';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,8 @@ export class DailyMealPlanService {
   apiUrl: string = environment.api;
   userId: number;
 
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient, 
+              private authService: AuthService) {
     this.userId = this.authService.getId();
   }
 
@@ -22,10 +26,6 @@ export class DailyMealPlanService {
 
   getLatestMealPlan(): Observable<DailyMealPlan> {
     return this.http.get<DailyMealPlan>(`${this.apiUrl}/meal-planning/${this.userId}/latest`);
-  }
-
-  getMealPlan(id: string): Observable<DailyMealPlan> {
-    return this.http.get<DailyMealPlan>(`${this.apiUrl}/meal-planning/${this.userId}/${id}`);
   }
 
   createMealPlan(): Observable<DailyMealPlan> {

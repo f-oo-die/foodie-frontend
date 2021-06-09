@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DailyMealPlan } from 'src/app/interface/dailyMealPlan';
+import { CalorieStatus } from 'src/app/interface/enums/calorieStatus';
 import { DailyMealPlanService } from 'src/app/services/dailyMealPlan.service';
 import { AuthService } from '../../auth/shared/auth.service';
 
@@ -14,13 +14,12 @@ export class DailyMealPlansComponent implements OnInit {
   plans: DailyMealPlan[];
   latestPlan: DailyMealPlan;
   userId: number;
-  hasClicked: boolean;
+  calorieStatus = CalorieStatus;
 
   constructor(private activatedRoute: ActivatedRoute,
     private authService: AuthService,
     private dailyMealPlanService: DailyMealPlanService,
-    private router: Router,
-    private actRoute: ActivatedRoute) {
+    private router: Router) {
       this.userId = this.authService.getId();
   }
   
@@ -34,9 +33,6 @@ export class DailyMealPlansComponent implements OnInit {
       this.plans = routeData.plans;
       this.latestPlan = routeData.latestPlan;
     });
-    if (this.actRoute.snapshot.params.id) {
-      this.hasClicked = true;
-    }
   }
 
   createNewPlan(){

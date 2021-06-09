@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
 
   user: User;
   favouriteRecipe: Recipe[];
+  infoMessage = '';
 
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -22,5 +23,11 @@ export class ProfileComponent implements OnInit {
       this.user = routeData.user;
       this.favouriteRecipe = routeData.recipe;
     });
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        if(params.additionalInfo !== undefined && params.additionalInfo === 'true') {
+            this.infoMessage = 'Please fill in weight, height and choose nutrition issue(s) in order to create a customized meal plan.';
+        }
+      });
   }
 }
