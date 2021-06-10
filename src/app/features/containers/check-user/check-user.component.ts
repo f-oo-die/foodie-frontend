@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../auth/shared/auth.service';
 import {User} from '../../../interface/user';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Recipe} from '../../../interface/recipe';
 
 
 @Component({
