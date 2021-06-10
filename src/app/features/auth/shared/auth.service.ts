@@ -24,10 +24,10 @@ export class AuthService {
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
-    return this.httpClient.post(`${this.apiUrl}`, signupRequestPayload, {responseType: 'text'});
+    return this.httpClient.post(`${this.apiUrl}/api/auth/signup`, signupRequestPayload, {responseType: 'text'});
   }
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
-    return this.httpClient.post<LoginResponse>(`${this.apiUrl}`,
+    return this.httpClient.post<LoginResponse>(`${this.apiUrl}/api/auth/login`,
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
