@@ -7,13 +7,23 @@
           <label for="title">Title</label>
           <input [(ngModel)]="recipeModel.title" name="title" type="text" class="form-control" id="title" placeholder="Enter recipe title">
         </div>
-        <div class="form-group">
-          <label for="typeOfMeal">Type of meal</label>
-          <select class="form-control" id="typeOfMeal" [(ngModel)]="recipeModel.typeOfMeal" name="typeOfMeal">
-            <option [ngValue]="typeOfMeal.Breakfast">Breakfast</option>
-            <option [ngValue]="typeOfMeal.Lunch">Lunch</option>
-            <option [ngValue]="typeOfMeal.Dinner">Dinner</option>
-          </select>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="typeOfMeal">Type of meal</label>
+              <select class="form-control" id="typeOfMeal" [(ngModel)]="recipeModel.typeOfMeal" name="typeOfMeal">
+                <option [ngValue]="typeOfMeal.Breakfast">Breakfast</option>
+                <option [ngValue]="typeOfMeal.Lunch">Lunch</option>
+                <option [ngValue]="typeOfMeal.Dinner">Dinner</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="preparationTime">Preparation Time</label>
+              <input [(ngModel)]="recipeModel.preparationTime" name="preparationTime" type="number" class="form-control" id="preparationTime" placeholder="Enter preparation time">
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col">
