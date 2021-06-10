@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngStyle]="router.url == '/recipes' && {'background-color': '#ebf4fa'}">
   <div class="search-area" *ngIf="router.url == '/recipes'">
     <form class="form-inline my-2 my-lg-0">
       <input type="search" (ngModelChange)="searchRecipes(key.value)" #key="ngModel" ngModel

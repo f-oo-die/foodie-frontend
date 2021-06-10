@@ -1,4 +1,3 @@
-// todo: add constants to components after files are separated into smart & dumb components . . .
 export abstract class RoutesConstant {
  // Params
   static readonly RECIPE_ID: string = 'id';
@@ -9,6 +8,8 @@ export abstract class RoutesConstant {
 
   static readonly SIGNUP_ROUTE: string = 'signup';
   static readonly LOGIN_ROUTE: string = 'login';
+
+  static readonly ABOUT_US: string = 'about-us';
 
   // Routes
   static readonly RECIPES_LIST: string = RoutesConstant.RECIPES_ROUTE;
@@ -22,9 +23,11 @@ export abstract class RoutesConstant {
   static readonly DAILY_MEAL_PLAN: string = 'meal-planning';
   static readonly USER_ID: string = 'userId';
   static readonly PLAN_ID: string = 'id';
+  static readonly CHECK_USER: string = 'check-user/:id'
   static readonly USER_MEAL_PLANS: string = RoutesConstant.DAILY_MEAL_PLAN;
   static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN + '/:' + RoutesConstant.USER_ID + '/:' + RoutesConstant.PLAN_ID; 
 
+  // Admin routes
   static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';
   static readonly ADMIN_RECIPES_LIST: string = RoutesConstant.ADMIN_RECIPES_BASE;
   static readonly ADMIN_RECIPES_NEW: string = RoutesConstant.ADMIN_RECIPES_BASE + '/new';
@@ -40,4 +43,10 @@ export abstract class RoutesConstant {
   static readonly ADMIN_INGREDIENTS_NEW: string = RoutesConstant.ADMIN_INGREDIENTS_BASE + '/new';
   static readonly ADMIN_INGREDIENTS_EDIT: string = RoutesConstant.ADMIN_INGREDIENTS_BASE + '/edit/:id';
 
+  // Profile
+  static readonly PROFILE: string = 'profile/:id';
+
+  // Shopping lists
+  static readonly SHOPPING_LISTS: string = 'shopping-lists';
+  static readonly SHOPPING_LIST: string = 'shopping-lists/:id';
 }
