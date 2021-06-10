@@ -20,14 +20,23 @@ import {AdminNutritionIssuesEditComponent} from './admin/admin-nutrition-issues-
 import {NutritionIssueResolver} from './resolvers/nutrition-issue.resolver';
 import {AdminIngredientsEditComponent} from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import {IngredientResolver} from './resolvers/ingredient.resolver';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from "./auth/login/login.component";
+import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
+import { SignupComponent } from './features/auth/signup/signup.component';
+import { LoginComponent } from "./features/auth/login/login.component";
 import {ProfileComponent} from './features/containers/profile/profile.component';
-import {ProfileNutritionIssuesEditComponent} from './features/containers/profile/profile-nutrition-issues-edit/profile-nutrition-issues-edit.component';
 import {ShoppingListComponent} from './features/containers/shopping-list/shopping-list.component';
 import {ShoppingListsResolver} from './resolvers/shopping-lists.resolver';
 import {ShoppingListDetailsComponent} from './features/containers/shopping-list/shopping-list-details/shopping-list-details.component';
+import {UserResolver} from './resolvers/user.resolver';
 import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
+import {AuthGuard} from './auth.guard';
+import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
+import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
+import {FavoriteRecipeService} from './services/favorite-recipe.service';
+import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
+import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
+import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
+
 
 const routes: Routes = [
   {
@@ -43,7 +52,17 @@ const routes: Routes = [
   {
     path: RoutesConstant.RECIPES_DETAILS,
     component: RecipeComponent,
-    resolve: { recipe: RecipeResolver }
+    resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
+  },
+  {
+    path: 'check-user/:id',
+    component: CheckUserInfoComponent,
+    resolve: { user: UserResolver },
+  },
+  {
+    path:'meal-planning', 
+    component: DailyMealPlansComponent,
+    resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
   },
   { path: 'about-us',
   component : AboutUsComponent,
@@ -51,44 +70,49 @@ const routes: Routes = [
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
-    component: AdminComponent,
+    component: AdminComponent, canActivate: [AuthGuard]
   },
   {
     path: RoutesConstant.ADMIN_RECIPES_LIST,
-    component: AdminRecipesComponent,
+    component: AdminRecipesComponent, canActivate: [AuthGuard],
     resolve: { recipes: RecipesResolver },
   },
   {
     path: RoutesConstant.ADMIN_RECIPES_NEW,
-    component: AdminRecipesAddComponent,
+    component: AdminRecipesAddComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver },
   },
   {
+    path: RoutesConstant.ADMIN_RECIPES_EDIT,
+    component: AdminRecipesEditComponent, canActivate: [AuthGuard],
+    resolve: { nutritionIssues: NutritionIssuesResolver, ingredients: IngredientsResolver, recipe: RecipeResolver },
+  },
+  {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST,
-    component: AdminNutritionIssuesComponent,
+    component: AdminNutritionIssuesComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssues: NutritionIssuesResolver },
   },
   {
-    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW,
+    path: RoutesConstant.ADMIN_NUTRITION_ISSUES_NEW, canActivate: [AuthGuard],
     component: AdminNutritionIssuesAddComponent,
   },
   {
     path: RoutesConstant.ADMIN_NUTRITION_ISSUES_EDIT,
-    component: AdminNutritionIssuesEditComponent,
+    component: AdminNutritionIssuesEditComponent, canActivate: [AuthGuard],
     resolve: { nutritionIssue: NutritionIssueResolver },
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_LIST,
-    component: AdminIngredientsComponent,
+    component: AdminIngredientsComponent, canActivate: [AuthGuard],
     resolve: { ingredients: IngredientsResolver },
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_NEW,
-    component: AdminIngredientsAddComponent,
+    component: AdminIngredientsAddComponent, canActivate: [AuthGuard]
   },
   {
     path: RoutesConstant.ADMIN_INGREDIENTS_EDIT,
-    component: AdminIngredientsEditComponent,
+    component: AdminIngredientsEditComponent, canActivate: [AuthGuard],
     resolve: { ingredient: IngredientResolver },
   },
   {
@@ -100,12 +124,17 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ProfileComponent,
-    resolve: {  nutritionIssues: NutritionIssuesResolver },
+    resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver, recipe: FavoriteRecipeResolver },
   },
   {
-    path: 'shopping-list/:id',
+    path: 'shopping-lists',
+    component: ShoppingListComponent,
+    resolve: { shoppingLists: ShoppingListsResolver }
+  },
+  {
+    path: 'shopping-lists/:id',
     component: ShoppingListDetailsComponent,
     resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },

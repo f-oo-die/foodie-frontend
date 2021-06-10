@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
 
     this.activatedRoute.queryParams
       .subscribe(params => {
-        if (params.registered !== undefined && params.registered == 'true'){
+        if (params.registered !== undefined && params.registered === 'true'){
           this.toastr.success('Signup Successful');
-          this.registerSuccessMessage = 'Please continiue to login!';
+          this.registerSuccessMessage = 'Please continue to login!';
         }
       });
   }

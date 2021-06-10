@@ -7,6 +7,8 @@ import {TypeOfMeal} from '../../interface/enums/typeOfMeal';
 import {IngredientList} from '../../interface/ingredientList';
 import {Ingredient} from '../../interface/ingredient';
 import {NutritionIssue} from '../../interface/nutritionIssue';
+import {CalorieStatus} from '../../interface/enums/calorieStatus';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin-recipes-add',
@@ -15,6 +17,8 @@ import {NutritionIssue} from '../../interface/nutritionIssue';
 })
 export class AdminRecipesAddComponent implements OnInit {
   typeOfMeal = TypeOfMeal;
+  calorieStatus = CalorieStatus;
+  faTrashAlt = faTrashAlt;
 
   nutritionIssues: NutritionIssue[];
   ingredients: Ingredient[];
@@ -26,6 +30,11 @@ export class AdminRecipesAddComponent implements OnInit {
     ingredientList: this.ingredientLists,
     nutritionIssues: undefined,
     numOfCalories: 0,
+    calorieStatus: 0,
+    preparationTime: 0,
+    thumbnailImageUrl: '',
+    mainImageUrl: '',
+    count: 0,
     preparation: '',
     title: '',
     typeOfMeal: 0
@@ -53,5 +62,12 @@ export class AdminRecipesAddComponent implements OnInit {
     this.ingredientLists.push(this.ingredientList);
     console.log(this.ingredientLists);
     this.ingredientList = {ingredient: undefined, amount: 0, amountLabel: ''};
+  }
+
+  removeIngredientList(ingredientList: IngredientList): void {
+    this.recipeModel.ingredientList = this.ingredientLists.filter((element) => {
+      return element !== ingredientList;
+    });
+    this.ingredientLists = this.recipeModel.ingredientList;
   }
 }

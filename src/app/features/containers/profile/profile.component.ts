@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../auth/shared/auth.service';
+import {User} from '../../../interface/user';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Recipe} from '../../../interface/recipe';
 
 
 @Component({
@@ -8,8 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  favouriteRecipe: Recipe[];
+  infoMessage = '';
+
+  constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(routeData => {
+      this.user = routeData.user;
+      this.favouriteRecipe = routeData.recipe;
+    });
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        if(params.additionalInfo !== undefined && params.additionalInfo === 'true') {
+            this.infoMessage = 'Please fill in weight, height and choose nutrition issue(s) in order to create a customized meal plan.';
+        }
+      });
   }
 }

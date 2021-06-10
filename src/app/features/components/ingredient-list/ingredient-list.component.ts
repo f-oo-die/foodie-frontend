@@ -1,21 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Ingredient } from 'src/app/interface/ingredient';
+import { Component, Input } from '@angular/core';
 import { IngredientList } from 'src/app/interface/ingredientList';
+import {ShoppingList} from '../../../interface/shoppingList';
 
 @Component({
   selector: 'app-ingredient-list',
   templateUrl: './ingredient-list.component.html',
   styleUrls: ['./ingredient-list.component.css']
 })
-export class IngredientListComponent implements OnInit {
+export class IngredientListComponent {
 
   @Input()
-  models: IngredientList[];
+  ingredientListModel: IngredientList[];
 
-  constructor() {}
-
-  ngOnInit(): void {
-    
-  }
-
+  @Input()
+  shoppingListsModel: ShoppingList[];
 }

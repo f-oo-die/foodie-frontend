@@ -6,11 +6,14 @@ import {LoginRequestPayload} from '../login/login.request.payload';
 import {LoginResponse} from '../login/login-response.payload';
 import {map} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  apiUrl: string = environment.api;
 
   // @Output() loggedIn: EventEmmiter<boolean> = new Eventemitter();
   // @Output() username: EventEmmiter<string> = new EventEmmiter();
@@ -21,27 +24,34 @@ export class AuthService {
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
-    return this.httpClient.post('http://localhost:8080/api/auth/signup', signupRequestPayload, {responseType: 'text'});
+    return this.httpClient.post(`${this.apiUrl}/api/auth/signup`, signupRequestPayload, {responseType: 'text'});
   }
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
-    return this.httpClient.post<LoginResponse>('http://localhost:8080/api/auth/login',
+    return this.httpClient.post<LoginResponse>(`${this.apiUrl}/api/auth/login`,
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
+        this.localStorage.store('id', data.id);
+        this.localStorage.store('userRole', data.userRole);
         return true;
     }));
   }
-  logout() {
-    this.localStorage.clear('authenticationToken');
-    this.localStorage.clear('username');
+  logout(): void {
+    this.localStorage.clear();
   }
-  getUsername() {
+  getUsername(): string {
     return this.localStorage.retrieve('username');
   }
-  getJwtToken() {
+  getId(): number {
+    return this.localStorage.retrieve('id');
+  }
+  getJwtToken(): string {
     return this.localStorage.retrieve('authenticationToken');
   }
-  isLoggedIn(): boolean{
+  getUserRole(): string {
+    return this.localStorage.retrieve('userRole');
+  }
+  isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
 }
