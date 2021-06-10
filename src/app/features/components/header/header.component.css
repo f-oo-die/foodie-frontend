@@ -3,8 +3,12 @@
   background:#fff;
   padding:10px;
   font-size:17px;
-  max-width: 70%;
+  max-width: 100%;
   margin: 10px auto;
+}
+
+.container-fluid {
+  max-width: 70%;
 }
 
 /* logo or main heading */

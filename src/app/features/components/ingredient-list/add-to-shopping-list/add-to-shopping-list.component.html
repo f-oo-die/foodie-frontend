@@ -24,7 +24,7 @@
             </select>
           </div>
           <div *ngIf="shoppingListNumber" class="form-group">
-            <label for="nutritionIssues">Nutrition Issues</label>
+            <label for="nutritionIssues">Ingredients</label>
             <select [(ngModel)]="ingredientsModel"  multiple class="form-control" id="nutritionIssues" name="nutritionIssues">
               <option *ngFor="let ingredient of ingredientList" [ngValue]="ingredient.ingredient">{{ ingredient.ingredient.ingredientName }}</option>
             </select>

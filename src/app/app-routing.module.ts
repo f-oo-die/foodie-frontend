@@ -36,13 +36,14 @@ import {FavoriteRecipeService} from './services/favorite-recipe.service';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
+import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    resolve: { recipes: RecipesResolver }
+    resolve: { recipes: HomepageRecipesResolver }
   },
   {
     path: RoutesConstant.RECIPES_LIST,

@@ -1,10 +1,27 @@
 .search-area {
   max-width: 100%;
   height: 100px;
-  background-color: rgba(250, 235, 215, 0.616);
+  background-color: #ebf4fa;
+}
+
+.container {
+  background-color: #ebf4fa;
+}
+
+.search-area .form-inline input{
   text-align: center;
-  padding-top: 50px;
-  margin-top: -50px;
+  width: 400px;
+}
+
+input:focus {
+  box-shadow: 0.5px 0.5px 3px 1px #fa6a48 !important;
+  border: none;
+}
+
+.search-area .form-inline {
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
 .card {
@@ -139,19 +156,18 @@ font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
   width: 90%;
   margin: 20px auto;
 }
 
 .table .main {
-  justify-content: space-around;
   align-items: center;
   margin: 10px auto;
 }
 
 .display-recipes {
   width: 32%;
+  margin-right: 13px;
 }
 
 .fadeout {
