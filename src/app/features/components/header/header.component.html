@@ -10,7 +10,7 @@
     <ul id="link" class="nav navbar-left">
       <li><a [routerLink]="['/']">Home</a></li>
       <li><a [routerLink]="['/recipes']">Recipes</a></li>
-      <li><a href="#">About</a></li>
+      <li><a [routerLink]="['/about-us']">About</a></li>
     </ul>
     <ul id="link" class="nav navbar-right">
       <div *ngIf="!isLoggedIn">
