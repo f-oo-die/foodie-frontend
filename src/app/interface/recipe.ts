@@ -8,6 +8,7 @@ export interface Recipe {
   numOfCalories: number;
   typeOfMeal: number;
   calorieStatus: number;
+  preparationTime: number;
   count: number;
   thumbnailImageUrl: string;
   mainImageUrl: string;
