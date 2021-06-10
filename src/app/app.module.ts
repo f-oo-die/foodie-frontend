@@ -28,7 +28,6 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
-import { DailyMealPlanComponent } from './features/components/daily-meal-plan/daily-meal-plan.component';
 import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 
 import { SignupComponent } from './features/auth/signup/signup.component';
@@ -76,7 +75,6 @@ import { CheckUserComponent } from './features/containers/daily-meal-plans/check
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
-    DailyMealPlanComponent,
     DailyMealPlansComponent,
     SignupComponent,
     LoginComponent,
