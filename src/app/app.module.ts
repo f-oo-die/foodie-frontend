@@ -28,7 +28,6 @@ import { AdminNutritionIssuesEditComponent } from './admin/admin-nutrition-issue
 import { NutritionIssueResolver } from './resolvers/nutrition-issue.resolver';
 import { AdminIngredientsEditComponent } from './admin/admin-ingredients-edit/admin-ingredients-edit.component';
 import { IngredientResolver } from './resolvers/ingredient.resolver';
-import { DailyMealPlanComponent } from './features/components/daily-meal-plan/daily-meal-plan.component';
 import { DailyMealPlansComponent } from './features/containers/daily-meal-plans/daily-meal-plans.component';
 
 import { SignupComponent } from './features/auth/signup/signup.component';
@@ -54,8 +53,7 @@ import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
-import { CheckUserComponent } from './features/containers/daily-meal-plans/check-user.component';
-import { RouterModule } from '@angular/router';
+import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +75,6 @@ import { RouterModule } from '@angular/router';
     AdminIngredientsAddComponent,
     AdminNutritionIssuesEditComponent,
     AdminIngredientsEditComponent,
-    DailyMealPlanComponent,
     DailyMealPlansComponent,
     SignupComponent,
     LoginComponent,
@@ -89,7 +86,7 @@ import { RouterModule } from '@angular/router';
     ShoppingListCreateComponent,
     AddToShoppingListComponent,
     AdminRecipesEditComponent,
-    CheckUserComponent,
+    CheckUserInfoComponent,
   ],
   imports: [
     BrowserModule,
