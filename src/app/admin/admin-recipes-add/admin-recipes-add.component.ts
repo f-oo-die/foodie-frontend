@@ -31,6 +31,7 @@ export class AdminRecipesAddComponent implements OnInit {
     nutritionIssues: undefined,
     numOfCalories: 0,
     calorieStatus: 0,
+    preparationTime: 0,
     thumbnailImageUrl: '',
     mainImageUrl: '',
     count: 0,

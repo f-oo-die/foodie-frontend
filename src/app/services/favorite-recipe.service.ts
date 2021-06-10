@@ -19,7 +19,7 @@ export class FavoriteRecipeService {
     return this.http.get<Recipe[]>(`${this.apiUrl}/favorite-recipes/${this.userId}`);
   }
 
-  updateFavoriteRecipe(rId: string): Observable<Recipe>{
+  addToFavoriteRecipe(rId: string): Observable<Recipe>{
     return this.http.post<Recipe>(`${this.apiUrl}/favorite-recipes/${this.userId}/${rId}`, null);
   }
 }

@@ -35,6 +35,7 @@ export class AdminRecipesEditComponent implements OnInit {
     calorieStatus: 0,
     thumbnailImageUrl: '',
     mainImageUrl: '',
+    preparationTime: 0,
     count: 0,
     preparation: '',
     title: '',
