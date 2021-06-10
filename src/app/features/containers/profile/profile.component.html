@@ -57,12 +57,18 @@
     </div>
     <div class="card mt-4">
       <div class="card-body">
-        <h3 class="card-title">Check out some of your highlighted recipes!</h3>
-        <div class="grid-container">
+        <h5 class="card-title" style="margin-bottom: 30px; margin-left: 15px;">Check out some of your favorite recipes:</h5>
+        <div class="d-flex flex-row ">
           <div *ngFor="let favoriteRecipe of favouriteRecipe">
-            <div class="card-body">
-               <a [routerLink]="['/recipes/', favoriteRecipe.id]" class="card-title btn">{{favoriteRecipe.title}}</a>
-               <p class="card-text">Meal calories:{{favoriteRecipe.numOfCalories}}</p>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ favoriteRecipe.title }}</h5>
+                  <p class="card-text">Recipe with {{ favoriteRecipe.ingredientList.length }} ingredients tailored to {{ favoriteRecipe.nutritionIssues.length }} nutrition issue(s).</p>
+                  <p class="card-text">Preparation time: {{ favoriteRecipe.preparationTime }} minutes</p>
+                  <a class="btn" [routerLink]="['/recipes/', favoriteRecipe.id]">View Recipe</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
