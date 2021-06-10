@@ -1,22 +1,32 @@
-<app-header></app-header>
-
 <div class="container pt-5">
   <ng-container *ngIf="model">
     <div class="pb-3 d-flex justify-content-between align-items-center">
-      <h1>{{ model.title }}</h1>
-      <img class="shadow rounded" src="../../../../assets/images/meal.jpeg" alt="meal">
+      <div class="ftr">
+        <h1>{{ model.title }}</h1>
+        <div class="d-flex flex-row">
+          <div class="mr-1" *ngFor="let nutritionIssue of nutritionIssues">
+            <span class="badge badge-info"> {{nutritionIssue.name}} </span>
+          </div>
+        </div>
+      </div>
+      <img class="shadow rounded" src="{{ model.mainImageUrl }}" alt="ERROR: Image could not be fetched!">
     </div>
     <hr>
-    <div class="text-center">
-      <h2 class="pt-3">Type of meal</h2>
-      <p>{{ typeOfMeal[model.typeOfMeal] }}</p>
-      <h2 class="pt-3">Preparation</h2>
-      <p>{{ model.preparation }}</p>
-      <h2 class="pt-3">Number of calories</h2>
-      <p class="pb-5">{{ model.numOfCalories }}</p>
+
+    <div class="row mb-3">
+      <div class="col-6 border-right">
+        <div class="text-center">
+          <h2>Type of meal</h2>
+          <p>{{ typeOfMeal[model.typeOfMeal] }}</p>
+          <h2 class="pt-3">Preparation</h2>
+          <p style="word-wrap: break-word;">{{ model.preparation }}</p>
+          <h2 class="pt-3">Number of calories</h2>
+          <p class="pb-5">{{ model.numOfCalories }}</p>
+        </div>
+      </div>
+      <div class="col">
+        <app-ingredient-lists [ingredientLists]="ingredientModel" [shoppingListsModel]="shoppingListsModel"></app-ingredient-lists>
+      </div>
     </div>
-    <app-ingredient-lists [ingredientLists]="ingredientModel"></app-ingredient-lists>
   </ng-container>
 </div>
-
-<app-footer></app-footer>

@@ -1,4 +1,7 @@
-<p>List of ingredients: </p>
-<ul *ngFor="let model of models">
+<div class="d-flex flex-row justify-content-between">
+  <h2>List of ingredients </h2>
+  <app-add-to-shopping-list [ingredientList]="ingredientListModel" [shoppingListsModel]="shoppingListsModel"></app-add-to-shopping-list>
+</div>
+<ul *ngFor="let model of ingredientListModel">
   <li>{{ model.ingredient.ingredientName }}</li>
 </ul>

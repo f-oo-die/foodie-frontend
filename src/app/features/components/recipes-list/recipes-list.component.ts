@@ -1,5 +1,5 @@
 import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from 'src/app/interface/recipe';
 
 @Component({
@@ -7,7 +7,8 @@ import { Recipe } from 'src/app/interface/recipe';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent {
+export class RecipesListComponent implements OnInit {
+  ngOnInit(): void {}
 
   @Input()
   models: Recipe[];

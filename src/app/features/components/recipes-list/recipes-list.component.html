@@ -8,7 +8,7 @@
   <div *ngFor="let model of models" class="display-recipes">
     <div class="card card-blog">
       <div class="card-image" [routerLink]="['/recipes', model.id]">
-        <img class="img" src="../../../assets/images/meal.jpeg" alt="meal">
+        <img class="img" src="{{model.thumbnailImageUrl}}" alt="ERROR: Could not fetch recipe thumbnail !">
         <div class="ripple-cont"></div>
       </div>
       <div class="table">
@@ -22,9 +22,12 @@
         <p class="card-description card-text">{{ model.preparation }}</p>
         <div class="fadeout"></div>
         <div class="ftr">
-          nutritional issue tags
+          <div *ngFor="let nutritionIssue of model.nutritionIssues">
+            <span class="badge badge-info">{{ nutritionIssue?.name }} </span>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+  

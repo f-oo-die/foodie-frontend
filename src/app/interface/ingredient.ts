@@ -1,6 +1,6 @@
 export interface Ingredient {
-  id: number;
-  ingredientName: String;
+  id?: number;
+  ingredientName: string;
   caloricValue: number;
   nutritionalValue: number;
 }
