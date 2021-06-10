@@ -5,6 +5,7 @@ import {NutritionIssue} from '../../interface/nutritionIssue';
 import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {NutritionIssueService} from '../../services/nutrition-issue.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-nutrition-issues',
@@ -17,9 +18,13 @@ export class AdminNutritionIssuesComponent implements OnInit {
   faEdit = faEdit;
   faTrashAlt = faTrashAlt;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private nutritionIssueService: NutritionIssueService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private nutritionIssueService: NutritionIssueService,
+              private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('(Admin) Nutrition Issues | Foodie');
     this.activatedRoute.data.subscribe((routeData: { nutritionIssues: NutritionIssue[] }) => {
       this.nutritionIssues = routeData.nutritionIssues;
     });
