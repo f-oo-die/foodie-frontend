@@ -10,10 +10,10 @@ import {Title} from '@angular/platform-browser';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router: Router, private titleService: Title) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('(Admin) Dashboard | Foodie');
+
   }
 
   openRecipesList(): void {
