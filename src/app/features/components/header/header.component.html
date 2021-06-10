@@ -10,7 +10,7 @@
     <div>
       <a class="ml-3 text-dark" [routerLink]="['/']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
       <a class="ml-3 text-dark" [routerLink]="['/recipes']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
-      <a class="ml-3 text-dark" href="#"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
+      <a class="ml-3 text-dark" [routerLink]="['/about-us']"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
     </div>
 
     <div *ngIf="!isLoggedIn">

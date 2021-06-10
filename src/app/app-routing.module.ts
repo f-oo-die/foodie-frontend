@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent} from './features/containers/about-us/about-us.component';
 import { HomeComponent } from './features/components/home/home.component';
 import { RecipesComponent } from './features/containers/recipes/recipes.component';
 import { RecipeComponent } from './features/containers/recipe/recipe.component';
@@ -62,6 +63,9 @@ const routes: Routes = [
     path:'meal-planning', 
     component: DailyMealPlansComponent,
     resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
+  },
+  { path: 'about-us',
+  component : AboutUsComponent,
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
