@@ -53,7 +53,7 @@ import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
-import { CheckUserComponent } from './features/containers/check-user/check-user.component';
+import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +86,7 @@ import { CheckUserComponent } from './features/containers/check-user/check-user.
     ShoppingListCreateComponent,
     AddToShoppingListComponent,
     AdminRecipesEditComponent,
-    CheckUserComponent,
+    CheckUserInfoComponent,
   ],
   imports: [
     BrowserModule,

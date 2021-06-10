@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../auth/shared/auth.service';
-import {User} from '../../../interface/user';
-import {ActivatedRoute, Router} from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/features/auth/shared/auth.service';
+import { User } from 'src/app/interface/user';
 
 @Component({
-  selector: 'app-check-user',
-  templateUrl: '',
-  styleUrls: []
+  selector: 'app-check-user-info',
+  templateUrl: './check-user-info.component.html',
+  styleUrls: ['./check-user-info.component.css']
 })
-export class CheckUserComponent implements OnInit {
+export class CheckUserInfoComponent implements OnInit {
 
   user: User;
   infoMessage = '';
@@ -35,4 +34,5 @@ export class CheckUserComponent implements OnInit {
       });
     }
   }
+
 }
