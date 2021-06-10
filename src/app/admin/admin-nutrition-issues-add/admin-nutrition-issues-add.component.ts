@@ -19,7 +19,7 @@ export class AdminNutritionIssuesAddComponent implements OnInit {
               private titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('(Admin) Add Nutrition Issue | Foodie');
+    this.titleService.setTitle('Admin: Add Nutrition Issue | Foodie');
   }
 
   onSubmit(): void {

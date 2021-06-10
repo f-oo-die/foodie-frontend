@@ -20,7 +20,7 @@ export class AdminNutritionIssuesEditComponent implements OnInit {
               private titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('(Admin) Edit Nutrition Issue | Foodie');
+    this.titleService.setTitle('Admin: Edit Nutrition Issue | Foodie');
     this.activatedRoute.data.subscribe(routeData => {
       this.nutritionIssueModel = routeData.nutritionIssue;
     });

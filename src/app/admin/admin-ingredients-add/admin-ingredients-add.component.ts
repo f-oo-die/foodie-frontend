@@ -19,7 +19,7 @@ export class AdminIngredientsAddComponent implements OnInit {
               private titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('(Admin) Add Ingredient | Foodie');
+    this.titleService.setTitle('Admin: Add Ingredient | Foodie');
   }
 
   onSubmit(): void {

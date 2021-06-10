@@ -23,7 +23,7 @@ export class AdminRecipesComponent implements OnInit {
               private titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('(Admin) Recipes | Foodie');
+    this.titleService.setTitle('Admin: Recipes | Foodie');
     this.activatedRoute.data.subscribe((routeData: { recipes: Recipe[] }) => {
       this.recipes = routeData.recipes;
     });
