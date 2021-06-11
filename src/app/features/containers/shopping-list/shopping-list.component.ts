@@ -6,6 +6,7 @@ import {RoutesConstant} from '../../../constants/routes-constant';
 import {ShoppingListService} from '../../../services/shoppingList.service';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-shopping-list',
@@ -24,12 +25,15 @@ export class ShoppingListComponent implements OnInit {
               private authService: AuthService,
               private shoppingListService: ShoppingListService,
               private router: Router,
-              private actRoute: ActivatedRoute) {
+              private actRoute: ActivatedRoute,
+              private titleService: Title) {
     this.userId = this.authService.getId();
     this.hasClicked = false;
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('My Shopping Lists | Foodie');
+
     this.activatedRoute.data.subscribe(routeData => {
       this.shoppingLists = routeData.shoppingLists;
     });

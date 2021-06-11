@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RoutesConstant} from '../constants/routes-constant';
 import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin',

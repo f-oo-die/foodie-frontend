@@ -9,6 +9,7 @@ import {Ingredient} from '../../interface/ingredient';
 import {NutritionIssue} from '../../interface/nutritionIssue';
 import {CalorieStatus} from '../../interface/enums/calorieStatus';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-recipes-add',
@@ -40,9 +41,13 @@ export class AdminRecipesAddComponent implements OnInit {
     typeOfMeal: 0
   };
 
-  constructor(private recipeService: RecipeService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private recipeService: RecipeService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Admin: Add Recipe | Foodie');
     this.activatedRoute.data.subscribe((routeData: { nutritionIssues: NutritionIssue[] }) => {
       this.nutritionIssues = routeData.nutritionIssues;
     });

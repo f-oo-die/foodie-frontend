@@ -25,11 +25,10 @@ export class ShoppingListDetailsComponent implements OnInit {
   }
 
   onDelete(shoppingListId: number, ingredient: Ingredient): void {
-    this.shoppingList.ingredients = this.shoppingList.ingredients.filter(el => {
-      return ingredient.id !== el.id;
-    });
-
     if (confirm(`Are you sure you want to delete ${ingredient.ingredientName} ?`)) {
+      this.shoppingList.ingredients = this.shoppingList.ingredients.filter(el => {
+        return ingredient.id !== el.id;
+      });
       this.shoppingListService.updateShoppingList(shoppingListId, this.shoppingList).subscribe();
     }
   }

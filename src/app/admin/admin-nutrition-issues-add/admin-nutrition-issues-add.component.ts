@@ -3,6 +3,7 @@ import {NutritionIssueService} from '../../services/nutrition-issue.service';
 import {RoutesConstant} from '../../constants/routes-constant';
 import {Router} from '@angular/router';
 import {NutritionIssue} from '../../interface/nutritionIssue';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-nutrition-issues-add',
@@ -13,9 +14,12 @@ export class AdminNutritionIssuesAddComponent implements OnInit {
 
   nutritionIssueModel: NutritionIssue = {name: ''};
 
-  constructor(private nutritionIssueService: NutritionIssueService, private router: Router) { }
+  constructor(private nutritionIssueService: NutritionIssueService,
+              private router: Router,
+              private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Admin: Add Nutrition Issue | Foodie');
   }
 
   onSubmit(): void {

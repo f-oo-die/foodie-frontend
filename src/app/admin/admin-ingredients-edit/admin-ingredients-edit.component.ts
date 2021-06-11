@@ -3,6 +3,7 @@ import {Ingredient} from '../../interface/ingredient';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientService} from '../../services/ingredient.service';
 import {RoutesConstant} from '../../constants/routes-constant';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-ingredients-edit',
@@ -13,9 +14,13 @@ export class AdminIngredientsEditComponent implements OnInit {
 
   ingredientModel: Ingredient;
 
-  constructor(private ingredientService: IngredientService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private ingredientService: IngredientService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Admin: Edit Ingredient | Foodie');
     this.activatedRoute.data.subscribe(routeData => {
       this.ingredientModel = routeData.ingredient;
     });
