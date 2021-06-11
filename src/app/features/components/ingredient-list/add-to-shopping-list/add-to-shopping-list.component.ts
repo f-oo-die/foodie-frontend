@@ -25,15 +25,6 @@ export class AddToShoppingListComponent implements OnInit {
   @Input()
   shoppingListsModel: ShoppingList[];
 
-  private static doesIngredientExist(array, obj): boolean {
-
-    console.log(array);
-    console.log(obj);
-    return array.some( el => {
-      return el.name === name;
-    });
-  }
-
   removeDuplicates(array): [] {
     const seen = new Set();
 

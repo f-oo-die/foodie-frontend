@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent} from './features/containers/about-us/about-us.component';
 import { HomeComponent } from './features/components/home/home.component';
 import { RecipesComponent } from './features/containers/recipes/recipes.component';
 import { RecipeComponent } from './features/containers/recipe/recipe.component';
@@ -31,17 +32,17 @@ import {ShoppingListResolver} from './resolvers/shopping-list.resolver';
 import {AuthGuard} from './auth.guard';
 import { DailyMealPlansResolver } from './resolvers/daily-meal-plans.resolver';
 import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.resolver';
-import {FavoriteRecipeService} from './services/favorite-recipe.service';
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
+import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    resolve: { recipes: RecipesResolver }
+    resolve: { recipes: HomepageRecipesResolver }
   },
   {
     path: RoutesConstant.RECIPES_LIST,
@@ -54,14 +55,17 @@ const routes: Routes = [
     resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
   },
   {
-    path: 'check-user/:id',
+    path: RoutesConstant.CHECK_USER,
     component: CheckUserInfoComponent,
     resolve: { user: UserResolver },
   },
   {
-    path:'meal-planning', 
+    path: RoutesConstant.DAILY_MEAL_PLAN, 
     component: DailyMealPlansComponent,
     resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
+  },
+  { path: RoutesConstant.ABOUT_US,
+  component : AboutUsComponent,
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,
@@ -119,17 +123,17 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'profile/:id',
+    path: RoutesConstant.PROFILE,
     component: ProfileComponent,
     resolve: {  nutritionIssues: NutritionIssuesResolver, user: UserResolver, recipe: FavoriteRecipeResolver },
   },
   {
-    path: 'shopping-lists',
+    path: RoutesConstant.SHOPPING_LISTS,
     component: ShoppingListComponent,
     resolve: { shoppingLists: ShoppingListsResolver }
   },
   {
-    path: 'shopping-lists/:id',
+    path: RoutesConstant.SHOPPING_LIST,
     component: ShoppingListDetailsComponent,
     resolve: { shoppingList: ShoppingListResolver, shoppingLists: ShoppingListsResolver }
   },

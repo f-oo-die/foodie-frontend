@@ -16,6 +16,10 @@ export class RecipeService {
     return this.http.get<Recipe[]>(`${this.apiUrl}/recipes`);
   }
 
+  getLimited(): Observable<Recipe[]>{
+    return this.http.get<Recipe[]>(`${this.apiUrl}/recipes/homepage`);
+  }
+
   getRecipe(id: string): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.apiUrl}/recipes/${id}`);
   }

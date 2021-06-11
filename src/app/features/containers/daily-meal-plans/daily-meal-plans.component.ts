@@ -4,6 +4,7 @@ import { DailyMealPlan } from 'src/app/interface/dailyMealPlan';
 import { CalorieStatus } from 'src/app/interface/enums/calorieStatus';
 import { DailyMealPlanService } from 'src/app/services/dailyMealPlan.service';
 import { AuthService } from '../../auth/shared/auth.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-daily-meal-plans',
@@ -17,13 +18,15 @@ export class DailyMealPlansComponent implements OnInit {
   calorieStatus = CalorieStatus;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private authService: AuthService,
-    private dailyMealPlanService: DailyMealPlanService,
-    private router: Router) {
+              private authService: AuthService,
+              private dailyMealPlanService: DailyMealPlanService,
+              private router: Router,
+              private titleService: Title) {
       this.userId = this.authService.getId();
   }
-  
+
   ngOnInit(): void {
+    this.titleService.setTitle('Daily Meal | Foodie');
     this.getDailyMealPlans();
     console.log(this.latestPlan);
   }

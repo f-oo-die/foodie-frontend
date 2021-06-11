@@ -5,6 +5,7 @@ import { IngredientList } from 'src/app/interface/ingredientList';
 import { NutritionIssue } from 'src/app/interface/nutritionIssue';
 import { ShoppingList } from '../../../interface/shoppingList';
 import { FavoriteRecipeService } from 'src/app/services/favorite-recipe.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-recipe',
@@ -19,13 +20,17 @@ export class RecipeComponent implements OnInit {
   isFavorite: boolean;
   isFavoriteMessage: string;
 
-  constructor(private route: ActivatedRoute, private favoriteRecipeService: FavoriteRecipeService, private router: Router) { }
+  constructor(private route: ActivatedRoute,
+              private favoriteRecipeService: FavoriteRecipeService,
+              private router: Router,
+              private titleService: Title) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {
       this.recipe = routeData.recipe;
       this.ingredientsList = routeData.recipe.ingredientList;
       this.nutritionIssues = routeData.recipe.nutritionIssues;
+      this.titleService.setTitle(this.recipe.title + ' | Foodie');
     });
 
     this.route.data.subscribe(routeData => {

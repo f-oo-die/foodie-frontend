@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.isLoggedIn = false;
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/');
     this.userId = null;
     this.adminUser = null;
   }

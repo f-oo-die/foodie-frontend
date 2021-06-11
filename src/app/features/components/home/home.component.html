@@ -3,7 +3,10 @@
       <div class="color-overlay"></div>
       <h1 class="display-4">WELCOME</h1>
       <p class="lead">Your first place to search for the next recipe to cook.</p>
-      <a class="start-btn" href="#">Get started</a>
+      <a class="start-btn" [routerLink]="['/recipes']">Get started</a>
     </div>
     <app-recipes></app-recipes>
+    <div class="view-all">
+      <a class="start-btn" [routerLink]="['/recipes']">View All Recipes</a>
+    </div>
 </div>

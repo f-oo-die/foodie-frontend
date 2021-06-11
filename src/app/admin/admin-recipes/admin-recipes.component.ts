@@ -5,6 +5,7 @@ import {RoutesConstant} from '../../constants/routes-constant';
 import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {RecipeService} from '../../services/recipe.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-recipes',
@@ -16,9 +17,13 @@ export class AdminRecipesComponent implements OnInit {
   faEdit = faEdit;
   faTrashAlt = faTrashAlt;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private recipeService: RecipeService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private recipeService: RecipeService,
+              private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Admin: Recipes | Foodie');
     this.activatedRoute.data.subscribe((routeData: { recipes: Recipe[] }) => {
       this.recipes = routeData.recipes;
     });

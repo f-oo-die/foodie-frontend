@@ -9,6 +9,7 @@ import { HeaderComponent } from './features/components/header/header.component';
 import { FooterComponent } from './features/components/footer/footer.component';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { RecipesResolver } from './resolvers/recipes.resolver';
+import { AboutUsComponent } from './features/containers/about-us/about-us.component';
 import { IngredientListsComponent } from './features/containers/ingredient-lists/ingredient-lists.component';
 import { IngredientListComponent } from './features/components/ingredient-list/ingredient-list.component';
 import { RecipesComponent } from './features/containers/recipes/recipes.component';
@@ -54,6 +55,8 @@ import { LatestDailyMealPlanResolver } from './resolvers/latest-daily-meal-plan.
 import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserInfoComponent } from './features/containers/check-user/check-user-info/check-user-info.component';
+import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +65,7 @@ import { CheckUserInfoComponent } from './features/containers/check-user/check-u
     HeaderComponent,
     FooterComponent,
     IngredientListsComponent,
+    AboutUsComponent,
     IngredientListComponent,
     RecipesComponent,
     RecipesListComponent,
@@ -114,6 +118,7 @@ import { CheckUserInfoComponent } from './features/containers/check-user/check-u
     DailyMealPlansResolver,
     LatestDailyMealPlanResolver,
     FavoriteRecipeResolver,
+    HomepageRecipesResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
