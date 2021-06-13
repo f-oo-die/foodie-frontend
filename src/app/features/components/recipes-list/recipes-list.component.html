@@ -18,7 +18,8 @@
             <p class="stats"> <i class="fa fa-clock-o"></i> {{ model.preparationTime }} minutes </p>
           </div>
           <h4 class="card-caption">
-            <a [routerLink]="['/recipes', model.id]">{{ model.title }}</a>
+            <a *ngIf="!isLoggedIn" (click)="onClick()" style="cursor: pointer; color: #fa6a48;">{{ model.title }}</a>
+            <a [routerLink]="['/recipes', model.id]" *ngIf="isLoggedIn">{{ model.title }}</a>
           </h4>
           <p class="card-description card-text">{{ model.preparation }}</p>
           <div class="fadeout"></div>

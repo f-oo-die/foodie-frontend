@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Recipe } from 'src/app/interface/recipe';
-import { NgForm } from '@angular/forms';
-import { NutritionIssue } from 'src/app/interface/nutritionIssue';
 
 @Component({
   selector: 'app-recipes',
