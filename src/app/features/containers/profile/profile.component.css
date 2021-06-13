@@ -1,5 +1,6 @@
 #main {
   background-color: #f5f8fa !important;
+  padding: 100px 0;
 }
 
 img {
@@ -39,4 +40,15 @@ img {
   -ms-transition: all 250ms ease-in-out 0s;
   -o-transition: all 250ms ease-in-out 0s;
   transition: all 250ms ease-in-out 0s;
+}
+
+.remove{
+  background-color: white !important;
+  border: 1px solid #fa6a48;
+  color: #fa6a48 !important;
+}
+
+.remove:hover{
+  color: white !important;
+  background-color: #fa6a48 !important;
 }

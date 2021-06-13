@@ -29,14 +29,16 @@
               </div>
 
               <div class="col-md-6 offset-md-4">
-                <button type="submit" class="login">Login</button>
-                <span style="padding-left: 15px">New to Foodie? </span>
-                <a [routerLink]="['/signup']" class="text-primary" style="cursor: pointer">SIGN UP</a>
+                <button type="submit" class="login btn btn-primary btn-lg btn-block">Login</button>
+                <div>
+                  <span style="padding-left: 15px">New to Foodie? </span>
+                  <a [routerLink]="['/signup']" style="cursor: pointer; color: #fa6a48;">SIGN UP</a>
+                </div>
               </div>
               <div class="login-failed" *ngIf="this.isError">
                 <p class="login-failed-text">Login Failed. Please check your credentials.</p>
               </div>
-              <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="this.registerSuccessMessage.length > 0">
+              <div class="login-failed" [ngStyle]="{'background-color': '#28a745'}" *ngIf="this.registerSuccessMessage.length > 0">
                 <p class="register-success-text">{{registerSuccessMessage}}</p>
               </div>
             </form>

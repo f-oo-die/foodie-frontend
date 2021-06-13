@@ -12,8 +12,8 @@ import { ShoppingList } from '../../../interface/shoppingList';
 })
 export class RecipeDetailsComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.isFavorite);
-    console.log(this.isFavoriteMessage);
+    console.log(this.model);
+    console.log(this.ingredientModel);
   }
 
   @Input()

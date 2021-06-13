@@ -280,3 +280,8 @@ body{
 .table-responsive {
   margin: 30px auto;
 }
+
+.highlight {
+  color: #fe4f6c;
+  font-weight: 400;
+}

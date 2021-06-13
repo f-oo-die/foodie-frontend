@@ -15,15 +15,13 @@
   text-align: center;
   margin: auto;
   margin-top: 10px;
-  border: 2px solid black;
-  width: 65%;
-  background-color: red;
+  width: 70%;
+  background-color: #dc3545;
 }
 
 .login-failed-text, .register-success-text{
   text-align: center;
-  margin-top: 5px;
-  font-weight: bold;
+  padding: 15px;
   color: aliceblue;
 }
 
@@ -31,6 +29,10 @@
 .login {
   background-color: #fa6a48;
   color:#fff;
+  border: none;
+  height: 40px;
+  width: 220px;
+  margin-bottom: 15px;
 }
 .login:hover, login:focus, login.active {
   background-color: white;

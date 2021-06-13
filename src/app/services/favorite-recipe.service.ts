@@ -9,6 +9,7 @@ import {AuthService} from '../features/auth/shared/auth.service';
   providedIn: 'root'
 })
 export class FavoriteRecipeService {
+  
   apiUrl: string = environment.api;
   userId: number;
 
@@ -21,5 +22,9 @@ export class FavoriteRecipeService {
 
   addToFavoriteRecipe(rId: string): Observable<Recipe>{
     return this.http.post<Recipe>(`${this.apiUrl}/favorite-recipes/${this.userId}/${rId}`, null);
+  }
+
+  removeFromFavorite(recipeId: number): Observable<Recipe> {
+    return this.http.delete<Recipe>(`${this.apiUrl}/favorite-recipes/${this.userId}/${recipeId}`);
   }
 }
