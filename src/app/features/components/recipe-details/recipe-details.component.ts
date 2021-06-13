@@ -10,11 +10,7 @@ import { ShoppingList } from '../../../interface/shoppingList';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
-export class RecipeDetailsComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this.model);
-    console.log(this.ingredientModel);
-  }
+export class RecipeDetailsComponent{
 
   @Input()
   model: Recipe;
@@ -39,8 +35,15 @@ export class RecipeDetailsComponent implements OnInit {
   @Output()
   onAdd = new EventEmitter();
 
-  public addToFavorite(): void {
+  @Output()
+  onRemove = new EventEmitter();
+
+  addToFavorite(): void {
     this.onAdd.emit();
+  }
+
+  removeFromFavorite(): void{
+    this.onRemove.emit(this.model.id);
   }
 
   onClick(){

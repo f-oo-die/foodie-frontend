@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Recipe } from 'src/app/interface/recipe';
-import { NgForm } from '@angular/forms';
-import { NutritionIssue } from 'src/app/interface/nutritionIssue';
+import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
 
 @Component({
   selector: 'app-recipes',
@@ -11,6 +10,7 @@ import { NutritionIssue } from 'src/app/interface/nutritionIssue';
 })
 export class RecipesComponent implements OnInit {
   recipes: Recipe[];
+  typeOfMeal = TypeOfMeal;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,7 +29,9 @@ export class RecipesComponent implements OnInit {
   public searchRecipes(key: String): void {
     const result: Recipe[] = [];
     for (const recipe of this.recipes){
-      if (recipe.title.toLowerCase().indexOf(key.toLowerCase()) !== -1){
+      if (recipe.title.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || this.typeOfMeal[recipe.typeOfMeal].toLowerCase().indexOf(key.toLowerCase()) !== -1
+      ){
         result.push(recipe);
       }
     }
