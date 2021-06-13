@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/features/auth/shared/auth.service';
 import { User } from 'src/app/interface/user';
 
 @Component({
@@ -13,7 +12,7 @@ export class CheckUserInfoComponent implements OnInit {
   user: User;
   infoMessage = '';
 
-  constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(routeData => {

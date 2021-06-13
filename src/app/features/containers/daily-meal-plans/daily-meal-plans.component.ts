@@ -28,7 +28,6 @@ export class DailyMealPlansComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Daily Meal | Foodie');
     this.getDailyMealPlans();
-    console.log(this.latestPlan);
   }
 
   getDailyMealPlans(){
