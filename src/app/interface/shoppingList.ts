@@ -3,6 +3,8 @@ import {User} from './user';
 
 export interface ShoppingList {
   id?: number;
-  user: User;
+  title: string;
+  userId?: number;
+  user?: User;
   ingredients: Ingredient[];
 }

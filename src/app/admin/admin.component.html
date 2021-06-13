@@ -1,5 +1,5 @@
 <div class="d-flex" id="wrapper">
-  <div class="border-end bg-white" id="sidebar-wrapper">
+  <div class="border-end bg-white border-top" id="sidebar-wrapper">
     <!-- Sidebar navigation -->
     <div class="sidebar-heading border-bottom bg-light">Foodie Admin Panel</div>
     <div class="list-group list-group-flush">
@@ -10,18 +10,8 @@
   </div>
   <!-- Page content wrapper-->
   <div id="page-content-wrapper">
-    <!-- Top navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-            <li class="nav-item active"><a class="nav-link" href="#">Log out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <!-- Page content-->
-    <div class="container-fluid">
+    <div class="container-fluid border-top">
       <ng-content></ng-content>
     </div>
   </div>

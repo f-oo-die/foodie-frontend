@@ -24,8 +24,8 @@ export class ShoppingListService {
     return this.http.get<ShoppingList>(`${this.apiUrl}/shopping-list/${this.userId}/${id}`);
   }
 
-  createShoppingList(): Observable<ShoppingList> {
-    return this.http.post<ShoppingList>(`${this.apiUrl}/shopping-list/${this.userId}`, '');
+  createShoppingList(shoppingList: ShoppingList): Observable<ShoppingList> {
+    return this.http.post<ShoppingList>(`${this.apiUrl}/shopping-list/${this.userId}`, shoppingList);
   }
 
   updateShoppingList(id: number, shoppingList: ShoppingList): Observable<ShoppingList> {

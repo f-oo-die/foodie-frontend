@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {ShoppingListService} from '../../../../services/shoppingList.service';
 import {Ingredient} from '../../../../interface/ingredient';
+import {AuthService} from "../../../auth/shared/auth.service";
 
 @Component({
   selector: 'app-shopping-list-details',
@@ -16,7 +17,10 @@ export class ShoppingListDetailsComponent implements OnInit {
 
   faTrashAlt = faTrashAlt;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private shoppingListService: ShoppingListService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private shoppingListService: ShoppingListService,
+              private authService: AuthService) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(routeData => {
@@ -29,7 +33,11 @@ export class ShoppingListDetailsComponent implements OnInit {
       this.shoppingList.ingredients = this.shoppingList.ingredients.filter(el => {
         return ingredient.id !== el.id;
       });
-      this.shoppingListService.updateShoppingList(shoppingListId, this.shoppingList).subscribe();
+      this.shoppingListService.updateShoppingList(shoppingListId, this.shoppingList).subscribe(() => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate([`/shopping-lists/${this.shoppingList.id}`]);
+        });
+      });
     }
   }
 }
