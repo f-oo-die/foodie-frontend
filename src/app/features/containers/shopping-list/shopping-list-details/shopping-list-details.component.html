@@ -1,6 +1,6 @@
 <app-shopping-list>
   <div class="card-body">
-    <h5 class="card-title">Shopping List {{ shoppingList.id }}</h5>
+    <h5 class="card-title">{{ shoppingList.title }}</h5>
     <div class="card-text" *ngFor="let ingredient of shoppingList.ingredients">
       <div class="row">
         <div class="col">
