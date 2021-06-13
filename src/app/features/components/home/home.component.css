@@ -34,7 +34,7 @@
     position: absolute;
 }
 
-.jumbotron .lead, .jumbotron .display-4 {
+.lead, .display-4 {
   font-size: 25px;
   color: white;
   text-align: center;
@@ -71,4 +71,30 @@
   text-align: center;
   padding: 20px 10px;
   margin-bottom: 20px;
+}
+
+.meal-part {
+  background-image: url("../../../../assets/images/meals.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  text-align: center;
+  box-shadow: 0 -7px 9px -7px #a39f9e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+  height: 30rem;
+
+  position: relative;
+
+}
+
+.meal-part .lead {
+  margin-top: 80px;
+  color: black;
+  font-size: 25px;
 }
