@@ -32,6 +32,7 @@
       <div class="btns">
         <a (click)="onClick()" class="btn btn-info">Read directions</a>
         <button *ngIf="!isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="addToFavorite()">Add to Favorite +</button>
+        <button *ngIf="isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="removeFromFavorite()">Remove from Favorite -</button>
       </div>
       </div>
       <img class="shadow rounded" src="{{ model.mainImageUrl }}" alt="ERROR: Image could not be fetched!" style="width: 650px; height: 350px;">

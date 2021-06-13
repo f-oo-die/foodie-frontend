@@ -9,5 +9,4 @@ export interface User {
   height: number;
   profileImageUrl: string;
   nutritionIssues: NutritionIssue[];
-  // recommendedCalorieStatus: number;
 }
