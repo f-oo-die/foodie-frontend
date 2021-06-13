@@ -36,6 +36,7 @@ import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import {AdminRecipesEditComponent} from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserInfoComponent } from './features/containers/check-user-info/check-user-info.component';
 import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
+import { CommentsResolver } from './resolvers/comments.resolver';
 
 
 const routes: Routes = [
@@ -52,7 +53,7 @@ const routes: Routes = [
   {
     path: RoutesConstant.RECIPES_DETAILS,
     component: RecipeComponent,
-    resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver }
+    resolve: { recipe: RecipeResolver, shoppingLists: ShoppingListsResolver, comments: CommentsResolver }
   },
   {
     path: RoutesConstant.CHECK_USER,
@@ -64,8 +65,9 @@ const routes: Routes = [
     component: DailyMealPlansComponent,
     resolve: { plans: DailyMealPlansResolver, latestPlan: LatestDailyMealPlanResolver }
   },
-  { path: RoutesConstant.ABOUT_US,
-  component : AboutUsComponent,
+  { 
+    path: RoutesConstant.ABOUT_US,
+    component : AboutUsComponent,
   },
   {
     path: RoutesConstant.ADMIN_ROUTE,

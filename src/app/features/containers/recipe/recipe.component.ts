@@ -39,7 +39,7 @@ export class RecipeComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
         if(params.addedToFavorites !== undefined && params.addedToFavorites=== 'true') {
-            this.isFavoriteMessage = 'Successfully added to favorite recipes!';
+            this.isFavoriteMessage = 'Successfully added to favorite recipes collection on your Profile page!';
             this.isFavorite = true;
         }
       });
@@ -50,5 +50,15 @@ export class RecipeComponent implements OnInit {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([`/recipes/${this.recipe.id}`], {queryParams: { addedToFavorites: 'true' } });
     });
+  }
+
+  onRemove(id: number): void {
+    if (confirm(`Are you sure you want to remove this recipe from favorites?`)) {
+      this.favoriteRecipeService.removeFromFavorite(id).subscribe(() => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/recipes/' + this.recipe.id]);
+        });
+      });
+    }
   }
 }

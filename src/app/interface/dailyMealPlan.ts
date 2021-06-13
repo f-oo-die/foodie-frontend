@@ -8,5 +8,4 @@ export class DailyMealPlan{
   lunch: Recipe;
   dinner: Recipe;
   user: User;
-  rating: number;
 }

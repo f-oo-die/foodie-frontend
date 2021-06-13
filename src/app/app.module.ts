@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -56,6 +57,8 @@ import {FavoriteRecipeResolver} from './resolvers/favorite-recipe.resolver';
 import { AdminRecipesEditComponent } from './admin/admin-recipes-edit/admin-recipes-edit.component';
 import { CheckUserInfoComponent } from './features/containers/check-user-info/check-user-info.component';
 import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
+import { CommentsComponent } from './features/containers/recipe/comments/comments.component';
+import { CommentsResolver } from './resolvers/comments.resolver';
 
 
 @NgModule({
@@ -91,6 +94,7 @@ import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
     AddToShoppingListComponent,
     AdminRecipesEditComponent,
     CheckUserInfoComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,6 +108,7 @@ import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
+    TimeagoModule.forRoot(),
   ],
   providers: [
     RecipeResolver,
@@ -119,6 +124,7 @@ import { HomepageRecipesResolver } from './resolvers/homepage-recipes.resolver';
     LatestDailyMealPlanResolver,
     FavoriteRecipeResolver,
     HomepageRecipesResolver,
+    CommentsResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
