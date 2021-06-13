@@ -195,3 +195,9 @@ font-weight: 500;
   .table .main {
     justify-content: space-between;
   }
+
+  .badge {
+    padding: 5px 8px;
+    font-weight: 400;
+    margin-right: 5px;
+  }
