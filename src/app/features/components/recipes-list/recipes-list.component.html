@@ -2,7 +2,7 @@
   <div class="search-area" *ngIf="router.url == '/recipes'">
     <form class="form-inline my-2 my-lg-0">
       <input type="search" (ngModelChange)="searchRecipes(key.value)" #key="ngModel" ngModel
-      name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search recipes...">
+      name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search by name or type of meal">
   </form>
   </div>
   <div class="main">
