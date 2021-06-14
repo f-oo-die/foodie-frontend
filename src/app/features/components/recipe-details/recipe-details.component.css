@@ -19,26 +19,26 @@ h2 {
   margin-top: 20px;
 }
 
- .under-title > div:nth-child(1), .under-title > div:nth-child(2) {
-   border-right: 1px solid #4a4a4ad0;
-   padding-right: 20px;
- }
+.under-title > div:nth-child(1), .under-title > div:nth-child(2) {
+  border-right: 1px solid #4a4a4ad0;
+  padding-right: 20px;
+}
 
- .under-title > div:nth-child(1) > span:nth-child(1), .under-title > div:nth-child(2) > span:nth-child(1), .under-title > div:nth-child(3) > span:nth-child(1) {
-   font-size: 30px;
- }
+.under-title > div:nth-child(1) > span:nth-child(1), .under-title > div:nth-child(2) > span:nth-child(1), .under-title > div:nth-child(3) > span:nth-child(1) {
+  font-size: 30px;
+}
 
- .btns {
-   margin-top: 20px;
- }
+.btns {
+  margin-top: 20px;
+}
 
- .btns > a:nth-child(2) {
-   border-color: #17a2b8;
-   color: #17a2b8;
-   margin-left: 5px;
- }
+.btns > a:nth-child(2) {
+  border-color: #17a2b8;
+  color: #17a2b8;
+  margin-left: 5px;
+}
 
- .btns > a:nth-child(1):hover {
+.btns > a:nth-child(1):hover {
   border-color: #17a2b8;
   color: #17a2b8;
   background-color: white;
@@ -54,11 +54,11 @@ h2 {
   font-weight: 400;
 }
 
-.pt-5{
+.pt-5 {
   margin-bottom: 100px;
 }
 
-div.pb-3.d-flex.justify-content-between.align-items-center > div > p{
+div.pb-3.d-flex.justify-content-between.align-items-center > div > p {
   font-size: 18px;
   line-height: 1;
   color: rgba(128, 128, 128, 0.507);

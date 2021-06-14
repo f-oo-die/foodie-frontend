@@ -8,7 +8,7 @@ import {IngredientList} from '../../interface/ingredientList';
 import {Ingredient} from '../../interface/ingredient';
 import {NutritionIssue} from '../../interface/nutritionIssue';
 import {CalorieStatus} from '../../interface/enums/calorieStatus';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -44,7 +44,8 @@ export class AdminRecipesAddComponent implements OnInit {
   constructor(private recipeService: RecipeService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Add Recipe | Foodie');

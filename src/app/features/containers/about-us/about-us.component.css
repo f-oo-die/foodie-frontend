@@ -1,25 +1,29 @@
-body{
-  margin-top:20px;
-  background:#FF7F50 !important;
+body {
+  margin-top: 20px;
+  background: #FF7F50 !important;
 }
-.text-custom{
+
+.text-custom {
   color: #0062ff !important;
 }
 
 .container {
   margin: 0 auto 150px;
 }
+
 .content {
   padding: 0 18px;
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
 }
-.aboutustext{
+
+.aboutustext {
   font-size: 40px;
   color: #FF7F50;
 }
-.title{
+
+.title {
   font-size: 30px;
 }
 
@@ -27,7 +31,8 @@ body{
   line-height: 28px;
   color: #51585e;
 }
-.imena{
+
+.imena {
   font-size: 19px;
   text-align: center;
   margin-top: 7px;

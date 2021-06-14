@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import { AuthService } from '../../auth/shared/auth.service';
+import {AuthService} from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
 
   isLoggedIn: boolean;
 
-  constructor(private authService: AuthService, private titleService: Title) { }
+  constructor(private authService: AuthService, private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Home | Foodie');

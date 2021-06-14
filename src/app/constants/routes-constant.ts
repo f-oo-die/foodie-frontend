@@ -1,5 +1,5 @@
 export abstract class RoutesConstant {
- // Params
+  // Params
   static readonly RECIPE_ID: string = 'id';
 
   // Route roots
@@ -23,9 +23,9 @@ export abstract class RoutesConstant {
   static readonly DAILY_MEAL_PLAN: string = 'meal-planning';
   static readonly USER_ID: string = 'userId';
   static readonly PLAN_ID: string = 'id';
-  static readonly CHECK_USER: string = 'check-user/:id'
+  static readonly CHECK_USER: string = 'check-user/:id';
   static readonly USER_MEAL_PLANS: string = RoutesConstant.DAILY_MEAL_PLAN;
-  static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN + '/:' + RoutesConstant.USER_ID + '/:' + RoutesConstant.PLAN_ID; 
+  static readonly USER_MEAL_PLAN: string = RoutesConstant.DAILY_MEAL_PLAN + '/:' + RoutesConstant.USER_ID + '/:' + RoutesConstant.PLAN_ID;
 
   // Admin routes
   static readonly ADMIN_RECIPES_BASE: string = RoutesConstant.ADMIN_ROUTE + '/recipes';

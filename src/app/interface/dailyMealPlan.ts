@@ -1,7 +1,7 @@
-import { Recipe } from "./recipe";
-import { User } from "./user";
+import {Recipe} from './recipe';
+import {User} from './user';
 
-export class DailyMealPlan{
+export class DailyMealPlan {
   id: number;
   date: Date;
   breakfast: Recipe;

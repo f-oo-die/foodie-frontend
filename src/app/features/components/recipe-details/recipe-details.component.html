@@ -28,20 +28,26 @@
             <span>{{ model.numOfCalories }}</span><br>
             <span>Calories</span>
           </div>
+        </div>
+        <div class="btns">
+          <a (click)="onClick()" class="btn btn-info">Read directions</a>
+          <button *ngIf="!isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="addToFavorite()">Add to
+            Favorite +
+          </button>
+          <button *ngIf="isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="removeFromFavorite()">
+            Remove from Favorite -
+          </button>
+        </div>
       </div>
-      <div class="btns">
-        <a (click)="onClick()" class="btn btn-info">Read directions</a>
-        <button *ngIf="!isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="addToFavorite()">Add to Favorite +</button>
-        <button *ngIf="isFavorite" type="button" class="btn btn-outline-info ml-1" (click)="removeFromFavorite()">Remove from Favorite -</button>
-      </div>
-      </div>
-      <img class="shadow rounded" src="{{ model.mainImageUrl }}" alt="ERROR: Image could not be fetched!" style="width: 650px; height: 350px;">
+      <img class="shadow rounded" src="{{ model.mainImageUrl }}" alt="ERROR: Image could not be fetched!"
+           style="width: 650px; height: 350px;">
     </div>
     <hr>
 
     <div class="row mb-3">
       <div class="col-6 border-right">
-        <app-ingredient-lists [ingredientLists]="ingredientModel" [shoppingListsModel]="shoppingListsModel"></app-ingredient-lists>
+        <app-ingredient-lists [ingredientLists]="ingredientModel"
+                              [shoppingListsModel]="shoppingListsModel"></app-ingredient-lists>
       </div>
       <div class="col-6">
         <div class="">

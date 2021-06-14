@@ -7,7 +7,8 @@ import {NutritionIssue} from '../interface/nutritionIssue';
 @Injectable()
 export class NutritionIssuesResolver implements Resolve<NutritionIssue[]> {
 
-  constructor(private nutritionIssuesService: NutritionIssueService) {}
+  constructor(private nutritionIssuesService: NutritionIssueService) {
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<NutritionIssue[]> {
     return this.nutritionIssuesService.getNutritionIssues();

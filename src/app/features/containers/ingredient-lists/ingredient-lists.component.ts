@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IngredientList } from 'src/app/interface/ingredientList';
+import {Component, Input, OnInit} from '@angular/core';
+import {IngredientList} from 'src/app/interface/ingredientList';
 import {ShoppingList} from '../../../interface/shoppingList';
 
 @Component({
@@ -15,7 +15,8 @@ export class IngredientListsComponent implements OnInit {
   @Input()
   shoppingListsModel: ShoppingList[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
 

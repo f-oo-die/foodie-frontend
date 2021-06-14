@@ -11,9 +11,10 @@ export class NutritionIssueService {
 
   apiUrl: string = environment.api;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getNutritionIssues(): Observable<NutritionIssue[]>{
+  getNutritionIssues(): Observable<NutritionIssue[]> {
     return this.http.get<NutritionIssue[]>(`${this.apiUrl}/nutrition-issues`);
   }
 

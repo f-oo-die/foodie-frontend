@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SignupRequestPayload} from './signup-request.payload';
-import {AuthService} from "../shared/auth.service";
+import {AuthService} from '../shared/auth.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  signup() {
+  signup(): void {
     this.signupRequestPayload.email = this.signupForm.get('email').value;
     this.signupRequestPayload.password = this.signupForm.get('password').value;
     this.signupRequestPayload.firstName = this.signupForm.get('firstName').value;
@@ -46,8 +46,8 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/login'],
           {queryParams: {registered: 'true'}});
       }, () => {
-          this.toastr.error('Registration Failed! Please try again');
-        });
+        this.toastr.error('Registration Failed! Please try again');
+      });
   }
 
 }

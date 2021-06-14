@@ -12,7 +12,8 @@ import {ShoppingListService} from '../../../../services/shoppingList.service';
 })
 export class AddToShoppingListComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private shoppingListService: ShoppingListService) { }
+  constructor(private route: ActivatedRoute, private shoppingListService: ShoppingListService) {
+  }
 
   // shoppingLists: ShoppingList[] = [];
 

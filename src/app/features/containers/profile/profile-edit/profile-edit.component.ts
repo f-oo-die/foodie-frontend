@@ -17,7 +17,9 @@ export class ProfileEditComponent implements OnInit {
   constructor(private authService: AuthService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
-              private userService: UserService) { }
+              private userService: UserService) {
+  }
+
   faEdit = faEdit;
 
   ngOnInit(): void {

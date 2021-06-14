@@ -10,9 +10,10 @@ import {environment} from '../../environments/environment';
 export class IngredientService {
   apiUrl: string = environment.api;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getIngredients(): Observable<Ingredient[]>{
+  getIngredients(): Observable<Ingredient[]> {
     return this.http.get<Ingredient[]>(`${this.apiUrl}/ingredients`);
   }
 

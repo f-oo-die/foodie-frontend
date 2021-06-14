@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Recipe } from '../../../interface/recipe';
-import { IngredientList } from '../../../interface/ingredientList';
-import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
-import { NutritionIssue } from 'src/app/interface/nutritionIssue';
-import { ShoppingList } from '../../../interface/shoppingList';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Recipe} from '../../../interface/recipe';
+import {IngredientList} from '../../../interface/ingredientList';
+import {TypeOfMeal} from 'src/app/interface/enums/typeOfMeal';
+import {NutritionIssue} from 'src/app/interface/nutritionIssue';
+import {ShoppingList} from '../../../interface/shoppingList';
 
 @Component({
   selector: 'app-recipe-details',
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
-export class RecipeDetailsComponent{
+export class RecipeDetailsComponent {
 
   @Input()
   model: Recipe;
@@ -32,9 +32,11 @@ export class RecipeDetailsComponent{
   @Input()
   isFavorite: boolean;
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onAdd = new EventEmitter();
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onRemove = new EventEmitter();
 
@@ -42,14 +44,14 @@ export class RecipeDetailsComponent{
     this.onAdd.emit();
   }
 
-  removeFromFavorite(): void{
+  removeFromFavorite(): void {
     this.onRemove.emit(this.model.id);
   }
 
-  onClick(){
-    let x = document.querySelector("#directions");
-    if (x){
-        x.scrollIntoView();
+  onClick(): void {
+    const x = document.querySelector('#directions');
+    if (x) {
+      x.scrollIntoView();
     }
-}
+  }
 }

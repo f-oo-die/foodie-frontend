@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Recipe } from '../../../interface/recipe';
-import { IngredientList } from 'src/app/interface/ingredientList';
-import { NutritionIssue } from 'src/app/interface/nutritionIssue';
-import { ShoppingList } from '../../../interface/shoppingList';
-import { FavoriteRecipeService } from 'src/app/services/favorite-recipe.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Recipe} from '../../../interface/recipe';
+import {IngredientList} from 'src/app/interface/ingredientList';
+import {NutritionIssue} from 'src/app/interface/nutritionIssue';
+import {ShoppingList} from '../../../interface/shoppingList';
+import {FavoriteRecipeService} from 'src/app/services/favorite-recipe.service';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -23,7 +23,8 @@ export class RecipeComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private favoriteRecipeService: FavoriteRecipeService,
               private router: Router,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {
@@ -38,24 +39,24 @@ export class RecipeComponent implements OnInit {
     });
     this.route.queryParams
       .subscribe(params => {
-        if(params.addedToFavorites !== undefined && params.addedToFavorites=== 'true') {
-            this.isFavoriteMessage = 'Successfully added to favorite recipes collection on your Profile page!';
-            this.isFavorite = true;
+        if (params.addedToFavorites !== undefined && params.addedToFavorites === 'true') {
+          this.isFavoriteMessage = 'Successfully added to favorite recipes collection on your Profile page!';
+          this.isFavorite = true;
         }
       });
   }
 
-  onAdd() {
-    this.favoriteRecipeService.addToFavoriteRecipe(this.recipe.id+"").subscribe();
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`/recipes/${this.recipe.id}`], {queryParams: { addedToFavorites: 'true' } });
+  onAdd(): void {
+    this.favoriteRecipeService.addToFavoriteRecipe(this.recipe.id + '').subscribe();
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([`/recipes/${this.recipe.id}`], {queryParams: {addedToFavorites: 'true'}});
     });
   }
 
   onRemove(id: number): void {
     if (confirm(`Are you sure you want to remove this recipe from favorites?`)) {
       this.favoriteRecipeService.removeFromFavorite(id).subscribe(() => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
           this.router.navigate(['/recipes/' + this.recipe.id]);
         });
       });

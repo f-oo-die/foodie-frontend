@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../auth/shared/auth.service';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -23,8 +23,9 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.username = this.authService.getUsername();
     this.userId = this.authService.getId();
-    if (this.authService.getUserRole() === 'ADMIN')
-    {this.adminUser = this.authService.getUserRole(); }
+    if (this.authService.getUserRole() === 'ADMIN') {
+      this.adminUser = this.authService.getUserRole();
+    }
   }
 
   logout(): void {

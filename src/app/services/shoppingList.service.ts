@@ -16,7 +16,7 @@ export class ShoppingListService {
     this.userId = this.authService.getId();
   }
 
-  getShoppingLists(): Observable<ShoppingList[]>{
+  getShoppingLists(): Observable<ShoppingList[]> {
     return this.http.get<ShoppingList[]>(`${this.apiUrl}/shopping-list/${this.userId}`);
   }
 

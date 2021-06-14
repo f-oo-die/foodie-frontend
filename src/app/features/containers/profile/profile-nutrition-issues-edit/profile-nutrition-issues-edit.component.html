@@ -2,7 +2,8 @@
 <fa-icon [icon]="faEdit" data-toggle="modal" data-target="#profile-nutrition-issues-edit"></fa-icon>
 
 <!-- Modal -->
-<div class="modal fade" id="profile-nutrition-issues-edit" tabindex="-1" role="dialog" aria-labelledby="nutrition-issues-editModalLabel" aria-hidden="true">
+<div class="modal fade" id="profile-nutrition-issues-edit" tabindex="-1" role="dialog"
+     aria-labelledby="nutrition-issues-editModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,8 +16,10 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="nutritionIssues">Nutrition Issues</label>
-            <select  [(ngModel)]="userModel.nutritionIssues" multiple class="form-control" id="nutritionIssues" name="nutritionIssues">
-              <option *ngFor="let nutritionIssue of nutritionIssues" [ngValue]="nutritionIssue">{{ nutritionIssue.name }}</option>
+            <select [(ngModel)]="userModel.nutritionIssues" multiple class="form-control" id="nutritionIssues"
+                    name="nutritionIssues">
+              <option *ngFor="let nutritionIssue of nutritionIssues"
+                      [ngValue]="nutritionIssue">{{ nutritionIssue.name }}</option>
             </select>
           </div>
         </div>

@@ -7,7 +7,8 @@ import {ShoppingListService} from '../services/shoppingList.service';
 @Injectable()
 export class ShoppingListsResolver implements Resolve<ShoppingList[]> {
 
-  constructor(private shoppingListService: ShoppingListService) {}
+  constructor(private shoppingListService: ShoppingListService) {
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ShoppingList[]> {
     return this.shoppingListService.getShoppingLists();
