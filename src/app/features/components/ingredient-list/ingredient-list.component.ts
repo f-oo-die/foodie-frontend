@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IngredientList } from 'src/app/interface/ingredientList';
+import {Component, Input} from '@angular/core';
+import {IngredientList} from 'src/app/interface/ingredientList';
 import {ShoppingList} from '../../../interface/shoppingList';
 
 @Component({

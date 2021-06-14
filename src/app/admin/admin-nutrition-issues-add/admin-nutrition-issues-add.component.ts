@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NutritionIssueService} from '../../services/nutrition-issue.service';
 import {RoutesConstant} from '../../constants/routes-constant';
 import {Router} from '@angular/router';
@@ -16,7 +16,8 @@ export class AdminNutritionIssuesAddComponent implements OnInit {
 
   constructor(private nutritionIssueService: NutritionIssueService,
               private router: Router,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Add Nutrition Issue | Foodie');

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/features/auth/shared/auth.service';
-import { Comment } from 'src/app/interface/comment';
-import { Recipe } from 'src/app/interface/recipe';
-import { User } from 'src/app/interface/user';
-import { CommentService } from 'src/app/services/comment.service';
-import { UserService } from 'src/app/services/user.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from 'src/app/features/auth/shared/auth.service';
+import {Comment} from 'src/app/interface/comment';
+import {Recipe} from 'src/app/interface/recipe';
+import {User} from 'src/app/interface/user';
+import {CommentService} from 'src/app/services/comment.service';
+import {UserService} from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-comments',
@@ -25,24 +25,24 @@ export class CommentsComponent implements OnInit {
   commentModel: Comment;
   errors;
 
-  constructor(private route: ActivatedRoute, 
+  constructor(private route: ActivatedRoute,
               private authService: AuthService,
               private commentService: CommentService,
               private userService: UserService,
               private router: Router,
   ) {
     this.userId = this.authService.getId();
-    this.commentModel = { comment: '', recipe: this.recipe, user: this.user, datetime: null};
+    this.commentModel = {comment: '', recipe: this.recipe, user: this.user, datetime: null};
     this.errors = [];
-   }
+  }
 
   ngOnInit(): void {
     this.getComments();
     this.getUser();
   }
 
-  getUser(){
-    this.userService.getUser(this.userId+'').subscribe(user => this.user = user);
+  getUser(): void {
+    this.userService.getUser(this.userId + '').subscribe(user => this.user = user);
   }
 
   public getComments(): void {
@@ -60,10 +60,10 @@ export class CommentsComponent implements OnInit {
     this.errors = [];
     this.commentModel.recipe = this.recipe;
     this.commentModel.user = this.user;
-    this.commentService.createComment(this.recipe.id, this.commentModel).subscribe(() =>{
-      this.router.navigateByUrl('/recipes', { skipLocationChange: true }).then(() => {
+    this.commentService.createComment(this.recipe.id, this.commentModel).subscribe(() => {
+      this.router.navigateByUrl('/recipes', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/recipes/' + this.recipe.id]);
       });
-    })
+    });
   }
 }

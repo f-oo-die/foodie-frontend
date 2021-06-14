@@ -1,9 +1,9 @@
-import { Recipe } from "./recipe";
-import { User } from "./user";
+import {Recipe} from './recipe';
+import {User} from './user';
 
 export interface Comment {
   id?: number;
-  comment: String;
+  comment: string;
   datetime: Date;
   user: User;
   recipe: Recipe;

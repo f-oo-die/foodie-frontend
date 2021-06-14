@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../../interface/recipe';
+import {Component, OnInit} from '@angular/core';
+import {Recipe} from '../../interface/recipe';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoutesConstant} from '../../constants/routes-constant';
-import {faEdit} from '@fortawesome/free-solid-svg-icons';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faEdit, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {RecipeService} from '../../services/recipe.service';
 import {Title} from '@angular/platform-browser';
 
@@ -20,7 +19,8 @@ export class AdminRecipesComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private recipeService: RecipeService,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Recipes | Foodie');
@@ -40,7 +40,7 @@ export class AdminRecipesComponent implements OnInit {
   deleteRecipe(recipe: Recipe): void {
     if (confirm(`Are you sure you want to delete "${recipe.title}" ?`)) {
       this.recipeService.deleteRecipe(recipe.id).subscribe(() => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
           this.router.navigate([`/${RoutesConstant.ADMIN_RECIPES_LIST}`]);
         });
       });

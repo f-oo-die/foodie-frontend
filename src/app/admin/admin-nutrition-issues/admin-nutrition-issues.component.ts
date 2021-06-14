@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoutesConstant} from '../../constants/routes-constant';
 import {NutritionIssue} from '../../interface/nutritionIssue';
-import {faEdit} from '@fortawesome/free-solid-svg-icons';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faEdit, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {NutritionIssueService} from '../../services/nutrition-issue.service';
 import {Title} from '@angular/platform-browser';
 
@@ -21,7 +20,8 @@ export class AdminNutritionIssuesComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private nutritionIssueService: NutritionIssueService,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Nutrition Issues | Foodie');
@@ -41,7 +41,7 @@ export class AdminNutritionIssuesComponent implements OnInit {
   deleteNutritionIssue(nutritionIssue: NutritionIssue): void {
     if (confirm(`Are you sure you want to delete "${nutritionIssue.name}" ?`)) {
       this.nutritionIssueService.deleteNutritionIssue(nutritionIssue.id).subscribe(() => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
           this.router.navigate([`/${RoutesConstant.ADMIN_NUTRITION_ISSUES_LIST}`]);
         });
       });

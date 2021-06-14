@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginRequestPayload} from './login.request.payload';
 import {AuthService} from '../shared/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -33,23 +33,23 @@ export class LoginComponent implements OnInit {
 
     this.activatedRoute.queryParams
       .subscribe(params => {
-        if (params.registered !== undefined && params.registered === 'true'){
+        if (params.registered !== undefined && params.registered === 'true') {
           this.toastr.success('Signup Successful');
           this.registerSuccessMessage = 'Please continue to login!';
         }
       });
   }
 
-  login() {
+  login(): void {
     this.loginRequestPayload.email = this.loginForm.get('username').value;
     this.loginRequestPayload.password = this.loginForm.get('password').value;
 
     this.authService.login(this.loginRequestPayload).subscribe(data => {
-      if (data){
+      if (data) {
         this.isError = false;
         this.router.navigateByUrl('/');
         this.toastr.success('Login Successful');
-      } else{
+      } else {
         this.isError = true;
       }
     });

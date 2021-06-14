@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/interface/user';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from 'src/app/interface/user';
 
 @Component({
   selector: 'app-check-user-info',
@@ -12,7 +12,8 @@ export class CheckUserInfoComponent implements OnInit {
   user: User;
   infoMessage = '';
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(routeData => {
@@ -21,14 +22,13 @@ export class CheckUserInfoComponent implements OnInit {
     this.redirect();
   }
 
-  redirect(){
-    if (this.user.height == null || this.user.weight == null || this.user.nutritionIssues.length == 0){
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate([`/profile/${this.user.id}`], {queryParams: { additionalInfo: 'true' } });
+  redirect(): void {
+    if (this.user.height === null || this.user.weight === null || this.user.nutritionIssues.length === 0) {
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([`/profile/${this.user.id}`], {queryParams: {additionalInfo: 'true'}});
       });
-    }
-    else {
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    } else {
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate([`/meal-planning`]);
       });
     }

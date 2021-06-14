@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TypeOfMeal} from '../../interface/enums/typeOfMeal';
 import {CalorieStatus} from '../../interface/enums/calorieStatus';
 import {NutritionIssue} from '../../interface/nutritionIssue';
@@ -8,7 +8,7 @@ import {Recipe} from '../../interface/recipe';
 import {RecipeService} from '../../services/recipe.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoutesConstant} from '../../constants/routes-constant';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -46,7 +46,8 @@ export class AdminRecipesEditComponent implements OnInit {
   constructor(private recipeService: RecipeService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Edit Recipe | Foodie');

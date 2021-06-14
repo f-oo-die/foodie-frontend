@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Ingredient} from '../../interface/ingredient';
 import {RoutesConstant} from '../../constants/routes-constant';
-import {faEdit} from '@fortawesome/free-solid-svg-icons';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faEdit, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {IngredientService} from '../../services/ingredient.service';
 import {Title} from '@angular/platform-browser';
 
@@ -21,7 +20,8 @@ export class AdminIngredientsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private ingredientsService: IngredientService,
-              private titleService: Title) { }
+              private titleService: Title) {
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle('Admin: Ingredients | Foodie');
@@ -41,7 +41,7 @@ export class AdminIngredientsComponent implements OnInit {
   deleteIngredient(ingredient: Ingredient): void {
     if (confirm(`Are you sure you want to delete "${ingredient.ingredientName}" ?`)) {
       this.ingredientsService.deleteIngredient(ingredient.id).subscribe(() => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
           this.router.navigate([`/${RoutesConstant.ADMIN_INGREDIENTS_LIST}`]);
         });
       });

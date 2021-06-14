@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ShoppingListService} from '../../../../services/shoppingList.service';
 import {Router} from '@angular/router';
 import {ShoppingList} from '../../../../interface/shoppingList';
@@ -39,7 +39,7 @@ export class ShoppingListCreateComponent implements OnInit {
       element.setAttribute('data-dismiss', 'modal');
       element.click();
 
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/shopping-lists']);
       });
     });

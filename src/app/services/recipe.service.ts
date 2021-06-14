@@ -10,13 +10,14 @@ import {environment} from '../../environments/environment';
 export class RecipeService {
   apiUrl: string = environment.api;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getRecipes(): Observable<Recipe[]>{
+  getRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.apiUrl}/recipes`);
   }
 
-  getLimited(): Observable<Recipe[]>{
+  getLimited(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.apiUrl}/recipes/homepage`);
   }
 

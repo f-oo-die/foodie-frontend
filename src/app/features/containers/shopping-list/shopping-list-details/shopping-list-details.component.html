@@ -9,7 +9,9 @@
           <p class="mb-0">Nutritional value: {{ ingredient.nutritionalValue }}</p>
         </div>
         <div class="col d-flex flex-row justify-content-end">
-          <a (click)="onDelete(shoppingList.id, ingredient)"><fa-icon class="text-danger" [icon]="faTrashAlt"></fa-icon></a>
+          <a (click)="onDelete(shoppingList.id, ingredient)">
+            <fa-icon class="text-danger" [icon]="faTrashAlt"></fa-icon>
+          </a>
         </div>
       </div>
       <hr>

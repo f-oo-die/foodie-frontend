@@ -7,7 +7,8 @@ import {Ingredient} from '../interface/ingredient';
 @Injectable()
 export class IngredientsResolver implements Resolve<Ingredient[]> {
 
-  constructor(private ingredientService: IngredientService) {}
+  constructor(private ingredientService: IngredientService) {
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Ingredient[]> {
     return this.ingredientService.getIngredients();

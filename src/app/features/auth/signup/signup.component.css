@@ -1,23 +1,26 @@
 .register-section {
   margin: 100px;
 }
-.overlay{
-  opacity:0.8;
+
+.overlay {
+  opacity: 0.8;
   background: -webkit-linear-gradient(left, #fa6a48, #ffcf5f);
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
-  z-index:1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
+
 .sign-up {
   background-color: #fa6a48;
-  color:#fff;
+  color: #fff;
   border-radius: 2px;
   width: 220px;
   margin-bottom: 15px;
 }
+
 .sign-up:hover, .sign-up:focus, .sign-up.active {
   background-color: white;
   color: #fa6a48;
@@ -35,7 +38,7 @@
 
 .login {
   margin-left: 20px;
-  background-color: none;
+  background-color: unset;
   border: 1px solid #fa6a48;
   border-radius: 2px;
   width: 220px;
