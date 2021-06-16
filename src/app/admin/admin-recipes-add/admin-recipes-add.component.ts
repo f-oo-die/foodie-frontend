@@ -66,7 +66,6 @@ export class AdminRecipesAddComponent implements OnInit {
 
   addIngredient(): void {
     this.ingredientLists.push(this.ingredientList);
-    console.log(this.ingredientLists);
     this.ingredientList = {ingredient: undefined, amount: 0, amountLabel: ''};
   }
 
