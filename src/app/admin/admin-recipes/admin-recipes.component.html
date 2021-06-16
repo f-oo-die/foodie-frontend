@@ -14,7 +14,7 @@
     <tr *ngFor="let recipe of recipes">
       <td>{{ recipe.id }}</td>
       <td>{{ recipe.title }}</td>
-      <td>{{ recipe.typeOfMeal }}</td>
+      <td>{{ typeOfMeal[recipe.typeOfMeal] }}</td>
       <td class="p-3">
         <fa-icon [icon]="faEdit" (click)="openEditRecipe(recipe.id)"></fa-icon>
         <fa-icon class="text-danger ml-3" [icon]="faTrashAlt" (click)="deleteRecipe(recipe)"></fa-icon>

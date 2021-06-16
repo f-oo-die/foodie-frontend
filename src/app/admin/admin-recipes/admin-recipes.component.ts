@@ -5,6 +5,7 @@ import {RoutesConstant} from '../../constants/routes-constant';
 import {faEdit, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {RecipeService} from '../../services/recipe.service';
 import {Title} from '@angular/platform-browser';
+import { TypeOfMeal } from 'src/app/interface/enums/typeOfMeal';
 
 @Component({
   selector: 'app-admin-recipes',
@@ -15,6 +16,7 @@ export class AdminRecipesComponent implements OnInit {
   recipes: Recipe[];
   faEdit = faEdit;
   faTrashAlt = faTrashAlt;
+  typeOfMeal = TypeOfMeal;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
