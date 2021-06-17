@@ -21,6 +21,7 @@ body {
 .aboutustext {
   font-size: 40px;
   color: #FF7F50;
+  margin-top: 60px;
 }
 
 .title {
@@ -30,6 +31,7 @@ body {
 .text-paragraph {
   line-height: 28px;
   color: #51585e;
+  text-align: justify;
 }
 
 .imena {
